@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "author": "Smart Farm IoT",
+  "editor": "wokwi",
+  "name": "Smart Farm ESP32",
+  "description": "Giám sát nông trại: DHT22, đất (pot), ánh sáng (LDR), LED bơm/quạt, buzzer, OLED I2C",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -20,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": 20,
+      "left": 320,
+      "attrs": {
+        "temperature": "25",
+        "humidity": "60"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "soil",
+      "top": 20,
+      "left": 520,
+      "attrs": {
+        "value": "512"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 20,
+      "left": 720,
+      "attrs": {
+        "lux": "500"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pump",
+      "top": 200,
+      "left": 300,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fan",
+      "top": 200,
+      "left": 500,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 200,
+      "left": 700,
+      "attrs": { "volume": "0.3" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": 360,
+      "left": 380,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    ["dht22:VCC", "esp:3V3", "red", []],
+    ["dht22:GND", "esp:GND.1", "black", []],
+    ["dht22:SDA", "esp:D23", "green", []],
+
+    ["soil:VCC", "esp:3V3", "red", []],
+    ["soil:GND", "esp:GND.1", "black", []],
+    ["soil:SIG", "esp:D34", "orange", []],
+
+    ["ldr:VCC", "esp:3V3", "red", []],
+    ["ldr:GND", "esp:GND.1", "black", []],
+    ["ldr:AO", "esp:D35", "yellow", []],
+
+    ["led_pump:C", "esp:GND.1", "black", []],
+    ["led_pump:A", "esp:D26", "blue", []],
+
+    ["led_fan:C", "esp:GND.1", "black", []],
+    ["led_fan:A", "esp:D27", "lime", []],
+
+    ["buzzer:1", "esp:GND.1", "black", []],
+    ["buzzer:2", "esp:D25", "purple", []],
+
+    ["oled:GND", "esp:GND.1", "black", []],
+    ["oled:VCC", "esp:3V3", "red", []],
+    ["oled:SCL", "esp:D22", "white", []],
+    ["oled:SDA", "esp:D21", "gray", []]
+  ]
+}
