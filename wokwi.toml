@@ -1,0 +1,5 @@
+# Build: pio run -e wokwi (hoặc pio run — default_envs)
+[wokwi]
+version = 1
+firmware = ".pio/build/wokwi/firmware.bin"
+elf = ".pio/build/wokwi/firmware.elf"

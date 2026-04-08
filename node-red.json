@@ -2,48 +2,49 @@
   {
     "id": "mqtt-broker-hivemq",
     "type": "mqtt-broker",
-    "broker": "broker.hivemq.com",
-    "port": "1883",
+    "broker": "s1c8f2cc5cd4416fb74b671a407dc0ff.s1.eu.hivemq.cloud",
+    "port": "8883",
     "clientid": "nodered-smartfarm-001",
     "autoConnect": true,
-    "usetls": false,
+    "usetls": true,
     "keepalive": "60",
     "cleansession": true,
-    "autoUnsubscribe": true
+    "autoUnsubscribe": true,
+    "username": "hivemq.webclient.1775674471408",
+    "password": "s32qFe>*8Jld<MY5?XEm",
+    "subscribecopts": ""
   },
   {
     "id": "tab-dashboard",
-    "type": "tab",
-    "label": "Smart Farm Dashboard",
+    "type": "ui_tab",
+    "name": "Smart Farm Dashboard",
+    "icon": "dashboard",
     "disabled": false,
     "info": ""
   },
   {
     "id": "tab-control",
-    "type": "tab",
-    "label": "Điều khiển",
+    "type": "ui_tab",
+    "name": "Điều khiển",
+    "icon": "settings",
     "disabled": false,
     "info": ""
   },
   {
     "id": "group-env-sensors",
-    "type": "group",
+    "type": "ui_group",
     "z": "tab-dashboard",
     "name": "Cảm biến môi trường",
-    "style": {
-      "fill": "#e3f2fd"
-    },
-    "nodes": []
+    "tab": "tab-dashboard",
+    "order": 1
   },
   {
     "id": "group-status",
-    "type": "group",
+    "type": "ui_group",
     "z": "tab-dashboard",
     "name": "Trạng thái thiết bị",
-    "style": {
-      "fill": "#f3e5f5"
-    },
-    "nodes": []
+    "tab": "tab-dashboard",
+    "order": 2
   },
   {
     "id": "mqtt-env-in",
@@ -58,7 +59,14 @@
     "x": 100,
     "y": 100,
     "wires": [
-      ["env-gauge-temp", "env-gauge-hum", "env-chart-temp", "env-chart-hum", "env-text-temp", "env-text-hum"]
+      [
+        "env-gauge-temp",
+        "env-gauge-hum",
+        "env-chart-temp",
+        "env-chart-hum",
+        "env-text-temp",
+        "env-text-hum"
+      ]
     ]
   },
   {
@@ -74,7 +82,11 @@
     "x": 100,
     "y": 200,
     "wires": [
-      ["soil-gauge", "soil-chart", "soil-text"]
+      [
+        "soil-gauge",
+        "soil-chart",
+        "soil-text"
+      ]
     ]
   },
   {
@@ -90,7 +102,11 @@
     "x": 100,
     "y": 300,
     "wires": [
-      ["light-gauge", "light-chart", "light-text"]
+      [
+        "light-gauge",
+        "light-chart",
+        "light-text"
+      ]
     ]
   },
   {
@@ -106,7 +122,12 @@
     "x": 100,
     "y": 400,
     "wires": [
-      ["status-pump-indicator", "status-fan-indicator", "status-mode-indicator", "status-wifi"]
+      [
+        "status-pump-indicator",
+        "status-fan-indicator",
+        "status-mode-indicator",
+        "status-wifi"
+      ]
     ]
   },
   {
@@ -122,7 +143,9 @@
     "x": 100,
     "y": 500,
     "wires": [
-      ["alert-notify"]
+      [
+        "alert-notify"
+      ]
     ]
   },
   {
@@ -429,7 +452,11 @@
     "topic": "mode",
     "x": 100,
     "y": 100,
-    "wires": [["mqtt-control-out"]]
+    "wires": [
+      [
+        "mqtt-control-out"
+      ]
+    ]
   },
   {
     "id": "control-pump-switch",
@@ -445,7 +472,11 @@
     "topic": "pump",
     "x": 100,
     "y": 200,
-    "wires": [["mqtt-control-out"]]
+    "wires": [
+      [
+        "mqtt-control-out"
+      ]
+    ]
   },
   {
     "id": "control-fan-switch",
@@ -461,7 +492,11 @@
     "topic": "fan",
     "x": 100,
     "y": 300,
-    "wires": [["mqtt-control-out"]]
+    "wires": [
+      [
+        "mqtt-control-out"
+      ]
+    ]
   },
   {
     "id": "control-alert-button",
@@ -477,7 +512,11 @@
     "payloadType": "json",
     "x": 100,
     "y": 400,
-    "wires": [["mqtt-control-out"]]
+    "wires": [
+      [
+        "mqtt-control-out"
+      ]
+    ]
   },
   {
     "id": "mqtt-control-out",
@@ -485,7 +524,7 @@
     "z": "tab-control",
     "name": "MQTT Control",
     "topic": "iot/farm/control",
-    "qos": "",
+    "qos": "0",
     "retain": "true",
     "broker": "mqtt-broker-hivemq",
     "x": 400,
@@ -494,13 +533,11 @@
   },
   {
     "id": "control-group",
-    "type": "group",
+    "type": "ui_group",
     "z": "tab-control",
-    "name": "Dieu khien thiet bi",
-    "style": {
-      "fill": "#e8f5e9"
-    },
-    "nodes": ["control-mode-switch", "control-pump-switch", "control-fan-switch", "control-alert-button", "mqtt-control-out"]
+    "name": "Điều khiển thiết bị",
+    "tab": "tab-control",
+    "order": 1
   },
   {
     "id": "ui_base",
