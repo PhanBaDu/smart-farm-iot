@@ -5,9 +5,6 @@
 #include <ArduinoJson.h>
 #include <DHT.h>
 
-// ============================================
-// CẤU HÌNH WIFI & MQTT
-// ============================================
 #ifdef WOKWI
 const char *WIFI_SSID = "Wokwi-GUEST";
 const char *WIFI_PASSWORD = "";
@@ -16,41 +13,27 @@ const char *WIFI_SSID = "YOUR_WIFI_SSID";
 const char *WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 #endif
 
-// HiveMQ Cloud Broker — TLS (port 8883)
 const char *MQTT_BROKER = "b1c8f2cc5cd4416fb74b671a407dc0ff.s1.eu.hivemq.cloud";
 const int MQTT_PORT = 8883;
 const char *MQTT_CLIENT_ID = "esp32-sensor-01";
 const char *MQTT_USERNAME = "hivemq.webclient.1775680760112";
 const char *MQTT_PASSWORD = "amy&f0VPG3c5<8,U>qAB";
 
-// MQTT Topic
 const char *TOPIC_SENSOR = "farm/sensor";
 
-// ============================================
-// CẤU HÌNH CHÂN GPIO
-// ============================================
 #define DHT_PIN 4
 #define DHT_TYPE DHT22
 #define LED_PIN 5
 
-// ============================================
-// ĐỐI TƯỢNG
-// ============================================
 DHT dht(DHT_PIN, DHT_TYPE);
-WiFiClientSecure espClient; // ← dùng Secure vì port 8883 = TLS
+WiFiClientSecure espClient;
 PubSubClient mqttClient(espClient);
 
-// ============================================
-// BIẾN TRẠNG THÁI
-// ============================================
 unsigned long lastPublish = 0;
 unsigned long lastMQTTRetry = 0;
 const unsigned long PUBLISH_INTERVAL = 5000;
 const unsigned long MQTT_RETRY_MS = 5000;
 
-// ============================================
-// HÀM KẾT NỐI WIFI
-// ============================================
 void setupWiFi()
 {
   Serial.print("Connecting to WiFi: ");
@@ -70,9 +53,6 @@ void setupWiFi()
   Serial.println(WiFi.localIP());
 }
 
-// ============================================
-// HÀM KẾT NỐI MQTT
-// ============================================
 void reconnectMQTT()
 {
   Serial.print("[MQTT] Connecting...");
@@ -86,9 +66,6 @@ void reconnectMQTT()
   }
 }
 
-// ============================================
-// GỬI DỮ LIỆU QUA MQTT
-// ============================================
 void publishSensorData(float temp, float hum)
 {
   StaticJsonDocument<256> doc;
@@ -104,9 +81,6 @@ void publishSensorData(float temp, float hum)
   Serial.printf("Published: Temp=%.1f C, Hum=%.1f %%\n", temp, hum);
 }
 
-// ============================================
-// ĐỌC DỮ LIỆU CẢM BIẾN
-// ============================================
 void readSensor(float &temp, float &hum)
 {
   temp = dht.readTemperature();
@@ -122,9 +96,6 @@ void readSensor(float &temp, float &hum)
   }
 }
 
-// ============================================
-// KHỞI TẠO
-// ============================================
 void setup()
 {
   Serial.begin(115200);
@@ -137,8 +108,6 @@ void setup()
 
   dht.begin();
 
-  // Bỏ xác thực chứng chỉ SSL (đơn giản, phù hợp demo)
-  // Trên board thật có thể thay bằng setCertificate / setCACert
   espClient.setInsecure();
 
   setupWiFi();
@@ -148,19 +117,14 @@ void setup()
   Serial.println("Setup complete!");
 }
 
-// ============================================
-// VÒNG LẶP CHÍNH
-// ============================================
 void loop()
 {
-  // Kiểm tra WiFi
   if (WiFi.status() != WL_CONNECTED)
   {
     Serial.println("[WiFi] Lost connection, reconnecting...");
     setupWiFi();
   }
 
-  // Non-blocking MQTT reconnect
   if (!mqttClient.connected())
   {
     if (millis() - lastMQTTRetry >= MQTT_RETRY_MS)
@@ -173,7 +137,6 @@ void loop()
 
   unsigned long now = millis();
 
-  // Gửi dữ liệu mỗi 5 giây
   if (now - lastPublish >= PUBLISH_INTERVAL)
   {
     lastPublish = now;
