@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <WiFi.h>
+#include <WiFiClientSecure.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <DHT.h>
@@ -15,12 +16,12 @@ const char *WIFI_SSID = "YOUR_WIFI_SSID";
 const char *WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 #endif
 
-// HiveMQ Cloud Broker (Non-TLS, port 1883)
+// HiveMQ Cloud Broker — TLS (port 8883)
 const char *MQTT_BROKER = "b1c8f2cc5cd4416fb74b671a407dc0ff.s1.eu.hivemq.cloud";
-const int MQTT_PORT = 1883;
+const int MQTT_PORT = 8883;
 const char *MQTT_CLIENT_ID = "esp32-sensor-01";
-const char *MQTT_USERNAME = "hivemq.webclient.1775674471408";
-const char *MQTT_PASSWORD = "s32qFe>*8Jld<MY5?XEm";
+const char *MQTT_USERNAME = "hivemq.webclient.1775680760112";
+const char *MQTT_PASSWORD = "amy&f0VPG3c5<8,U>qAB";
 
 // MQTT Topic
 const char *TOPIC_SENSOR = "farm/sensor";
@@ -29,7 +30,6 @@ const char *TOPIC_SENSOR = "farm/sensor";
 // CẤU HÌNH CHÂN GPIO
 // ============================================
 #define DHT_PIN 4
-// Wokwi dùng wokwi-dht22; trên board thật nếu là DHT11 thì đổi thành DHT11
 #define DHT_TYPE DHT22
 #define LED_PIN 5
 
@@ -37,7 +37,7 @@ const char *TOPIC_SENSOR = "farm/sensor";
 // ĐỐI TƯỢNG
 // ============================================
 DHT dht(DHT_PIN, DHT_TYPE);
-WiFiClient espClient;
+WiFiClientSecure espClient; // ← dùng Secure vì port 8883 = TLS
 PubSubClient mqttClient(espClient);
 
 // ============================================
@@ -129,13 +129,17 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println("\n========================================");
-  Serial.println("  ESP32 + DHT11 + MQTT");
+  Serial.println("  ESP32 + DHT22 + MQTT (TLS)");
   Serial.println("========================================");
 
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
 
   dht.begin();
+
+  // Bỏ xác thực chứng chỉ SSL (đơn giản, phù hợp demo)
+  // Trên board thật có thể thay bằng setCertificate / setCACert
+  espClient.setInsecure();
 
   setupWiFi();
 
