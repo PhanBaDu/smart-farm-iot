@@ -1,212 +1,45 @@
-
 # 🧠 1. Đề tài
 
 **Tên đề tài:**
 
-> **Thiết kế và triển khai hệ thống giám sát và điều khiển môi trường trang trại thông minh sử dụng IoT (ESP32, MQTT và Node-RED)**
+> **Thiết kế hệ thống tưới cây tự động đơn giản sử dụng IoT (ESP32 + MQTT + Node-RED)**
 
 ---
 
-# 📌 2. Những nội dung cần thực hiện
+# 🎯 2. Ý tưởng cốt lõi
 
-## 2.1. Xây dựng hệ thống phần cứng (mô phỏng Wokwi)
+Xây dựng một **chậu cây thông minh** có khả năng:
 
-![Image](https://images.openai.com/static-rsc-4/WNPhdHDW19Cp4VqKTRHWxcee8NCEwUtPjJejdAbpXdgtvJvBPN-ALFPlRRhlPCTgy6xT0Xb3-833ib45zBzknzCTSu7BJkLKFktDJDxYCvfDRirkMbXuJEM_UqIYztqMx5hG9SoqLdf3w2aPW7Ja6CvapeHvtgR-zjJiE9WaPYxIrupNch-0yDijbV0lES4Y?purpose=fullsize)
+- Đọc độ ẩm đất
+- Tự động bật/tắt bơm nước
+- Hiển thị trạng thái trên dashboard
 
-![Image](https://images.openai.com/static-rsc-4/X07PKT619To4skVgZ4ZEeWzuIfcTSd0AUqTzOhIqsXE00nLdS28mx7jzI5TGP6UEgnB98WJPZ7XCNIhX35L_H3q76BCqAqP6uOYyGj3DYTcy3I_rS4ajQ-VX9z6eTN_NojEPzuPBBo_szM1j_plikY2xm4OdUDYtzMewbJtWy7SxMjA0eI95Cj2PTeumrdDJ?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/JF9Zq2cGjc6xt9D1dGJ7Dvnh1bt3HKHwp12y4PyGNUMboSpm69DQculiq6tmJzG_VqjLe8kMk6H8F6TgLCHMsFakdPLi1Bjb0STwQ-jY847tRvUI8dMWj-7Z-F-FMWZgCRXMFeoHi2z2KCZv5mttel7c0Jclx7jii2-h5RRJApy3Iz88sWA3iR6jLVqsq8_d?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/8RcL4wV0P7V5Qw5VH-N9a72ZniYpiBfr41WIxppT5T6seMJNYG1wyBqqy-WWjGA_KFyBf0Hu3fKX5YWsWsHNVcZ7ix8XjvYKvXz2Ek0wtE99ImFgu6GG_aprlGod0nMFdUbCumwba2cEhsvwqe2UbxxWIwn-ViflQhfytLiEzHRoet5rccvEivAXPXzeyoyD?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/KzggCnjjSIQWl1gOqfJbks2Tu6gnCA7kNwVfgu8A50tLRXmiOm7t9SsKcvu-qq-FFv7o01b85wYzI5e61pXf-48eGqaXseigSvc6XVHjj0GzDMt44adqys2fbo6VXieYF9kGChoBbV_ov4qRIXCCDstd9E8i7WrsTlx1qFUrXwoybILLXQ1BezRzv5jAiZrH?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/YMVjksW5oSEkzbXCxvLSg3v3DqWn8Yohl-bGFr8_Zc7tiWmXCTTS2kOjpNBg_igionpO1zmUIbuSF_vwwmrRLJYbN7HN5pEYIv8QfK-0zVu7fK5ph_4iy4v_Eqr10_DqI4zfIrOfpJh7LRzH9bUdnd_uShOrJFR3HuCFpAs9GPBUVeeoAg1mAGlcp1NSKRx5?purpose=fullsize)
-
-* Kết nối vi điều khiển ESP32 với các cảm biến:
-
-  * Cảm biến nhiệt độ và độ ẩm không khí (DHT22)
-  * Cảm biến độ ẩm đất (giả lập bằng biến trở - Potentiometer)
-  * Cảm biến ánh sáng (LDR)
-* Kết nối các thiết bị chấp hành:
-
-  * LED (giả lập máy bơm nước / quạt)
-  * Buzzer (cảnh báo)
-  * OLED (hiển thị thông tin)
+👉 Mục tiêu: đơn giản – dễ triển khai – tập trung vào IoT cơ bản
 
 ---
 
-## 2.2. Thu thập và truyền dữ liệu (MQTT)
+# 📦 3. Phần cứng (Wokwi - mô phỏng)
 
-* Thu thập dữ liệu từ các cảm biến theo thời gian thực
-* Xây dựng chương trình trên ESP32 để:
 
-  * Đọc dữ liệu sensor
-  * Publish dữ liệu lên MQTT Broker (HiveMQ)
-* Định nghĩa các topic MQTT:
+::contentReference[oaicite:0]{index=0}
+
+
+| Linh kiện       | Vai trò                         |
+|----------------|---------------------------------|
+| ESP32          | Vi điều khiển chính             |
+| DHT22          | Đo nhiệt độ + độ ẩm không khí   |
+| Potentiometer  | Giả lập độ ẩm đất               |
+| LED xanh       | Giả lập máy bơm nước            |
+| Buzzer         | Cảnh báo đất quá khô            |
+
+❌ Đã loại bỏ: LDR, OLED, relay, quạt (không cần thiết)
+
+---
+
+# 📡 4. MQTT Topics
+
+Chỉ sử dụng **2 topic đơn giản**:
 
 ```json
 iot/farm/env
-iot/farm/soil
 iot/farm/control
-iot/farm/alert
-```
-
----
-
-## 2.3. Xây dựng hệ thống xử lý trung tâm (Node-RED)
-
-![Image](https://images.openai.com/static-rsc-4/Fuo2hWyFTO67tFES4JlVtXCKHN95eod6kT31q2IZKqfYkTtreXl2nBj0bZZx6fJ70PGY0TifGZwVm-mHe3Aa-0ArNVTjkOCpnEVt6x0lf0Vc1viEm8pjjevxLQPz0oujVdQ-GwoeaIMQBc76HxalIFWvjGzuF7LNXmjqeESS4RGSoFPLpWXT2eu-2KEdT0dE?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/EV7UjmwJaVBWSImr0UD7TCpHnRO_ybb9f8xldW02pBmd8nQuFu2EHjzv77UBgIBNkaAqKdaAQ5taSXkiDh13RnnZbTCO4h2wNw9graWIKp5To2FtjRj9L5_J-vAnwnreVAvKVD72e4_KFNTweutNoWQAQhwqlL0qJjQALxnoibEnHn90O34Tb8T4YZmaueei?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/APXZ1GpJXNh0FaHcavA3SZ1ayFHWBIhitL6zFgQaHOz7HzejKXc4H1KG7TNO0wcaeNeu-ssu8R_8UKoVgnmB4BFoCiVSYbZIqHbClL-1Qn4mIoSlud-6I02nCLnKw2NJDu4ltjdgya2o2o7POgGvakePRghrIoan-QHR77_rCb-AeVPNImOXndW3vzEB0YvN?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/0RMkB878dYYoc63Nhp56RYU--qMWp-BGHzRCc-AtOzfac_DEUYydC0rsahMZtUvGbh75RHo8BWogPVbBIZo8UX7RPMA7lnZsv1F8t-PfiHYXVOSGrWxPitAsb3NRb39r_s88gHrWDUJqquGdDuMROObZGOsNlnyGmcROqZoXmBNpNvs51r_C0CEBUNtxeZS4?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/ZuLU9qSJWRl1FrXOGft3bsvoaj-sDBTzPHUT1etOQbbuRAnmb0D-kpLyV7gy1alW2FZGCQfZ6SmVVq-2VZCGHeAmkK_Ob80uoMDk9nMidi3vmJccVVChiwRRUBOc85Cod-98R7hESOPNjDri41x5oukyHcSRveUcyR6UQdSs4Y3l8atiVpY0edFilJfJpeaM?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/_G1Pl83tkQoLTcwsr6ZTwp_7zRYKChkyOOOTz1eYcjLTmwNTjom81I05t5R6wR-i9KYmx1AFy8xCJ3qqEhew9aeABFIJ9868t09fnbmw0EbOWsmm5Y-5CyWQhSqYyr5BR3bN5n31wdqj5quyrLER-2aZQZUMgtJTBmretH3K3Axm8PoLZmVYD1XRVESIdVUP?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/ZKQC3n8Q3x2H0pIKW7V4QgDwb8p0WMjxNLUqg0DfFF5VHzarp-FA2Pi2HyOQEOZx_AhbzSY-eR_gUUNNToWaV6aLsPSOE08TnuH5wOJ19AHOcGqUOr1OzuItLC45rn0L1y5A6OkT9ojelxi5BCU_a9AcMofTVCeIWNmv_yhlPVebG1m6MiH3qeTOANw_36lx?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/O-22hmio6slacyBeOfuIB-okRy-TWUc1rScuiTYli9wbryWJdG0oRi01MhRRdauDxfxhHM9MfF4e-r59D6joEQin3lKo3BLbxV5wkA7YHgg5NLIUNn2WFLigueHJRrPJ0yswGrNLLVYxFHM3PY2dg4nt3Aj0n92OR0cTS2I2JFhkxOsu3tQ-KeZk_3Nm0dbO?purpose=fullsize)
-
-* Subscribe dữ liệu từ MQTT Broker
-* Xây dựng các flow xử lý:
-
-  * Phân tích dữ liệu nhiệt độ, độ ẩm, ánh sáng
-  * So sánh với ngưỡng (threshold)
-* Điều khiển thiết bị:
-
-  * Gửi lệnh bật/tắt pump, quạt qua MQTT
-* Thiết kế dashboard:
-
-  * Gauge hiển thị nhiệt độ, độ ẩm
-  * Chart theo thời gian
-  * Switch điều khiển thủ công
-
----
-
-## 2.4. Xây dựng logic điều khiển thông minh
-
-### 🔹 Điều khiển cơ bản:
-
-* Nếu độ ẩm đất thấp → bật bơm
-* Nếu nhiệt độ cao → bật quạt
-
-### 🔹 Điều khiển nâng cao:
-
-* Điều chỉnh theo thời gian (ngày / đêm)
-* Kết hợp nhiều yếu tố:
-
-  * Độ ẩm đất + độ ẩm không khí
-  * Ánh sáng môi trường
-
-### 🔥 Điều khiển thích nghi (Adaptive Control):
-
-* Lưu lịch sử dữ liệu (Node-RED / database)
-* Phân tích hiệu quả tưới:
-
-  * Nếu sau khi tưới đất vẫn khô → tăng thời gian tưới
-  * Nếu đất quá ẩm → giảm thời gian tưới
-* Tự động điều chỉnh ngưỡng theo thời gian
-
----
-
-## 2.5. Chế độ hoạt động
-
-* **AUTO mode**:
-
-  * Hệ thống tự động điều khiển theo thuật toán
-* **MANUAL mode**:
-
-  * Người dùng điều khiển trực tiếp qua dashboard
-
----
-
-## 2.6. Cảnh báo và giám sát
-
-* Cảnh báo khi:
-
-  * Nhiệt độ quá cao
-  * Độ ẩm đất quá thấp trong thời gian dài
-* Hiển thị cảnh báo:
-
-  * Dashboard Node-RED
-  * Buzzer
-
----
-
-# ⚙️ 3. Thiết bị sử dụng
-
-## 3.1. Vi điều khiển
-
-![Image](https://images.openai.com/static-rsc-4/uCDFHtegPIRgF5AGo7uK7B5J-sm1t26wNKg9S5Zkh_89F7RkQWFF1Q4jhxMXlf3q_eJMdRjHxxQgs6na2gAp55E0F5mTQ1p7fqGadW2rRJ43J9ApcrHiLtjODfHwcXiEGvQgJWaaUTh917CLbC3aJ1Xk2GKfG284Lg1yMkOjN2A1g_gT1pxJiROVFNAlzdAL?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/6GUE67Mjs9EMLDaxV9yh45uj4eScE_bXNgZAYl8s6SvKtYZ7N0LEAg9FkHf5Wu4dS0RVSCbNIsncaRD40pRZItN3BGR8uF-EiRa16HFhT16txUF21O7dDRtdN8tj0DASvVg-JLrETk_oA16-tFKDlA2Jpjc8fBIQUCOPBwpBd1VcXTBOy5R1qog0KDwgR4jC?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/IIBccak6Lx55iPl2zPfW0PG5mCk-3Fb4k9_xR9BYcNnDySGWHn63Cm64GIBQVeeb9muZ5tcQGKHChsVSW4BUR92vLDhlr09whZkro4I-skBX4necqdqzoXItTcfqhrqjuXi-RNHWqBCiVW41hyR25VZNKZZuIkysy9--4NCrB7PnbtMNgL0V3Hw8FKfjwi6-?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/DOE681ZGgvbzNuvLN3TVd4QTlB9iIcp6DhGdaaMBiO-6LWxaUJ7soYahvnt7mALwNMkAzZT63gC6Urpu-woUjQzPAfGEwXmw0LYAUXxwMDyAgJOHF7T-FMp3oXseKLwAD3ct6CAI_HKR5hefNel9SVBJTRzrsgX5CWh8Fowg2FIWODKlBM3b1ZsJS8BEVEtr?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/Hdcrv1fxR9WtzY-HW2XlRwlz1TVdALMtupdZhP9mZd4Chh1KcwaCUJ594jCjBaymZGFr5OkD98Px-4XzW3H3WIhxPLvETWOiPd1_zpNs_UTnI5LyOp3HK-5cwVdUPAPWH2uAZyvPO4O2fOdV58LCF1uiTNGBoe3Ozfi2IC1Jnr5yGoQtcNisYELdL8pUJza-?purpose=fullsize)
-
-* ESP32 DevKit C V4
-* Hỗ trợ WiFi, phù hợp truyền dữ liệu MQTT
-
----
-
-## 3.2. Cảm biến
-
-![Image](https://images.openai.com/static-rsc-4/n9_xlY9RoezfSe_VsRLO5BHAzEOGaWHTvKP4UpKA1_JOPK8NFFmGEcFLmypKhaY10-oT-YEG9PyzG8vT1sOt6k39ZEUDLV_9oj_F2CyZ--J4IBMMSbG41ewrCsrijKDDCx9p8bFyMyvYzZN31kep9M9XR4vRfoAXVyUYBfuvS0BZxhHom173VN2woFOUJ7CW?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/2GiKVAnx6HBoUMw3w_aBheaBUluXR6PVlqzMABoEKbuFO13IMXpKKu88WGLJkgQEJ4IoXkHH181RsMll2mqDjlabuUdY97SGtp161N-HCeIgd8ZRKt2VhJtNaLd78DoJrn2ubwNWmZp4Y_0eoRAWS6CtGqetUwgE7MVpsFxOXcrkO_0KKM7AKsY5EpcFuGKn?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/uKk2s5i7nstx4ZEFMngb0PPgA4WBs1p_NwcWxgsrQgUWaOhi78rgYotpXixjRB0_Qg3ywoidMqLOfw6-aS48kUVEcLw061Ziv6RoV0DAutlp4UtUKdlA-a2eWPsD65jXdcRNw7WDAzd8_Ca5OIbcdu9mXt9jR4JVYisARcnJma1K_My5AAhXp519sXxxw1sW?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/qwKr0ezraLT_lUZTLQvv7hG6dcNlrx1xOt-66M77E0zVpKyXHZb4RiWc9hha1iEso1Ke0QfLsC-UsDN9HGEVqCwlyICafa4v_Lit2ARrhl2kQsSwOIkwPE4NJ6zIx7aFApOlLgePtrx4bEI18cOCTYTYZBs5WrwIWU5haMugRzcdB88_RUpHBqeQk2D42j05?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/Yw8A5nP5g4nrlaZk4vbcDL8aFL5ujtYtf7rP4LfOIpt53bt25JW12sieSb-4P1bpbrulFeamUp0lxFkRIzwZlHKW4skQqYPyxuB7Kdz5vBIiwr-cpJjAFrOs2fyZTSA2CZ4h9VBBx_zxeGwe73ye27g6NaVte1kro8vDgXIh7G8XdVIE2FQj1--FR8VFVLnx?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/5xUn9-aSIWlLhF2vSTznI3wfKp91Rt2iBBPcZGAk46VdTi6RSOjEP52V0HxxQWvVVfOujH985AvOVijSeYDV9fkidSpLWFknSyYaPz8if6xnuiCNFei2slepfqYVt48CXbeF6Vqmr2qJdXR0KiiT1nV5qqmT4j45xLnSIIMHGIc17juB6_HpSlRYO-xzEBM7?purpose=fullsize)
-
-* DHT22: đo nhiệt độ và độ ẩm không khí
-* Soil moisture sensor (giả lập bằng Potentiometer): đo độ ẩm đất
-* LDR: đo cường độ ánh sáng
-
----
-
-## 3.3. Thiết bị chấp hành
-
-![Image](https://images.openai.com/static-rsc-4/OIKl-lg3pIbJqN7rZOWrDkzvSBHw7uGWCwY7QtZ4W08vcKDLm32EuSCsrGKsFiTCUhtTE4AldFg3v3UZm29u7PlLxoLi03gQHYL6xlsqFs1qLrn8VFGIcRiuAkZLjSqR-2h-oiCFGWjpOGJGMX-K4LVOFlVI7sqi8ZusgUb_WzEgshHFOW9NegOsGDHgLA5r?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/_s6NgUBpt4YP7XeHGOm3agpMOj867MTwEZbSOBRXOy3TfeNxWPujYAdBqha-Vi6i9U2dhSJoNKv3lLDmqb29j5wK0SedYgto6F1oYS4HOFO_8v8Fg9N-aZpEsc3FFRtyrLe_itbRPvRr9dnOrjKIq8cJKW3X1RKw7l9dIDiGG4PpdxOZJ4EHptfPx-iUXchP?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/p2F3icpPn7wFg6DR9ttTNEfASPiqp9AIRzo0D3AtGgG-VvVJbQ1uqR13Jp4cpS4a3mhyF8V3h40Zv0aaPq90rJngbnuvIBjrefKDC9WoLprw-fzOH2W9WrqWs7xqESQOozA3p5J3Q4XlawVzCZmPftyTHygvH-EyUhUDcdJnWIVta3ibdpeuQ9rricEPAFHL?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/ne0eEQclGIemGOXQ_dKwYYVqkbJHsrEU4J3dkbqIWMYj2DsHJFslrsOQzYhl3oO0vd2MVbsYb-xvz7mA6Vohi0cCH64p-qMLTWoYYUtv14rfsASx0_VhhYgOYsLINZIBtv-3xyx1CjQ23IXhETHT29ApGBDIdPvAHXbqwi6DsWsT3-PVMp-5t6NN74mil9Qx?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/ovn06L1aJVDMfi_XOHmklfHDjGuwNmu9kUD6eKHlByCBjExrxxYqdYpf3hru2-HGjXSz87T090A7fGGWIgeIB088SyLvGuq-YHWqfRwqB2npa7EdYvCk7kKB_qaVTDqsoMicp4IMCnsdzYNwdiczujGphbphKbQF1IdZXexzSxuPmnOE0O1JY5DptiuHxjAx?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/fl7z8vwIxaiOXTnH0pAQVyB-0WJqjmxuOTREpvD3fIgX77OfokDj4JfYedIhozkJefWgHx10M2EonhJw-84i6DvhKl1-Nfai-56rbGE-TV1OZ7yRRlU-T2SYb2NfLV2z-0IzR4WM5QLKbPvhEiu8Qnfu2jtnP0maGf9NLkyyiv7mhIGj0286XqPiKlr5V1mK?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/AS0e1jkDuLp31iRwrqlZF6nbo0t5wMUvnnKzPOHI1tEeVwWWQAS0Ax0irxUjndNuGTFXBGQPittVv2m1ERRXrR7cY8eOAN6VRQVOMew4Ijqa5ew30CHBaG1GUXBvn1RQA5sr4zYQNxVFctSOv-JpOh8cf-lzWt_2nDZlOuB-QGOKN-O-Qag1UnRmJ5a8N7cO?purpose=fullsize)
-
-* LED: giả lập máy bơm nước / quạt
-* Relay module: điều khiển thiết bị (tùy chọn)
-* Buzzer: cảnh báo
-* OLED SSD1306: hiển thị thông tin
-
----
-
-# 🎯 Kết luận
-
-Hệ thống cho phép:
-
-* Giám sát môi trường theo thời gian thực
-* Điều khiển thiết bị tự động và thủ công
-* Áp dụng thuật toán điều khiển thông minh (Adaptive)
-* Dễ dàng mở rộng trong thực tế
-
----

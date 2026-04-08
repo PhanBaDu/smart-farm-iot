@@ -1,4 +1,5 @@
-# Build: pio run -e wokwi (hoặc pio run — default_envs)
+# Build: pio run -e wokwi
+# diagram.json đặt cùng thư mục (root project) với wokwi.toml
 [wokwi]
 version = 1
 firmware = ".pio/build/wokwi/firmware.bin"
