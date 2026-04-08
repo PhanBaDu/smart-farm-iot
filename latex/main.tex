@@ -55,6 +55,7 @@
 \usepackage{listings}
 \usepackage{ifthen}
 \usepackage{amssymb}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
 
 % Cấu hình listings (mã nguồn)
 \lstset{
@@ -89,12 +90,14 @@
     xleftmargin=10pt
 }
 
+% JSON (và flow Node-RED): language=Java để listings nhận dạng chuỗi;
+% tránh \color{green} (xanh lá chói trên nền trắng) — dùng xanh đậm / tím than.
 \lstdefinestyle{jcode}{
     language=Java,
     backgroundcolor=\color{white},
     commentstyle=\color{gray}\itshape,
-    keywordstyle=\color{purple}\bfseries,
-    stringstyle=\color{green},
+    keywordstyle=\color{violet!55!black}\bfseries,
+    stringstyle=\color{blue!35!black},
     numberstyle=\tiny\color{gray},
     basicstyle=\ttfamily\small,
     breaklines=true,
@@ -135,6 +138,20 @@
 \renewcommand{\contentsname}{MỤC LỤC}
 
 % =============================================================================
+% 6. MACRO ĐÓNG KHUNG VĂN BẢN (theo Nguyễn Thái Sơn)
+% =============================================================================
+% \khung{độ rộng}{nội dung} — vẽ khung bao quanh đoạn văn bản.
+% Ví dụ: \khung{.8\textwidth}{Nội dung cần đóng khung}
+\newcommand{\khung}[2]{%
+  \hspace*{-.6cm}%
+  \begin{tabular}{|l|}
+    \hline
+    \parbox{#1}{\vphantom{\tiny i}#2} \\
+    \hline
+  \end{tabular}%
+}
+
+% =============================================================================
 % ========================  NỘI DUNG TÀI LIỆU  ============================
 % =============================================================================
 \begin{document}
@@ -157,6 +174,48 @@
   {\large Giảng viên hướng dẫn: Lê Hữu Bình}\\[3cm]
   {\large Huế, Ngày 08 Tháng 04 Năm 2026}
 \end{center}
+
+\newpage
+
+% =============================================================================
+% LỜI CẢM ƠN
+% =============================================================================
+\thispagestyle{empty}
+\vspace*{0.4cm}
+\begin{center}
+  \fontsize{17}{21}\selectfont\bfseries LỜI CẢM ƠN\par
+  \vspace{0.2ex}
+  \rule{0.28\textwidth}{1.8pt}
+\end{center}
+\vspace{0.6cm}
+
+\parindent=1.1cm
+\setlength{\parskip}{0.55ex plus 0.2ex}
+
+Trong quá trình thực hiện tiểu luận này, em đã nhận được sự hỗ trợ, giúp đỡ tận tình từ thầy cô, bạn bè và gia đình. Em xin chân thành gửi lời cảm ơn sâu sắc đến:
+
+\textbf{Trước hết}, em xin bày tỏ lòng biết ơn đến Thầy Lê Hữu Bình, người đã tận tình chỉ dẫn, góp ý và đồng hành cùng em trong suốt quá trình nghiên cứu và hoàn thiện tiểu luận. Sự hướng dẫn quý báu của thầy là nguồn động lực và định hướng quan trọng giúp em hoàn thành tốt tiểu luận này.
+
+\textbf{Em cũng xin gửi lời cảm ơn} đến quý thầy cô trong khoa Công Nghệ Thông Tin, những người đã truyền đạt kiến thức nền tảng và tạo điều kiện thuận lợi để em có thể áp dụng vào quá trình thực tập và hoàn thiện tiểu luận.
+
+Mặc dù đã cố gắng hoàn thiện bài viết trong khả năng của mình, nhưng chắc chắn không thể tránh khỏi những thiếu sót. Em rất mong nhận được sự góp ý từ quý thầy cô để bài viết được hoàn thiện hơn.
+
+Một lần nữa, em xin chân thành cảm ơn và luôn mong nhận được sự đóng góp của Quý thầy cô. Em xin kính chúc các thầy cô trong Khoa Công nghệ Thông tin dồi dào sức khỏe, niềm tin để tiếp tục thực hiện sứ mệnh cao đẹp của mình là truyền đạt kiến thức cho thế hệ mai sau.
+
+Em xin chân thành cảm ơn!
+
+\parindent=0pt
+\parskip=0pt
+\vspace{0.5cm}
+\hfill\begin{minipage}[t]{7cm}
+  \fontsize{13}{17}\selectfont
+  \begin{flushright}
+    \textbf{Nguyễn Thị Huyền}\\
+    MSSV: 22T1020161\\
+    Lớp: TIN4024.009\\
+    Huế, tháng 04 năm 2026
+  \end{flushright}
+\end{minipage}
 
 \newpage
 
@@ -549,38 +608,6 @@ Thứ năm, phát triển ứng dụng di động (Android/iOS) thay thế Dashb
 Thứ sáu, triển khai cập nhật firmware từ xa qua OTA (Over-The-Air) để thuận tiện cho việc bảo trì và nâng cấp mà không cần kết nối vật lý với ESP32.
 
 % =============================================================================
-% TÀI LIỆU THAM KHẢO
-% =============================================================================
-\newpage
-\addcontentsline{toc}{section}{Tài liệu tham khảo}
-\section*{Tài liệu tham khảo}
-\label{sec:tailieu}
-
-\begin{enumerate}[label={[\arabic*]}, leftmargin=*, itemsep=6pt]
-
-  \item Espressif Systems (2024). \textit{ESP32 Series Datasheet}. Truy cập: \url{https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf}.
-
-  \item Aosong Electronics (2015). \textit{DHT22 (AM2302) Temperature and Humidity Sensor Datasheet}. Truy cập: \url{https://www.aosong.com/en/products/details/87.html}.
-
-  \item ISO/IEC (2014). \textit{Information technology — Message Queuing Telemetry Transport (MQTT) v3.1.1}. ISO/IEC 20922:2016. Truy cập: \url{https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html}.
-
-  \item HiveMQ (2025). \textit{HiveMQ Cloud — Managed MQTT Broker for IoT}. Truy cập: \url{https://www.hivemq.com/cloud/}.
-
-  \item IBM Emerging Technology Services. \textit{Node-RED Documentation}. Truy cập: \url{https://nodered.org/docs/}.
-
-  \item Node-RED Community. \textit{node-red-dashboard}. Truy cập: \url{https://flows.nodered.org/node/node-red-dashboard}.
-
-  \item Nick O'Leary. \textit{PubSubClient library for Arduino}. Truy cập: \url{https://github.com/knolleary/pubsubclient}.
-
-  \item PlatformIO (2025). \textit{PlatformIO IDE for VS Code — Advanced IoT Integration}. Truy cập: \url{https://platformio.org/}.
-
-  \item Wokwi (2025). \textit{Online ESP32 Simulator}. Truy cập: \url{https://wokwi.com/}.
-
-  \item FAO — Food and Agriculture Organization of the United Nations (2019). \textit{The Digitalization of Agriculture}. Truy cập: \url{https://www.fao.org/3/CA4682EN/CA4682EN.pdf}.
-
-\end{enumerate}
-
-% =============================================================================
 % PHỤ LỤC
 % =============================================================================
 \newpage
@@ -658,69 +685,30 @@ Thứ sáu, triển khai cập nhật firmware từ xa qua OTA (Over-The-Air) đ
 }
 
 % =============================================================================
-% PHIẾU ĐÁNH GIÁ TIỂU LUẬN (Mẫu TL2)
+% REFERENCES
 % =============================================================================
 \newpage
+\section*{References}
+\label{sec:tailieu}
 
-\begin{center}
-  {\large\bfseries PHIẾU ĐÁNH GIÁ TIỂU LUẬN}\\
-  \textit{(Theo mẫu TL2 của Trường Đại học Khoa học, Đại học Huế)}
-\end{center}
-\vspace{0.5cm}
+\begin{thebibliography}{99}
+  \fontsize{13}{17}\selectfont
 
-\begin{tabularx}{\textwidth}{|L{5cm}|X|X|X|X|}
-  \hline
-  \textbf{Họ và tên sinh viên} & \multicolumn{4}{c|}{Nguyễn Thị Huyền} \\
-  \hline
-  \textbf{MSSV} & \multicolumn{4}{c|}{22T1020161} \\
-  \hline
-  \textbf{Lớp} & \multicolumn{4}{c|}{TIN4024.009} \\
-  \hline
-  \textbf{Học phần} & \multicolumn{4}{c|}{Phát triển ứng dụng IoT} \\
-  \hline
-  \textbf{Tên đề tài tiểu luận} & \multicolumn{4}{c|}{Thiết kế hệ thống tưới cây tự động sử dụng IoT} \\
-  \hline
-  \textbf{STT} & \textbf{Nội dung đánh giá} & \textbf{Đạt} & \textbf{\shortstack{Đạt\\đủ}} & \textbf{\shortstack{Chưa\\đạt}} \\
-  \hline
-  1 & Đề tài phù hợp với nội dung học phần & $\square$ & $\square$ & $\square$ \\
-  \hline
-  2 & Mục tiêu đề tài rõ ràng & $\square$ & $\square$ & $\square$ \\
-  \hline
-  3 & Nội dung đầy đủ, logic, có chiều sâu & $\square$ & $\square$ & $\square$ \\
-  \hline
-  4 & Sử dụng tài liệu tham khảo phù hợp & $\square$ & $\square$ & $\square$ \\
-  \hline
-  5 & Kết quả đạt được (thực nghiệm/công cụ) & $\square$ & $\square$ & $\square$ \\
-  \hline
-  6 & Kết luận và kiến nghị có giá trị & $\square$ & $\square$ & $\square$ \\
-  \hline
-  7 & Trình bày đúng quy cách (cấu trúc, hình thức) & $\square$ & $\square$ & $\square$ \\
-  \hline
-  8 & Không sao chép từ các nguồn có sẵn & $\square$ & $\square$ & $\square$ \\
-  \hline
-  \multicolumn{2}{|l|}{\textbf{Điểm tiểu luận (thang điểm 10):}} & \multicolumn{3}{c|}{\underline{\hspace{3cm}}} \\
-  \hline
-  \multicolumn{2}{|l|}{\textbf{Nhận xét của giảng viên:}} & \multicolumn{3}{c|}{\underline{\hspace{8cm}}} \\
-  \hline
-  \multicolumn{2}{|l|}{} & \multicolumn{3}{c|}{\underline{\hspace{8cm}}} \\
-  \hline
-  \multicolumn{2}{|l|}{} & \multicolumn{3}{c|}{\underline{\hspace{8cm}}} \\
-  \hline
-\end{tabularx}
+  \bibitem{esp8266} ESP8266 Community Forum. \textit{ESP8266 Arduino Core Documentation}. Truy cập: \url{https://arduino-esp8266.readthedocs.io/}.
 
-\vspace{1.5cm}
+  \bibitem{nodered} Node-RED. \textit{Node-RED Documentation}. IBM \& others. Truy cập: \url{https://nodered.org/docs/}.
 
-\begin{tabular}{@{}p{0.42\textwidth}p{0.42\textwidth}@{}}
-  &
-  {\raggedleft Huế, ngày \underline{\hspace{2cm}} tháng \underline{\hspace{2cm}} năm \underline{\hspace{2cm}}\par} \\
-  & \\
-  & \multicolumn{1}{c}{Giảng viên hướng dẫn} \\
-  & \\
-  & \\
-  & \\
-  & \multicolumn{1}{c}{\underline{\hspace{5cm}}} \\
-  & \multicolumn{1}{c}{Lê Hữu Bình}
-\end{tabular}
+  \bibitem{hivemq} HiveMQ. \textit{HiveMQ Cloud}. Truy cập: \url{https://www.hivemq.com/cloud/}.
+
+  \bibitem{u8g2} olikraus. \textit{U8g2 Library Reference}. Truy cập: \url{https://github.com/olikraus/u8g2}.
+
+  \bibitem{dht} Adafruit. \textit{DHT sensor library for Arduino}. Truy cập: \url{https://github.com/adafruit/DHT-sensor-library}.
+
+  \bibitem{pubsubclient} Nick O'Leary. \textit{PubSubClient for Arduino}. Truy cập: \url{https://github.com/knolleary/pubsubclient}.
+
+  \bibitem{nodereddash} Node-RED. \textit{node-red-dashboard}. Truy cập: \url{https://flows.nodered.org/node/node-red-dashboard}.
+
+\end{thebibliography}
 
 % =============================================================================
 \end{document}
