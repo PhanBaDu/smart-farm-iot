@@ -1,40 +1,176 @@
 [
   {
-    "id": "4bb92f4817b19ffe",
+    "id": "28972163d1638f7e",
     "type": "tab",
     "label": "Smart Farm",
     "disabled": false,
     "info": ""
   },
   {
-    "id": "42f87f2ba55f27ae",
+    "id": "bd7b79c3fbf5417a",
     "type": "mqtt in",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Nhận cảm biến",
     "topic": "farm/sensor",
-    "qos": "2",
+    "qos": "0",
     "datatype": "json",
-    "broker": "ce582509b4db026a",
+    "broker": "d4179fb10b941343",
+    "nl": false,
+    "rap": false,
     "inputs": 0,
     "x": 280,
     "y": 420,
     "wires": [
       [
-        "725c52614ac7fe96",
-        "acd7cd59b970be3f",
-        "3420af7bfdd49ebd",
-        "8162a07aa6fde028",
-        "f641911464c78bac",
-        "653509f3196bb481",
-        "733754fc5e9e1460",
-        "081dc1083ce70af3"
+        "a31199f64a6ad255",
+        "b8e99199386b9667",
+        "01e7a8e29907dd5c",
+        "e57427a9f993e160",
+        "b91420f0802c3665",
+        "b24a110f89916cc1",
+        "f8a1gaugefn01",
+        "f8a1gaugefn02",
+        "9e2f992ea37b88e9",
+        "ef65ccde2a9dc727"
       ]
     ]
   },
   {
-    "id": "725c52614ac7fe96",
+    "id": "f8a1gaugefn01",
+    "type": "function",
+    "z": "28972163d1638f7e",
+    "name": "Gauge: nhiệt độ",
+    "func": "var p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch (e) { return null; } }\nif (!p || typeof p !== 'object') return null;\nvar t = parseFloat(p.temperature);\nif (isNaN(t)) return null;\nmsg.payload = t;\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 520,
+    "y": 420,
+    "wires": [
+      [
+        "f8a1gaugeui01"
+      ]
+    ]
+  },
+  {
+    "id": "f8a1gaugefn02",
+    "type": "function",
+    "z": "28972163d1638f7e",
+    "name": "Gauge: độ ẩm",
+    "func": "var p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch (e) { return null; } }\nif (!p || typeof p !== 'object') return null;\nvar h = parseFloat(p.humidity);\nif (isNaN(h)) return null;\nmsg.payload = h;\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 520,
+    "y": 460,
+    "wires": [
+      [
+        "f8a1gaugeui02"
+      ]
+    ]
+  },
+  {
+    "id": "f8a1gaugeui01",
+    "type": "ui_gauge",
+    "z": "28972163d1638f7e",
+    "name": "Gauge nhiệt độ",
+    "group": "d2ca79a83590b557",
+    "order": 0,
+    "width": "3",
+    "height": "3",
+    "gtype": "gage",
+    "title": "Nhiệt độ (°C)",
+    "label": "°C",
+    "min": "0",
+    "max": "100",
+    "colors": [
+      "#00b050",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "className": "",
+    "x": 740,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "f8a1gaugeui02",
+    "type": "ui_gauge",
+    "z": "28972163d1638f7e",
+    "name": "Gauge độ ẩm",
+    "group": "d2ca79a83590b557",
+    "order": 1,
+    "width": "3",
+    "height": "3",
+    "gtype": "donut",
+    "title": "Độ ẩm KK (%)",
+    "label": "%",
+    "min": "0",
+    "max": "100",
+    "colors": [
+      "#00b050",
+      "#ff9900",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "className": "",
+    "x": 740,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "b91420f0802c3665",
+    "type": "function",
+    "z": "28972163d1638f7e",
+    "name": "Chart: nhiệt độ (số)",
+    "func": "var p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch (e) { return null; } }\nif (!p || typeof p !== 'object') return null;\nvar t = parseFloat(p.temperature);\nif (isNaN(t)) return null;\nmsg.payload = t;\nmsg.topic = 'Nhiệt độ °C';\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 520,
+    "y": 500,
+    "wires": [
+      [
+        "cc5a9fcda823fb39"
+      ]
+    ]
+  },
+  {
+    "id": "b24a110f89916cc1",
+    "type": "function",
+    "z": "28972163d1638f7e",
+    "name": "Chart: độ ẩm (số)",
+    "func": "var p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch (e) { return null; } }\nif (!p || typeof p !== 'object') return null;\nvar h = parseFloat(p.humidity);\nif (isNaN(h)) return null;\nmsg.payload = h;\nmsg.topic = 'Độ ẩm %';\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 520,
+    "y": 540,
+    "wires": [
+      [
+        "2c3a97d97ea9da30"
+      ]
+    ]
+  },
+  {
+    "id": "a31199f64a6ad255",
     "type": "switch",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Nhiệt độ > 35°C",
     "property": "payload.temperature",
     "propertyType": "msg",
@@ -52,26 +188,53 @@
     "y": 280,
     "wires": [
       [
-        "83aaffa8a80e4504"
+        "f9a1toastfn01"
       ]
     ]
   },
   {
-    "id": "83aaffa8a80e4504",
+    "id": "f9a1toastfn01",
+    "type": "function",
+    "z": "28972163d1638f7e",
+    "name": "Toast text: nhiệt",
+    "func": "var p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch (e) { return null; } }\nvar t = p && p.temperature != null ? Number(p.temperature) : NaN;\nif (isNaN(t)) return null;\nmsg.payload = '⚠️ Nhiệt độ cao: ' + t + '°C';\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 720,
+    "y": 280,
+    "wires": [
+      [
+        "425f5a8bf7c2a0b5"
+      ]
+    ]
+  },
+  {
+    "id": "425f5a8bf7c2a0b5",
     "type": "ui_toast",
-    "z": "4bb92f4817b19ffe",
-    "position": "top-right",
-    "displayTime": "10",
+    "z": "28972163d1638f7e",
+    "position": "top right",
+    "displayTime": "8",
     "outputs": 0,
     "name": "Thông báo nhiệt độ",
-    "x": 850,
+    "group": "",
+    "order": 0,
+    "width": 0,
+    "height": 0,
+    "text": "{{payload}}",
+    "color": "",
+    "className": "",
+    "x": 950,
     "y": 280,
     "wires": []
   },
   {
-    "id": "acd7cd59b970be3f",
+    "id": "b8e99199386b9667",
     "type": "switch",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Độ ẩm < 40%",
     "property": "payload.humidity",
     "propertyType": "msg",
@@ -89,27 +252,54 @@
     "y": 360,
     "wires": [
       [
-        "74fea8ba631ab12c",
-        "f3ac9c548f680c1b"
+        "f9a1toastfn02",
+        "dbb4a8c895814460"
       ]
     ]
   },
   {
-    "id": "74fea8ba631ab12c",
+    "id": "f9a1toastfn02",
+    "type": "function",
+    "z": "28972163d1638f7e",
+    "name": "Toast text: ẩm",
+    "func": "var p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch (e) { return null; } }\nvar h = p && p.humidity != null ? Number(p.humidity) : NaN;\nif (isNaN(h)) return null;\nmsg.payload = '🌵 Độ ẩm thấp: ' + h + '% — cân nhắc tưới';\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 720,
+    "y": 360,
+    "wires": [
+      [
+        "e9272ea0978a6ed1"
+      ]
+    ]
+  },
+  {
+    "id": "e9272ea0978a6ed1",
     "type": "ui_toast",
-    "z": "4bb92f4817b19ffe",
-    "position": "top-right",
-    "displayTime": "10",
+    "z": "28972163d1638f7e",
+    "position": "top right",
+    "displayTime": "8",
     "outputs": 0,
     "name": "Thông báo đất khô",
-    "x": 850,
+    "group": "",
+    "order": 0,
+    "width": 0,
+    "height": 0,
+    "text": "{{payload}}",
+    "color": "",
+    "className": "",
+    "x": 950,
     "y": 360,
     "wires": []
   },
   {
-    "id": "f3ac9c548f680c1b",
+    "id": "dbb4a8c895814460",
     "type": "switch",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Chế độ tưới tự động",
     "property": "manual",
     "propertyType": "flow",
@@ -127,14 +317,14 @@
     "y": 440,
     "wires": [
       [
-        "269c6791c3a3579d"
+        "df4e79c154d58a50"
       ]
     ]
   },
   {
-    "id": "269c6791c3a3579d",
+    "id": "df4e79c154d58a50",
     "type": "change",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Bật bơm 5s",
     "rules": [
       {
@@ -154,14 +344,14 @@
     "y": 440,
     "wires": [
       [
-        "b87b62e5bfdc640b"
+        "52d4228c218a253a"
       ]
     ]
   },
   {
-    "id": "3420af7bfdd49ebd",
+    "id": "01e7a8e29907dd5c",
     "type": "switch",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Ẩm < 45% (cần tưới)",
     "property": "payload.humidity",
     "propertyType": "msg",
@@ -179,14 +369,14 @@
     "y": 600,
     "wires": [
       [
-        "bf0438db135287d6"
+        "c90822af4a63eb54"
       ]
     ]
   },
   {
-    "id": "bf0438db135287d6",
+    "id": "c90822af4a63eb54",
     "type": "function",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Hiện trạng bơm",
     "func": "var h = msg.payload.humidity;\nmsg.payload = '🚿 Cần tưới — độ ẩm KK: ' + (h != null ? h : '?') + '%';\nreturn msg;",
     "outputs": 1,
@@ -199,20 +389,20 @@
     "y": 600,
     "wires": [
       [
-        "cc559b64047fae48"
+        "22c86325ecbf70be"
       ]
     ]
   },
   {
-    "id": "cc559b64047fae48",
+    "id": "22c86325ecbf70be",
     "type": "ui_text",
-    "z": "4bb92f4817b19ffe",
-    "group": "f9de133a0886a4df",
-    "order": 5,
+    "z": "28972163d1638f7e",
+    "group": "d2ca79a83590b557",
+    "order": 6,
     "width": "3",
     "height": "2",
     "name": "Trạng thái tưới",
-    "format": "<span style=\"font-size:15px;line-height:1.4\">{{payload}}</span>",
+    "format": "<span style=\"font-size:15px;line-height:1.4\">{{msg.payload}}</span>",
     "layout": "row-center",
     "className": "",
     "style": false,
@@ -224,9 +414,9 @@
     "wires": []
   },
   {
-    "id": "8162a07aa6fde028",
+    "id": "e57427a9f993e160",
     "type": "switch",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Độ ẩm < 20%",
     "property": "payload.humidity",
     "propertyType": "msg",
@@ -244,14 +434,14 @@
     "y": 660,
     "wires": [
       [
-        "3b67c9142c9f7ad2"
+        "673687e437ae8622"
       ]
     ]
   },
   {
-    "id": "3b67c9142c9f7ad2",
+    "id": "673687e437ae8622",
     "type": "function",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Hiện cảnh báo",
     "func": "var h = msg.payload.humidity;\nmsg.payload = '🔔 CẢNH BÁO: độ ẩm rất thấp (' + (h != null ? h : '?') + '%) — cần tưới ngay';\nreturn msg;",
     "outputs": 1,
@@ -264,20 +454,20 @@
     "y": 660,
     "wires": [
       [
-        "569d0ac6f37eb13f"
+        "ac643c3a74928b73"
       ]
     ]
   },
   {
-    "id": "569d0ac6f37eb13f",
+    "id": "ac643c3a74928b73",
     "type": "ui_text",
-    "z": "4bb92f4817b19ffe",
-    "group": "f9de133a0886a4df",
-    "order": 6,
+    "z": "28972163d1638f7e",
+    "group": "d2ca79a83590b557",
+    "order": 7,
     "width": "3",
     "height": "2",
     "name": "Cảnh báo Buzzer",
-    "format": "<span style=\"font-size:15px;line-height:1.4;color:#b71c1c;font-weight:600\">{{payload}}</span>",
+    "format": "<span style=\"font-size:15px;line-height:1.4;color:#b71c1c;font-weight:600\">{{msg.payload}}</span>",
     "layout": "row-center",
     "className": "",
     "style": false,
@@ -289,12 +479,12 @@
     "wires": []
   },
   {
-    "id": "f641911464c78bac",
+    "id": "cc5a9fcda823fb39",
     "type": "ui_chart",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Biểu đồ nhiệt độ",
-    "group": "f9de133a0886a4df",
-    "order": 1,
+    "group": "d2ca79a83590b557",
+    "order": 2,
     "width": "3",
     "height": "4",
     "chartType": "line",
@@ -306,12 +496,12 @@
     ]
   },
   {
-    "id": "653509f3196bb481",
+    "id": "2c3a97d97ea9da30",
     "type": "ui_chart",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Biểu đồ độ ẩm",
-    "group": "f9de133a0886a4df",
-    "order": 2,
+    "group": "d2ca79a83590b557",
+    "order": 3,
     "width": "3",
     "height": "4",
     "chartType": "line",
@@ -323,41 +513,41 @@
     ]
   },
   {
-    "id": "733754fc5e9e1460",
+    "id": "9e2f992ea37b88e9",
     "type": "ui_text",
-    "z": "4bb92f4817b19ffe",
-    "group": "f9de133a0886a4df",
-    "order": 3,
+    "z": "28972163d1638f7e",
+    "group": "d2ca79a83590b557",
+    "order": 4,
     "width": "3",
     "height": 1,
     "name": "Nhiệt độ",
-    "format": "🌡 Nhiệt độ<br><span style=\"font-size:24px;font-weight:bold\">{{payload.temperature}}°C</span>",
+    "format": "🌡 Nhiệt độ<br><span style=\"font-size:24px;font-weight:bold\">{{msg.payload.temperature}}°C</span>",
     "layout": "row-spread",
     "x": 540,
     "y": 200,
     "wires": []
   },
   {
-    "id": "081dc1083ce70af3",
+    "id": "ef65ccde2a9dc727",
     "type": "ui_text",
-    "z": "4bb92f4817b19ffe",
-    "group": "f9de133a0886a4df",
-    "order": 4,
+    "z": "28972163d1638f7e",
+    "group": "d2ca79a83590b557",
+    "order": 5,
     "width": "3",
     "height": 1,
     "name": "Độ ẩm",
-    "format": "💧 Độ ẩm<br><span style=\"font-size:24px;font-weight:bold\">{{payload.humidity}}%</span>",
+    "format": "💧 Độ ẩm<br><span style=\"font-size:24px;font-weight:bold\">{{msg.payload.humidity}}%</span>",
     "layout": "row-spread",
     "x": 530,
     "y": 140,
     "wires": []
   },
   {
-    "id": "74fbaaf487a52011",
+    "id": "9782277746682320",
     "type": "ui_button",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Bật/Tắt bơm",
-    "group": "61fd9ff991be7727",
+    "group": "22743ae4eedbebe6",
     "order": 1,
     "width": "3",
     "height": 1,
@@ -371,17 +561,17 @@
     "y": 720,
     "wires": [
       [
-        "b87b62e5bfdc640b"
+        "52d4228c218a253a"
       ]
     ]
   },
   {
-    "id": "2a20fb192f3224df",
+    "id": "9269adf2dde7a036",
     "type": "ui_switch",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Tưới tự động",
     "label": "Tưới tự động",
-    "group": "61fd9ff991be7727",
+    "group": "22743ae4eedbebe6",
     "order": 2,
     "width": "3",
     "height": 1,
@@ -390,14 +580,14 @@
     "y": 800,
     "wires": [
       [
-        "05867df2de85ac40"
+        "f0dd0c472d5d7e77"
       ]
     ]
   },
   {
-    "id": "05867df2de85ac40",
+    "id": "f0dd0c472d5d7e77",
     "type": "change",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Set flow.manual",
     "rules": [
       {
@@ -420,58 +610,79 @@
     ]
   },
   {
-    "id": "b87b62e5bfdc640b",
+    "id": "52d4228c218a253a",
     "type": "mqtt out",
-    "z": "4bb92f4817b19ffe",
+    "z": "28972163d1638f7e",
     "name": "Gửi điều khiển bơm",
     "topic": "farm/control",
-    "qos": "2",
+    "qos": "0",
     "retain": "false",
-    "broker": "ce582509b4db026a",
+    "broker": "d4179fb10b941343",
     "x": 1340,
     "y": 720,
     "wires": []
   },
   {
-    "id": "ce582509b4db026a",
+    "id": "d4179fb10b941343",
     "type": "mqtt-broker",
-    "name": "HiveMQ Cloud",
+    "name": "Smart",
     "broker": "b1c8f2cc5cd4416fb74b671a407dc0ff.s1.eu.hivemq.cloud",
     "port": "8883",
     "tls": "",
-    "clientid": "nodered-client",
+    "clientid": "",
     "autoConnect": true,
-    "usetls": true
+    "usetls": true,
+    "protocolVersion": 4,
+    "keepalive": 60,
+    "cleansession": true,
+    "autoUnsubscribe": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthRetain": "false",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closeRetain": "false",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willRetain": "false",
+    "willPayload": "",
+    "willMsg": {},
+    "userProps": "",
+    "sessionExpiry": ""
   },
   {
-    "id": "f9de133a0886a4df",
+    "id": "d2ca79a83590b557",
     "type": "ui_group",
     "name": "Giám sát",
-    "tab": "0ea16edec3bb798b",
+    "tab": "2ec7089e7e446577",
     "order": 1,
     "disp": true,
     "width": "6",
     "className": ""
   },
   {
-    "id": "61fd9ff991be7727",
+    "id": "22743ae4eedbebe6",
     "type": "ui_group",
     "name": "Điều khiển",
-    "tab": "0ea16edec3bb798b",
+    "tab": "2ec7089e7e446577",
     "order": 2,
     "disp": true,
     "width": "6",
     "className": ""
   },
   {
-    "id": "0ea16edec3bb798b",
+    "id": "2ec7089e7e446577",
     "type": "ui_tab",
     "name": "Smart Farm",
     "icon": "fa-leaf",
     "order": 1
   },
   {
-    "id": "99075fa4328e4f90",
+    "id": "20efe6ee98805f62",
     "type": "global-config",
     "env": [],
     "modules": {
