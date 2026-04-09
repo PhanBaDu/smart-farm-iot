@@ -1,8 +1,7 @@
 % =============================================================================
 %  TIỂU LUẬN
-%  Thiết kế hệ thống tưới cây tự động sử dụng IoT
-%  (ESP32 + DHT22 + MQTT + Node-RED Dashboard)
-%  Sinh viên: Nguyễn Thị Huyền — MSSV: 22T1020161
+%  Thiết kế và triển khai hệ thống giám sát và điều khiển môi trường trang trại thông minh
+%  Sinh viên: [Đã ẩn thông tin]
 % =============================================================================
 \documentclass[13pt, a4paper]{article}
 
@@ -56,6 +55,7 @@
 \usepackage{ifthen}
 \usepackage{amssymb}
 \usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage{tikz}
 
 % Cấu hình listings (mã nguồn)
 \lstset{
@@ -160,21 +160,50 @@
 % TRANG BÌA
 % =============================================================================
 \thispagestyle{empty}
+\begin{titlepage}
+\begin{tikzpicture}[overlay, remember picture]
+  \draw [line width=2pt] ([shift={(2cm,-2cm)}] current page.north west) rectangle ([shift={(-1.5cm,2cm)}] current page.south east);
+  \draw [line width=0.5pt] ([shift={(2.1cm,-2.1cm)}] current page.north west) rectangle ([shift={(-1.6cm,2.1cm)}] current page.south east);
+\end{tikzpicture}
+
+% --- Phần đầu: trường + logo ---
 \begin{center}
-  \fontsize{18}{22}\selectfont\bfseries
-  ĐẠI HỌC HUẾ\\
-  TRƯỜNG ĐẠI HỌC KHOA HỌC\\[0.4cm]
-  \includegraphics[width=4.5cm]{logo.png}\\[0.45cm]
-  \rule{\linewidth}{0.5pt}\\[1cm]
-  {\LARGE\bfseries THIẾT KẾ HỆ THỐNG TƯỚI CÂY TỰ ĐỘNG\\ SỬ DỤNG IoT (ESP32 + MQTT + Node-RED)}\\[1cm]
-  {\large Học phần: Phát triển ứng dụng IoT}\\
-  {\large Mã học phần: TIN4024}\\[2cm]
-  {\large Sinh viên thực hiện: Nguyễn Thị Huyền}\\
-  {\large MSSV: 22T1020161}\\
-  {\large Lớp: TIN4024.009}\\[2cm]
-  {\large Giảng viên hướng dẫn: Lê Hữu Bình}\\[3cm]
+  \fontsize{16}{20}\selectfont\bfseries
+  BỘ GIÁO DỤC VÀ ĐÀO TẠO\\
+  TRƯỜNG ĐẠI HỌC KHOA HỌC\\
+  KHOA CÔNG NGHỆ THÔNG TIN\\[0.4cm]
+  \includegraphics[width=4.5cm]{logo.png}
+\end{center}
+
+\vspace{1.1cm}
+
+% --- Tiêu đề đề tài (căn giữa, cỡ lớn) ---
+\begin{center}
+  \fontsize{17}{22}\selectfont\bfseries
+  THIẾT KẾ VÀ TRIỂN KHAI HỆ THỐNG\\
+  GIÁM SÁT VÀ ĐIỀU KHIỂN MÔI TRƯỜNG\\
+  TRANG TRẠI THÔNG MINH
+\end{center}
+
+\vspace{1.4cm}
+
+% --- Học phần / mã HP (căn giữa, nhỏ hơn tiêu đề) ---
+\begin{center}
+  \fontsize{14}{18}\selectfont\bfseries
+  TÊN LỚP HỌC PHẦN: PHÁT TRIỂN ỨNG DỤNG IOT\\[0.45cm]
+  MÃ HỌC PHẦN: 2025-2026.2.TIN4024.009\\[0.45cm]
+  GIẢNG VIÊN HƯỚNG DẪN: LÊ HỮU BÌNH
+\end{center}
+
+\vfill
+
+\vspace{2.2cm}
+
+\begin{center}
   {\large Huế, Ngày 08 Tháng 04 Năm 2026}
 \end{center}
+
+\end{titlepage}
 
 \newpage
 
@@ -193,17 +222,15 @@
 \parindent=1.1cm
 \setlength{\parskip}{0.55ex plus 0.2ex}
 
-Trong quá trình thực hiện tiểu luận này, em đã nhận được sự hỗ trợ, giúp đỡ tận tình từ thầy cô, bạn bè và gia đình. Em xin chân thành gửi lời cảm ơn sâu sắc đến:
+Lời đầu tiên, em xin gửi lời cảm ơn sâu sắc đến Khoa Công nghệ Thông tin – Trường Đại học Khoa học – Đại học Huế, nơi đã tạo điều kiện thuận lợi và môi trường học tập tuyệt vời để em có cơ hội tham gia và hoàn thành bài tiểu luận này. Sự hỗ trợ từ phía nhà trường đã giúp em không chỉ phát triển kiến thức chuyên môn mà còn rèn luyện được những kỹ năng cần thiết để chuẩn bị cho tương lai.
 
-\textbf{Trước hết}, em xin bày tỏ lòng biết ơn đến Thầy Lê Hữu Bình, người đã tận tình chỉ dẫn, góp ý và đồng hành cùng em trong suốt quá trình nghiên cứu và hoàn thiện tiểu luận. Sự hướng dẫn quý báu của thầy là nguồn động lực và định hướng quan trọng giúp em hoàn thành tốt tiểu luận này.
+Đặc biệt, em xin bày tỏ lòng biết ơn chân thành đến thầy Lê Hữu Bình, người đã tận tình hướng dẫn, chia sẻ kinh nghiệm và truyền đạt những kiến thức quý báu trong suốt quá trình em thực hiện bài tiểu luận. Những lời chỉ bảo tận tình và sự quan tâm của thầy đã giúp em vượt qua những khó khăn và hoàn thành bài tiểu luận một cách tốt nhất. Em cảm thấy may mắn và trân quý những lời khuyên, sự giúp đỡ từ thầy, người đã luôn kiên nhẫn đồng hành cùng em qua từng bước đi.
 
-\textbf{Em cũng xin gửi lời cảm ơn} đến quý thầy cô trong khoa Công Nghệ Thông Tin, những người đã truyền đạt kiến thức nền tảng và tạo điều kiện thuận lợi để em có thể áp dụng vào quá trình thực tập và hoàn thiện tiểu luận.
+Bên cạnh đó, em xin gửi lời tri ân đến toàn thể quý thầy cô của Khoa Công nghệ Thông tin – Trường Đại học Khoa học – Đại học Huế, những người đã không quản ngại khó khăn, luôn tận tâm truyền đạt kiến thức, dạy bảo và hỗ trợ em trong suốt thời gian học tập tại trường. Sự tận tụy và cống hiến của quý thầy cô không chỉ giúp em đạt được thành tích học tập mà còn giúp em nhận thức rõ ràng về con đường sự nghiệp mà em đang theo đuổi.
 
-Mặc dù đã cố gắng hoàn thiện bài viết trong khả năng của mình, nhưng chắc chắn không thể tránh khỏi những thiếu sót. Em rất mong nhận được sự góp ý từ quý thầy cô để bài viết được hoàn thiện hơn.
+Cuối cùng, em xin gửi lời cảm ơn chân thành đến gia đình, bạn bè và tất cả những ai đã luôn ở bên cạnh, động viên, ủng hộ em trong suốt chặng đường vừa qua. Sự ủng hộ vô điều kiện của mọi người chính là động lực để em không ngừng cố gắng và hoàn thành tốt nhiệm vụ của mình.
 
-Một lần nữa, em xin chân thành cảm ơn và luôn mong nhận được sự đóng góp của Quý thầy cô. Em xin kính chúc các thầy cô trong Khoa Công nghệ Thông tin dồi dào sức khỏe, niềm tin để tiếp tục thực hiện sứ mệnh cao đẹp của mình là truyền đạt kiến thức cho thế hệ mai sau.
-
-Em xin chân thành cảm ơn!
+Xin trân trọng cảm ơn!
 
 \parindent=0pt
 \parskip=0pt
@@ -211,9 +238,6 @@ Em xin chân thành cảm ơn!
 \hfill\begin{minipage}[t]{7cm}
   \fontsize{13}{17}\selectfont
   \begin{flushright}
-    \textbf{Nguyễn Thị Huyền}\\
-    MSSV: 22T1020161\\
-    Lớp: TIN4024.009\\
     Huế, tháng 04 năm 2026
   \end{flushright}
 \end{minipage}

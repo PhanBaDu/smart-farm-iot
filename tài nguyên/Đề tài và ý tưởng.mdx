@@ -2,44 +2,45 @@
 
 **Tên đề tài:**
 
-> **Thiết kế hệ thống tưới cây tự động đơn giản sử dụng IoT (ESP32 + MQTT + Node-RED)**
+> **Thiết kế và triển khai hệ thống giám sát và điều khiển môi trường trang trại thông minh**
 
 ---
+✅ VIẾT LẠI CHUẨN CHO BẠN (DÙNG LUÔN)
+🎯 2. Ý tưởng cốt lõi (FIX)
+Xây dựng một **mô hình thu nhỏ của hệ thống trang trại thông minh**, có khả năng:
 
-# 🎯 2. Ý tưởng cốt lõi
+- Giám sát môi trường:
+  - Nhiệt độ, độ ẩm không khí
+  - Độ ẩm đất
+- Điều khiển tự động:
+  - Bật/tắt hệ thống tưới dựa trên độ ẩm đất
+- Kết nối IoT:
+  - Gửi dữ liệu lên dashboard thời gian thực qua MQTT
+- Cảnh báo:
+  - Khi môi trường không phù hợp (đất khô)
 
-Xây dựng một **chậu cây thông minh** có khả năng:
+👉 Mục tiêu: xây dựng hệ thống IoT cơ bản, dễ triển khai, có khả năng mở rộng lên quy mô trang trại thực tế
+📦 3. Phần cứng (GIỮ NGUYÊN OK)
 
-- Đọc độ ẩm đất
-- Tự động bật/tắt bơm nước
-- Hiển thị trạng thái trên dashboard
+👉 Phần này ổn rồi, chỉ cần sửa wording nhẹ:
 
-👉 Mục tiêu: đơn giản – dễ triển khai – tập trung vào IoT cơ bản
-
----
-
-# 📦 3. Phần cứng (Wokwi - mô phỏng)
-
-
-::contentReference[oaicite:0]{index=0}
-
+Mô hình sử dụng phần cứng đơn giản (mô phỏng trên Wokwi):
 
 | Linh kiện       | Vai trò                         |
 |----------------|---------------------------------|
-| ESP32          | Vi điều khiển chính             |
+| ESP32          | Vi điều khiển trung tâm         |
 | DHT22          | Đo nhiệt độ + độ ẩm không khí   |
-| Potentiometer  | Giả lập độ ẩm đất               |
-| LED xanh       | Giả lập máy bơm nước            |
-| Buzzer         | Cảnh báo đất quá khô            |
+| Potentiometer  | Giả lập cảm biến độ ẩm đất      |
+| LED            | Giả lập hệ thống bơm nước       |
+| Buzzer         | Cảnh báo môi trường không phù hợp |
+📡 4. MQTT Topics (CHUẨN HƠN)
 
-❌ Đã loại bỏ: LDR, OLED, relay, quạt (không cần thiết)
+👉 Sửa lại cho “pro” hơn:
 
----
-
-# 📡 4. MQTT Topics
-
-Chỉ sử dụng **2 topic đơn giản**:
-
-```json
-iot/farm/env
+iot/farm/sensor
 iot/farm/control
+
+👉 Và giải thích thêm:
+
+- iot/farm/sensor: gửi dữ liệu môi trường (temperature, humidity, soil)
+- iot/farm/control: nhận lệnh điều khiển (bật/tắt bơm)
