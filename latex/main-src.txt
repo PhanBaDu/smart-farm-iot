@@ -16,14 +16,17 @@ const char *WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 const char *MQTT_BROKER = "b1c8f2cc5cd4416fb74b671a407dc0ff.s1.eu.hivemq.cloud";
 const int MQTT_PORT = 8883;
 const char *MQTT_CLIENT_ID = "esp32-sensor-01";
-const char *MQTT_USERNAME = "****";
-const char *MQTT_PASSWORD = "****";
+const char *MQTT_USERNAME = "hivemq.webclient.1775680760112";
+const char *MQTT_PASSWORD = "amy&f0VPG3c5<8,U>qAB";
 
-const char *TOPIC_SENSOR = "farm/sensor";
+const char *TOPIC_SENSOR = "iot/farm/sensor";
+const char *TOPIC_CONTROL = "iot/farm/control";
 
 #define DHT_PIN 4
 #define DHT_TYPE DHT22
 #define LED_PIN 5
+#define SOIL_PIN 34
+#define BUZZER_PIN 18
 
 DHT dht(DHT_PIN, DHT_TYPE);
 WiFiClientSecure espClient;
@@ -33,6 +36,63 @@ unsigned long lastPublish = 0;
 unsigned long lastMQTTRetry = 0;
 const unsigned long PUBLISH_INTERVAL = 5000;
 const unsigned long MQTT_RETRY_MS = 5000;
+
+bool pumpActive = false;
+unsigned long pumpStartTime = 0;
+const unsigned long PUMP_DURATION_MS = 5000;
+
+void toneBuzzer(int pin, int freq, int durationMs)
+{
+  ledcSetup(0, freq, 8);
+  ledcAttachPin(pin, 0);
+  ledcWrite(0, 127);
+  delay(durationMs);
+  ledcWrite(0, 0);
+  ledcDetachPin(pin);
+}
+
+void stopPump()
+{
+  digitalWrite(LED_PIN, LOW);
+  pumpActive = false;
+}
+
+void handleControlPayload(const char *payload, size_t len)
+{
+  StaticJsonDocument<256> doc;
+  DeserializationError err = deserializeJson(doc, payload, len);
+  if (err)
+    return;
+
+  if (doc.containsKey("pump"))
+  {
+    bool pumpCmd = doc["pump"].as<bool>();
+    if (pumpCmd)
+    {
+      int durationS = doc.containsKey("duration") ? doc["duration"].as<int>() : 5;
+      pumpActive = true;
+      pumpStartTime = millis();
+      digitalWrite(LED_PIN, HIGH);
+      Serial.printf("[PUMP] Bat bom trong %d giay\n", durationS);
+    }
+    else
+    {
+      stopPump();
+      Serial.println("[PUMP] Tat bom");
+    }
+  }
+}
+
+void mqttCallback(char *topic, byte *payload, unsigned int length)
+{
+  if (strcmp(topic, TOPIC_CONTROL) == 0)
+  {
+    char msg[length + 1];
+    memcpy(msg, payload, length);
+    msg[length] = '\0';
+    handleControlPayload(msg, length);
+  }
+}
 
 void setupWiFi()
 {
@@ -59,6 +119,8 @@ void reconnectMQTT()
   if (mqttClient.connect(MQTT_CLIENT_ID, MQTT_USERNAME, MQTT_PASSWORD))
   {
     Serial.println(" Connected!");
+    mqttClient.subscribe(TOPIC_CONTROL);
+    Serial.printf("[MQTT] Subscribed: %s\n", TOPIC_CONTROL);
   }
   else
   {
@@ -66,25 +128,27 @@ void reconnectMQTT()
   }
 }
 
-void publishSensorData(float temp, float hum)
+void publishSensorData(float temp, float hum, int soilRaw)
 {
-  StaticJsonDocument<256> doc;
+  StaticJsonDocument<512> doc;
   doc["device"] = "ESP32-01";
   doc["temperature"] = temp;
   doc["humidity"] = hum;
+  doc["soil"] = soilRaw;
   doc["timestamp"] = millis();
 
-  char buffer[256];
+  char buffer[512];
   size_t n = serializeJson(doc, buffer);
   mqttClient.publish(TOPIC_SENSOR, buffer, n);
 
-  Serial.printf("Published: Temp=%.1f C, Hum=%.1f %%\n", temp, hum);
+  Serial.printf("Published: Temp=%.1f C, Hum=%.1f %%, Soil=%d\n", temp, hum, soilRaw);
 }
 
-void readSensor(float &temp, float &hum)
+void readSensor(float &temp, float &hum, int &soilRaw)
 {
   temp = dht.readTemperature();
   hum = dht.readHumidity();
+  soilRaw = analogRead(SOIL_PIN);
 
   if (isnan(temp))
   {
@@ -96,15 +160,29 @@ void readSensor(float &temp, float &hum)
   }
 }
 
+void checkPumpTimeout()
+{
+  if (pumpActive && (millis() - pumpStartTime >= PUMP_DURATION_MS))
+  {
+    stopPump();
+    Serial.println("[PUMP] Het thoi gian, tat bom");
+  }
+}
+
 void setup()
 {
   Serial.begin(115200);
   Serial.println("\n========================================");
-  Serial.println("  ESP32 + DHT22 + MQTT (TLS)");
+  Serial.println("  ESP32 - Smart Farm IoT System");
   Serial.println("========================================");
 
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
+
+  pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW);
+
+  pinMode(SOIL_PIN, INPUT);
 
   dht.begin();
 
@@ -113,6 +191,7 @@ void setup()
   setupWiFi();
 
   mqttClient.setServer(MQTT_BROKER, MQTT_PORT);
+  mqttClient.setCallback(mqttCallback);
 
   Serial.println("Setup complete!");
 }
@@ -135,6 +214,8 @@ void loop()
   }
   mqttClient.loop();
 
+  checkPumpTimeout();
+
   unsigned long now = millis();
 
   if (now - lastPublish >= PUBLISH_INTERVAL)
@@ -142,7 +223,8 @@ void loop()
     lastPublish = now;
 
     float temperature, humidity;
-    readSensor(temperature, humidity);
+    int soilRaw;
+    readSensor(temperature, humidity, soilRaw);
 
     Serial.println("\n--- Sensor Data ---");
     Serial.print("Temperature: ");
@@ -151,13 +233,18 @@ void loop()
     Serial.print("Humidity: ");
     Serial.print(humidity);
     Serial.println(" %");
+    Serial.print("Soil Moisture (raw): ");
+    Serial.println(soilRaw);
+
+    if (soilRaw < 2048)
+    {
+      toneBuzzer(BUZZER_PIN, 2000, 300);
+      Serial.println("[ALERT] Dat khong hop li - can tuoi!");
+    }
 
     if (mqttClient.connected())
     {
-      publishSensorData(temperature, humidity);
-      digitalWrite(LED_PIN, HIGH);
-      delay(100);
-      digitalWrite(LED_PIN, LOW);
+      publishSensorData(temperature, humidity, soilRaw);
     }
     else
     {
