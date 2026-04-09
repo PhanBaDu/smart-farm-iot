@@ -451,9 +451,16 @@ ESP32 thực hiện chu trình hoạt động như sau: khởi tạo Serial (115
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.65\linewidth]{luu-do-thuat-toan.png}
-  \caption{Lưu đồ thuật toán trên ESP32}
+  \includegraphics[width=0.88\linewidth]{luu-do-thuat-toan-top.png}
+  \caption{Lưu đồ thuật toán trên ESP32 (phần trên: khởi tạo \code{setup()} và vòng lặp \code{loop()} --- Wi-Fi, MQTT, kiểm tra timeout bơm, nhịp 5 giây)}
   \label{fig:luudo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\linewidth]{luu-do-thuat-toan-bottom.png}
+  \caption{Lưu đồ thuật toán trên ESP32 (phần dưới: đọc cảm biến, buzzer, publish MQTT và nhánh \code{mqttCallback} nhận lệnh \code{iot/farm/control})}
+  \label{fig:luudo-2}
 \end{figure}
 
 \subsection{Xây dựng flow xử lý dữ liệu trên Node-RED}
@@ -508,9 +515,16 @@ Nhánh thứ mười một (\textbf{Tưới tự động}): switch node kiểm t
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full.png}
-  \caption{Giao diện Dashboard Node-RED: gauge, chart và điều khiển bơm}
-  \label{fig:nr-dash}
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-1.png}
+  \caption{Giao diện Dashboard Node-RED (phần 1/2): độ ẩm không khí, nhiệt độ, điều khiển máy bơm và tưới tự động, phần đầu nhóm độ ẩm đất}
+  \label{fig:nr-dash-1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-2.png}
+  \caption{Giao diện Dashboard Node-RED (phần 2/2): nhiệt độ, điều khiển, độ ẩm đất (gauge, biểu đồ line, trạng thái đất và cảnh báo)}
+  \label{fig:nr-dash-2}
 \end{figure}
 
 Hình~\ref{fig:easyeda-schematic} trình bày sơ đồ nguyên lý phần cứng thiết kế trên EasyEDA (đầy đủ relay bơm, OLED, nút và công tắc). Hình~\ref{fig:wokwi} là mạch mô phỏng Wokwi tương ứng phần lõi dùng trong tiểu luận: DHT22, độ ẩm đất (potentiometer thay cảm biến), LED trạng thái bơm và buzzer. Firmware trong Phụ lục~A khớp với tập chân tối thiểu đó; các khối mở rộng trên sơ đồ EasyEDA có thể tích hợp khi triển khai phần cứng thật.

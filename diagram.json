@@ -6,15 +6,15 @@
     {
       "type": "board-esp32-devkit-c-v4",
       "id": "esp",
-      "top": 0,
-      "left": 0,
+      "top": -9.6,
+      "left": 4.84,
       "attrs": {}
     },
     {
       "type": "wokwi-dht22",
       "id": "dht1",
-      "top": -20,
-      "left": 240,
+      "top": -191.7,
+      "left": 282.6,
       "attrs": {
         "temperature": "25",
         "humidity": "55"
@@ -23,8 +23,8 @@
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": 80,
-      "left": -120,
+      "top": -90,
+      "left": -188.2,
       "attrs": {
         "color": "green"
       }
@@ -32,8 +32,8 @@
     {
       "type": "wokwi-resistor",
       "id": "r_dht",
-      "top": -20,
-      "left": 160,
+      "top": 176.75,
+      "left": 220.8,
       "attrs": {
         "value": "10000"
       }
@@ -41,8 +41,8 @@
     {
       "type": "wokwi-resistor",
       "id": "r_led",
-      "top": 80,
-      "left": -200,
+      "top": 71.15,
+      "left": -172.8,
       "attrs": {
         "value": "220"
       }
@@ -50,8 +50,8 @@
     {
       "type": "wokwi-potentiometer",
       "id": "pot1",
-      "top": 200,
-      "left": -120,
+      "top": -174.1,
+      "left": -115.4,
       "attrs": {
         "value": "512"
       }
@@ -59,33 +59,133 @@
     {
       "type": "wokwi-buzzer",
       "id": "buzzer1",
-      "top": 80,
-      "left": 200,
+      "top": -189.6,
+      "left": 117,
       "attrs": {
         "frequency": "2000"
       }
     }
   ],
   "connections": [
-    ["esp:TX", "$serialMonitor:RX", "", []],
-    ["esp:RX", "$serialMonitor:TX", "", []],
-
-    ["esp:3V3", "dht1:VCC", "red", []],
-    ["esp:GND.2", "dht1:GND", "black", []],
-    ["esp:3V3", "r_dht:1", "red", []],
-    ["r_dht:2", "dht1:SDA", "orange", []],
-    ["dht1:SDA", "esp:4", "yellow", []],
-
-    ["esp:5", "r_led:1", "green", []],
-    ["r_led:2", "led1:A", "green", []],
-    ["esp:GND.2", "led1:C", "black", []],
-
-    ["esp:3V3", "pot1:VCC", "red", []],
-    ["esp:GND.2", "pot1:GND", "black", []],
-    ["pot1:SIG", "esp:34", "blue", []],
-
-    ["esp:GND.2", "buzzer1:1", "black", []],
-    ["esp:18", "buzzer1:2", "purple", []]
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:3V3",
+      "dht1:VCC",
+      "red",
+      [
+        "v-96",
+        "h288.15"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "dht1:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:3V3",
+      "r_dht:1",
+      "red",
+      [
+        "h-28.65",
+        "v220.8",
+        "h201.6",
+        "v-57.6"
+      ]
+    ],
+    [
+      "r_dht:2",
+      "dht1:SDA",
+      "orange",
+      []
+    ],
+    [
+      "dht1:SDA",
+      "esp:4",
+      "yellow",
+      [
+        "h0.1",
+        "v240"
+      ]
+    ],
+    [
+      "esp:5",
+      "r_led:1",
+      "green",
+      [
+        "h19.2",
+        "v115.2",
+        "h-297.6"
+      ]
+    ],
+    [
+      "r_led:2",
+      "led1:A",
+      "green",
+      [
+        "v-28.8",
+        "h-106.8"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "led1:C",
+      "black",
+      [
+        "v-57.6",
+        "h-336.4"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "pot1:VCC",
+      "red",
+      [
+        "h-75.85"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "pot1:GND",
+      "black",
+      [
+        "v-38.4",
+        "h-187.16"
+      ]
+    ],
+    [
+      "pot1:SIG",
+      "esp:34",
+      "blue",
+      [
+        "h-0.4",
+        "v172.8"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "buzzer1:1",
+      "black",
+      []
+    ],
+    [
+      "esp:18",
+      "buzzer1:2",
+      "purple",
+      []
+    ]
   ],
   "dependencies": {}
 }
