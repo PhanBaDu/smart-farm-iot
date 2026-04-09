@@ -513,10 +513,19 @@ Nhánh thứ mười một (\textbf{Tưới tự động}): switch node kiểm t
   \label{fig:nr-dash}
 \end{figure}
 
+Hình~\ref{fig:easyeda-schematic} trình bày sơ đồ nguyên lý phần cứng thiết kế trên EasyEDA (đầy đủ relay bơm, OLED, nút và công tắc). Hình~\ref{fig:wokwi} là mạch mô phỏng Wokwi tương ứng phần lõi dùng trong tiểu luận: DHT22, độ ẩm đất (potentiometer thay cảm biến), LED trạng thái bơm và buzzer. Firmware trong Phụ lục~A khớp với tập chân tối thiểu đó; các khối mở rộng trên sơ đồ EasyEDA có thể tích hợp khi triển khai phần cứng thật.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{mach-nguyen-ly-easyeda.png}
+  \caption{Sơ đồ nguyên lý phần cứng hệ thống giám sát trang trại thông minh (thiết kế trên EasyEDA): ESP32, DHT22, cảm biến độ ẩm đất, relay máy bơm, buzzer, OLED và các tín hiệu điều khiển}
+  \label{fig:easyeda-schematic}
+\end{figure}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.88\linewidth]{mach-vat-ly-wokwi.png}
-  \caption{Mạch mô phỏng Wokwi: ESP32 DevKit C v4 + DHT22 + LED + Potentiometer + Buzzer}
+  \caption{Mạch mô phỏng Wokwi (tương ứng phần lõi cảm biến và điều khiển): ESP32 DevKit C v4 + DHT22 + LED + Potentiometer + Buzzer}
   \label{fig:wokwi}
 \end{figure}
 
