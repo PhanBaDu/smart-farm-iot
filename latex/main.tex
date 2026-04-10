@@ -171,6 +171,7 @@
 % =============================================================================
 % TRANG BÌA
 % =============================================================================
+\newgeometry{top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm}
 \thispagestyle{empty}
 \begin{titlepage}
 \begin{tikzpicture}[overlay, remember picture]
@@ -204,7 +205,7 @@
   \fontsize{14}{18}\selectfont\bfseries
   TÊN LỚP HỌC PHẦN: PHÁT TRIỂN ỨNG DỤNG IOT\\[0.45cm]
   MÃ HỌC PHẦN: 2025-2026.2.TIN4024.009\\[0.45cm]
-  GIẢNG VIÊN HƯỚNG DẪN: LÊ HỮU BÌNH
+  GIẢNG VIÊN HƯỚNG DẪN: TS. LÊ HỮU BÌNH
 \end{center}
 
 \vfill
@@ -216,7 +217,7 @@
 \end{center}
 
 \end{titlepage}
-
+\restoregeometry
 \newpage
 
 % =============================================================================
@@ -236,7 +237,7 @@
 
 Lời đầu tiên, em xin gửi lời cảm ơn sâu sắc đến Khoa Công nghệ Thông tin – Trường Đại học Khoa học – Đại học Huế, nơi đã tạo điều kiện thuận lợi và môi trường học tập tuyệt vời để em có cơ hội tham gia và hoàn thành bài tiểu luận này. Sự hỗ trợ từ phía nhà trường đã giúp em không chỉ phát triển kiến thức chuyên môn mà còn rèn luyện được những kỹ năng cần thiết để chuẩn bị cho tương lai.
 
-Đặc biệt, em xin bày tỏ lòng biết ơn chân thành đến thầy Lê Hữu Bình, người đã tận tình hướng dẫn, chia sẻ kinh nghiệm và truyền đạt những kiến thức quý báu trong suốt quá trình em thực hiện bài tiểu luận. Những lời chỉ bảo tận tình và sự quan tâm của thầy đã giúp em vượt qua những khó khăn và hoàn thành bài tiểu luận một cách tốt nhất. Em cảm thấy may mắn và trân quý những lời khuyên, sự giúp đỡ từ thầy, người đã luôn kiên nhẫn đồng hành cùng em qua từng bước đi.
+Đặc biệt, em xin bày tỏ lòng biết ơn chân thành đến TS. Lê Hữu Bình, người đã tận tình hướng dẫn, chia sẻ kinh nghiệm và truyền đạt những kiến thức quý báu trong suốt quá trình em thực hiện bài tiểu luận. Những lời chỉ bảo tận tình và sự quan tâm của thầy đã giúp em vượt qua những khó khăn và hoàn thành bài tiểu luận một cách tốt nhất. Em cảm thấy may mắn và trân quý những lời khuyên, sự giúp đỡ từ thầy, người đã luôn kiên nhẫn đồng hành cùng em qua từng bước đi.
 
 Bên cạnh đó, em xin gửi lời tri ân đến toàn thể quý thầy cô của Khoa Công nghệ Thông tin – Trường Đại học Khoa học – Đại học Huế, những người đã không quản ngại khó khăn, luôn tận tâm truyền đạt kiến thức, dạy bảo và hỗ trợ em trong suốt thời gian học tập tại trường. Sự tận tụy và cống hiến của quý thầy cô không chỉ giúp em đạt được thành tích học tập mà còn giúp em nhận thức rõ ràng về con đường sự nghiệp mà em đang theo đuổi.
 
@@ -309,22 +310,23 @@ Xin trân trọng cảm ơn!
 % =============================================================================
 % PHẦN MỞ ĐẦU (theo bố cục Phụ lục II)
 % =============================================================================
-\section*{MỞ ĐẦU}
-\addcontentsline{toc}{section}{Mở đầu}
-\label{sec:modau}
-
-Bài tiểu luận trình bày hệ thống giám sát và điều khiển môi trường trang trại thông minh trên nền ESP32, MQTT và Node-RED Dashboard, đúng với mã nguồn \file{main.cpp}, flow \file{node-red.json} và sơ đồ mô phỏng \file{diagram.json} đính kèm. Cấu trúc báo cáo gồm bảy chương chính (mục lục): (1)~Đặt vấn đề; (2)~Nội dung thực hiện; (3)~Thiết kế mạch IoT; (4)~Nguyên lý hoạt động; (5)~Cài đặt hệ thống; (6)~Kết quả thực hiện; (7)~Kết luận và hướng phát triển --- sau đó là tài liệu tham khảo và các phụ lục mã nguồn (theo Phụ lục~II).
-
 % =============================================================================
 % 1. ĐẶT VẤN ĐỀ
 % =============================================================================
 \section*{CHƯƠNG 1: ĐẶT VẤN ĐỀ}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 1: ĐẶT VẤN ĐỀ}
 \label{sec:ch1}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
 
-Trong bối cảnh biến đổi khí hậu và đô thị hóa, tưới tiêu thủ công tại nhà kính, ban công hay sân thượng thường không đảm bảo cung cấp nước đúng lúc; người trồng cần theo dõi nhiệt độ, độ ẩm không khí và độ ẩm đất, đồng thời có khả năng cảnh báo và điều khiển tưới từ xa. Việc tự động hóa giám sát --- truyền dữ liệu lên cloud --- hiển thị trên giao diện web và gửi lệnh điều khiển ngược xuống thiết bị là nhu cầu thực tế và phù hợp với học phần phát triển ứng dụng IoT.
+\subsection{Bối cảnh và tính cấp thiết của đề tài}
+Trong bối cảnh biến đổi khí hậu diễn biến phức tạp và quá trình đô thị hóa diễn ra nhanh chóng, việc áp dụng công nghệ thông minh vào sản xuất nông nghiệp ngày càng trở nên quan trọng và thực tiễn. Hiện nay, phương pháp tưới tiêu thủ công tại các mô hình nhà kính, trang trại vừa và nhỏ, hay quy mô hộ gia đình (sân thượng, ban công) thường bộc lộ nhiều hạn chế, tốn kém thời gian và khó đảm bảo cung cấp nước đúng mức độ, đúng thời điểm. Những khó khăn này đặt ra nhu cầu lớn trong việc ứng dụng Internet of Things (IoT) để chuyển đổi số nông nghiệp. 
 
-Đề tài hướng tới các mục tiêu kỹ thuật sau, khớp với firmware và flow đã cài đặt:
+Việc trang bị một hệ thống có khả năng tự động theo dõi xuyên suốt các thông số thiết yếu (nhiệt độ, độ ẩm không khí, độ ẩm của đất) kết hợp với chức năng cảnh báo sớm và điều khiển bơm tưới tiêu từ xa là một tiện ích không thể thiếu. Tính năng tự động hóa giám sát — truyền dữ liệu lên máy chủ cloud — cập nhật lên giao diện trực quan (Dashboard) và đẩy các lệnh điều khiển ngược trở lại cho thiết bị phần cứng chính là hướng tiếp cận hiệu quả nhằm giải quyết nhu cầu hiển hiện trên. Đồng thời, đây cũng là hướng đi bám sát với mục đích và nội dung cốt lõi mong đợi của học phần Phát triển Ứng dụng IoT.
+
+\subsection{Mục tiêu thiết kế và phạm vi nghiên cứu}
+Đề tài tập trung thiết kế và triển khai một hệ thống mô phỏng quy trình giám sát và điều khiển trang trại thông minh cỡ nhỏ. Các mục tiêu kỹ thuật cụ thể được giới hạn trong phạm vi thực thi thống nhất giữa Firmware và Flow điều khiển như sau:
 
 \begin{itemize}
   \item Đọc nhiệt độ, độ ẩm không khí (DHT22, GPIO 4) và độ ẩm đất mô phỏng bằng biến trở (ADC GPIO 34), chu kỳ 5 giây.
@@ -337,10 +339,11 @@ Trong bối cảnh biến đổi khí hậu và đô thị hóa, tưới tiêu t
 % 2. NỘI DUNG THỰC HIỆN (mục lục chi tiết; nội dung khớp main.cpp / node-red.json)
 % =============================================================================
 \section*{CHƯƠNG 2: NỘI DUNG THỰC HIỆN}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 2: NỘI DUNG THỰC HIỆN}
 \label{sec:ch2}
-
-Chương này tóm tắt các chức năng đã cài đặt trên firmware ESP32 (\file{main.cpp}), flow Node-RED (\file{node-red.json}) và sơ đồ mạch mô phỏng (\file{diagram.json}). Hệ thống \textbf{không} dùng OLED, DHT11 hay đồng bộ giờ NTP; cảm biến khí tượng là \textbf{DHT22}; độ ẩm đất mô phỏng bằng biến trở đọc ADC.
+\setcounter{section}{2}
+\setcounter{subsection}{0}
 
 \subsection{Thu thập dữ liệu môi trường (DHT22 và độ ẩm đất)}
 
@@ -348,9 +351,32 @@ Firmware định kỳ 5 giây (\code{PUBLISH_INTERVAL}) gọi \code{readSensor()
 
 DHT22 đo KK theo giao tiếp 1-wire; độ chính xác tốt hơn DHT11. Potentiometer mô phỏng cảm biến độ ẩm đất: giá trị ADC càng thấp thì trên Dashboard (công thức \code{(1 - soil/4095)*100}) đất càng khô.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\linewidth]{dht22.png}
+  \caption{Cảm biến đo nhiệt độ và độ ẩm không khí DHT22}
+  \label{fig:dht22}
+\end{figure}
+
 \subsection{Chỉ báo cục bộ: LED mô phỏng máy bơm và buzzer cảnh báo}
 
 GPIO \code{LED_PIN} (5) điều khiển LED cực dương (mô phỏng máy bơm). GPIO \code{BUZZER_PIN} (18) dùng PWM qua \code{ledc} trong hàm \code{toneBuzzer()}: khi \code{soilRaw < 2048}, firmware phát cảnh báo 2\,kHz trong 300\,ms mỗi chu kỳ đọc (\file{main.cpp}).
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{led.png}
+    \caption{Đèn LED mô phỏng trạng thái máy bơm}
+    \label{fig:led}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{buzzer.png}
+    \caption{Còi loa (Buzzer) phát âm thanh cảnh báo}
+    \label{fig:buzzer}
+  \end{minipage}
+\end{figure}
 
 \subsection{Truyền dữ liệu qua MQTT (HiveMQ Cloud, TLS)}
 
@@ -409,13 +435,34 @@ Nhánh thứ mười một (\textbf{Tưới tự động}): switch node kiểm t
 
 Node-RED Dashboard cung cấp các widget: gauge (nhiệt độ, độ ẩm KK, độ ẩm đất), chart đường theo thời gian thực, text trạng thái, nút \textbf{Máy bơm}, switch \textbf{Tưới tự động}, toast cảnh báo. Giao diện truy cập tại \url{http://localhost:1880/ui} (hoặc \url{http://127.0.0.1:1880/ui}).
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-1.png}
+  \caption{Giao diện tổng quan hiển thị dữ liệu trên Node-RED Dashboard}
+  \label{fig:dashboard-1}
+\end{figure}
+
 \subsection{Cảnh báo môi trường}
 
 Trên Dashboard: toast khi \code{temperature > 35}, khi \code{humidity < 40}, khi \code{soil < 2048}, và cảnh báo đỏ khi \code{soil < 1024} (\file{node-red.json}). Trên ESP32: buzzer chỉ phụ thuộc \code{soilRaw < 2048} trong \code{loop()} (không có ngưỡng 1024 riêng trên firmware).
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-2.png}
+  \caption{Giao diện cảnh báo môi trường trên Node-RED Dashboard}
+  \label{fig:dashboard-2}
+\end{figure}
+
 \subsection{Điều khiển máy bơm từ xa qua MQTT}
 
 Topic \code{iot/farm/control} nhận JSON; \code{handleControlPayload()} đọc \code{pump} (boolean) và \code{duration} (giây, mặc định 5 --- dùng trong log Serial). Khi \code{pump == true}, LED bật, \code{pumpStartTime} được gán; \code{checkPumpTimeout()} tắt bơm sau \code{PUMP_DURATION_MS} (5000\,ms) --- thời gian tắt thực tế đang cố định theo hằng số này (\file{main.cpp}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{dieukhien.png}
+  \caption{Giao diện nút nhấn và công tắc điều khiển máy bơm từ xa}
+  \label{fig:dieukhien}
+\end{figure}
 
 \subsection{Duy trì kết nối và đồng bộ trạng thái bơm}
 
@@ -423,20 +470,64 @@ Topic \code{iot/farm/control} nhận JSON; \code{handleControlPayload()} đọc 
 
 \subsection{Tự động tưới theo ngưỡng độ ẩm đất (Node-RED)}
 
-Khi \code{soil < 2048} và biến flow \code{manual == true} (switch \textit{Tưới tự động}), flow gửi \code{\{"pump":true,"duration":5\}} lên \code{iot/farm/control}. Đây là logic tự động theo \textbf{ngưỡng đất}, không dùng đồng hồ NTP trong bài này.
+Hệ thống kết hợp đánh giá điều kiện \code{soil < 2048} và trạng thái biến flow \code{manual == true} (thu nhận từ thao tác bật switch \textit{Tưới tự động} trên giao diện Dashboard). Khi cả hai điều kiện này đồng thời thoả mãn, logic trên Node-RED sẽ tự động kích hoạt và gửi bản tin JSON \code{\{"pump":true,"duration":5\}} sang topic \code{iot/farm/control} nhằm bật máy bơm tưới bù độ ẩm cho đất.
 
 % =============================================================================
 % 3. THIẾT KẾ MẠCH IOT
 % =============================================================================
 \section*{CHƯƠNG 3: THIẾT KẾ MẠCH IoT}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 3: THIẾT KẾ MẠCH IoT}
 \label{sec:ch3}
-
-Theo yêu cầu hướng dẫn: sơ đồ logic (EasyEDA), chức năng linh kiện, mạch vật lý/minh họa Wokwi (\file{mach-vat-ly-wokwi.png}, khớp \file{diagram.json}, Phụ lục~C). Ảnh mạch in thực tế có thể thay thế; ghi chú \file{anh-mach-vat-ly-thuc-te.png.txt}.
+\setcounter{section}{3}
+\setcounter{subsection}{0}
 
 \subsection{Thành phần phần cứng}
 
-Vi điều khiển ESP32 DevKit C v4; cảm biến DHT22; biến trở mô phỏng độ ẩm đất; LED và điện trở hạn dòng; buzzer cảnh báo. Sơ đồ EasyEDA có thể bao gồm khối mở rộng (OLED, relay) cho hướng phát triển; mạch chạy trong đề tài khớp \file{diagram.json} (DHT22, LED, potentiometer, buzzer).
+Hệ thống sử dụng các linh kiện điện tử cơ bản và phổ biến, được lựa chọn nhằm tối ưu chi phí nhưng vẫn đảm bảo độ tin cậy trong việc thu thập dữ liệu và cảnh báo. Các thành phần chính bao gồm:
+\begin{itemize}
+    \item \textbf{Vi điều khiển trung tâm:} ESP32 DevKit C v4 đóng vai trò bộ não xử lý, kết nối mạng Wi-Fi và giao tiếp MQTT.
+    \item \textbf{Cảm biến môi trường:} Cảm biến DHT22 dùng để đo nhiệt độ và độ ẩm không khí với sai số thấp.
+    \item \textbf{Cảm biến đo lường (mô phỏng):} Biến trở (Potentiometer) được sử dụng để giả lập tín hiệu điện áp tương tự (ADC) của cảm biến đo độ ẩm đất trong thực tế.
+    \item \textbf{Cơ cấu chấp hành và cảnh báo:} Đèn LED (kèm điện trở hạn dòng) giả lập trạng thái hoạt động của máy bơm nước. Còi loa (Buzzer) điều khiển bằng xung PWM nhằm phát âm thanh báo động cường độ cao khi đất quá khô.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{esp32.png}
+    \caption{Vi điều khiển ESP32}
+    \label{fig:esp32}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{dht22.png}
+    \caption{Cảm biến DHT22}
+    \label{fig:hw-dht22}
+  \end{minipage}
+
+  \vspace{0.5cm}
+
+  \begin{minipage}{0.31\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{potentiometer.png}
+    \caption{Biến trở}
+    \label{fig:hw-pot}
+  \end{minipage}\hfill
+  \begin{minipage}{0.31\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{led.png}
+    \caption{Đèn LED}
+    \label{fig:hw-led}
+  \end{minipage}\hfill
+  \begin{minipage}{0.31\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{buzzer.png}
+    \caption{Còi Buzzer}
+    \label{fig:hw-buzzer}
+  \end{minipage}
+\end{figure}
 
 \subsection{Kết nối phần cứng (GPIO)}
 
@@ -487,24 +578,68 @@ Hình~\ref{fig:wokwi}.
 
 \subsection{Giải thích các linh kiện chính}
 
-\textbf{ESP32:} SoC Wi-Fi/Bluetooth, CPU Xtensa dual-core, ADC 12-bit; lập trình bằng PlatformIO/Arduino (\file{main.cpp}).
+\subsubsection{Vi điều khiển ESP32 DevKit C v4}
+ESP32 là một hệ thống trên một vi mạch (SoC) mạnh mẽ, được tích hợp sẵn kết nối Wi-Fi và Bluetooth. Với vi xử lý Xtensa dual-core tốc độ cao cùng bộ chuyển đổi tín hiệu tương tự sang số (ADC) 12-bit, ESP32 lý tưởng cho các ứng dụng IoT đòi hỏi khả năng tính toán và kết nối mạng liên tục. Trong hệ thống này, ESP32 đóng vai trò là "bộ não" thu thập dữ liệu và xử lý các lệnh điều khiển.
 
-\textbf{DHT22:} Đo nhiệt độ và độ ẩm KK, giao tiếp 1-wire trên GPIO~4; độ chính xác tốt hơn DHT11.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{esp32.png}
+  \caption{Mạch vi điều khiển ESP32 DevKit C}
+  \label{fig:hw_esp32_detail}
+\end{figure}
 
-\textbf{Biến trở (độ ẩm đất):} Đọc ADC 0--4095 tại GPIO~34; hiển thị \% trên Node-RED theo \code{(1 - soil/4095)*100}.
+\subsubsection{Cảm biến nhiệt độ và độ ẩm DHT22}
+DHT22 là chuẩn cảm biến môi trường phổ biến với khả năng đo đạc nhiệt độ và độ ẩm không khí mang lại độ phân giải và độ chính xác cao hơn hẳn so với dòng cũ (DHT11). Cảm biến sử dụng giao tiếp kỹ thuật số 1-wire, cho phép truyền dữ liệu đã được số hóa trực tiếp về vi điều khiển một cách đáng tin cậy.
 
-\textbf{LED và buzzer:} LED GPIO~5 mô phỏng máy bơm; buzzer GPIO~18 cảnh báo khi \code{soilRaw < 2048}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\linewidth]{dht22.png}
+  \caption{Cảm biến DHT22 thực tế}
+  \label{fig:hw_dht22_detail}
+\end{figure}
+
+\subsubsection{Biến trở (mô phỏng cảm biến độ ẩm đất)}
+Trong giới hạn mô phỏng của đề tài, một biến trở (Potentiometer) được sử dụng để đóng vai trò thay thế cho cảm biến đo độ ẩm đất analog thực tế. Bằng cách xoay trục biến trở, linh kiện này sẽ thay đổi phân áp để đưa về một tín hiệu điện áp tuyến tính, qua đó mô phỏng các giá trị từ khi đất rất khô đến khi ngập nước theo miền giá trị điện áp tương ứng.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\linewidth]{potentiometer.png}
+  \caption{Biến trở xoay dùng trong mô phỏng}
+  \label{fig:hw_pot_detail}
+\end{figure}
+
+\subsubsection{Cơ cấu chấp hành và tín hiệu cảnh báo (LED \& Buzzer)}
+Để phản ánh trực quan quá trình điều khiển thiết bị bơm nước trong mô phỏng, hệ thống sử dụng một bóng đèn LED để thể hiện trạng thái đóng/cắt của máy bơm. Cùng với đó, một còi sinh âm (Buzzer) được sử dụng như một phương tiện cảnh báo cục bộ, nó sẽ tạo ra những âm thanh báo động ở tần số cao khi phát hiện môi trường đang bị khô hạn nghiêm trọng.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{led.png}
+    \caption{Đèn LED hiển thị đóng/cắt}
+    \label{fig:hw_led_detail}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{buzzer.png}
+    \caption{Còi loa Buzzer báo hiệu âm thanh}
+    \label{fig:hw_buz_detail}
+  \end{minipage}
+\end{figure}
 
 \subsection{Luồng hoạt động tóm tắt theo chức năng}
 
-Thu thập $\rightarrow$ xử lý ngưỡng buzzer $\rightarrow$ đóng gói JSON $\rightarrow$ MQTT publish; song song subscribe \code{iot/farm/control} để bật/tắt bơm và \code{checkPumpTimeout}. Chi tiết sơ đồ kiến trúc, luồng dữ liệu và lưu đồ firmware xem chương~\ref{sec:nguyen-ly}.
+Thu thập $\rightarrow$ xử lý ngưỡng buzzer $\rightarrow$ đóng gói JSON $\rightarrow$ MQTT publish; song song subscribe \code{iot/farm/control} để bật/tắt bơm và \code{checkPumpTimeout}. Chi tiết sơ đồ kiến trúc, luồng dữ liệu và lưu đồ firmware xem chương~\ref{sec:ch4}.
 
 % =============================================================================
 % 4. NGUYÊN LÝ HOẠT ĐỘNG
 % =============================================================================
 \section*{CHƯƠNG 4: NGUYÊN LÝ HOẠT ĐỘNG}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 4: NGUYÊN LÝ HOẠT ĐỘNG}
 \label{sec:ch4}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
 
 \subsection{Sơ đồ luồng hệ thống (kiến trúc ba tầng)}
 
@@ -519,7 +654,7 @@ Hệ thống gồm tầng thiết bị (ESP32 + cảm biến/chấp hành), tầ
 
 \subsection{Luồng giám sát: cảm biến $\rightarrow$ MQTT $\rightarrow$ Dashboard}
 
-ESP32 đọc cảm biến, gọi \code{publishSensorData()} khi MQTT đã kết nối; broker chuyển payload JSON tới Node-RED; các nhánh gauge/chart/toast hiển thị (mô tả chương~\ref{sec:noi-dung-thuchien}).
+ESP32 đọc cảm biến, gọi \code{publishSensorData()} khi MQTT đã kết nối; broker chuyển payload JSON tới Node-RED; các nhánh gauge/chart/toast hiển thị (mô tả chương~\ref{sec:ch2}).
 
 \subsection{Luồng điều khiển: Dashboard $\rightarrow$ MQTT $\rightarrow$ ESP32 (LED mô phỏng bơm)}
 
@@ -547,7 +682,7 @@ Biến \code{pumpActive} và \code{checkPumpTimeout()} đảm bảo LED tắt sa
 
 \subsection{Luồng tưới tự động theo ngưỡng độ ẩm đất (Node-RED)}
 
-Điều kiện \code{soil < 2048} và \code{flow.manual == true} kích hoạt gửi lệnh bơm; không dùng lịch giờ hay NTP.
+Hệ thống tự động kích hoạt gửi lệnh bơm hoạt động dựa trên phương pháp đánh giá ngưỡng độ ẩm đất thực tế (\code{soil < 2048}) và tín hiệu cho phép chế độ vận hành tự động từ quản trị viên (\code{flow.manual == true}).
 
 \subsection{Luồng duy trì kết nối Wi-Fi và MQTT}
 
@@ -557,8 +692,11 @@ Biến \code{pumpActive} và \code{checkPumpTimeout()} đảm bảo LED tắt sa
 % 5. CÀI ĐẶT HỆ THỐNG
 % =============================================================================
 \section*{CHƯƠNG 5: CÀI ĐẶT HỆ THỐNG}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 5: CÀI ĐẶT HỆ THỐNG}
 \label{sec:ch5}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
 
 \subsection{Yêu cầu phần mềm}
 
@@ -621,8 +759,11 @@ Mở \url{http://127.0.0.1:1880/ui}; kiểm tra gauge cập nhật khi ESP32 pub
 % 6. KẾT QUẢ THỰC HIỆN
 % =============================================================================
 \section*{CHƯƠNG 6: KẾT QUẢ THỰC HIỆN}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 6: KẾT QUẢ THỰC HIỆN}
 \label{sec:ch6}
+\setcounter{section}{6}
+\setcounter{subsection}{0}
 
 \subsection{Các hình ảnh minh họa}
 
@@ -704,8 +845,11 @@ Hình~\ref{fig:nr-flow}, \ref{fig:nr-dash-1}, \ref{fig:nr-dash-2} minh họa edi
 % 7. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
 % =============================================================================
 \section*{CHƯƠNG 7: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
+\phantomsection
 \addcontentsline{toc}{section}{CHƯƠNG 7: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
 \label{sec:ch7}
+\setcounter{section}{7}
+\setcounter{subsection}{0}
 
 \subsection{Các công việc đã hoàn thành}
 
@@ -747,8 +891,9 @@ Thứ sáu, OTA để cập nhật firmware từ xa.
 % =============================================================================
 \newpage
 \pagenumbering{gobble}
-\section*{Tài liệu tham khảo}
-\addcontentsline{toc}{section}{Tài liệu tham khảo}
+\section*{TÀI LIỆU THAM KHẢO}
+\phantomsection
+\addcontentsline{toc}{section}{TÀI LIỆU THAM KHẢO}
 \label{sec:tailieu}
 
 \begin{thebibliography}{99}
@@ -776,13 +921,13 @@ Thứ sáu, OTA để cập nhật firmware từ xa.
 \newpage
 
 \begin{center}
-  {\large\bfseries CÁC PHỤ LỤC}\\
-  \textit{(Không tính vào số trang của bản tiểu luận)}
+  {\large\bfseries CÁC PHỤ LỤC}
 \end{center}
 \vspace{0.5cm}
 
 % ----- PHỤ LỤC A -----
 \subsection*{PHỤ LỤC A. Mã nguồn chương trình ESP32}
+\phantomsection
 \addcontentsline{toc}{subsection}{Phụ lục A. Mã nguồn chương trình ESP32}
 \label{sec:pl-a}
 
@@ -800,6 +945,7 @@ Thứ sáu, OTA để cập nhật firmware từ xa.
 
 % ----- PHỤ LỤC B -----
 \subsection*{PHỤ LỤC B. Mã nguồn Node-RED (JSON Flow)}
+\phantomsection
 \addcontentsline{toc}{subsection}{Phụ lục B. Mã nguồn Node-RED (JSON Flow)}
 \label{sec:pl-b}
 
@@ -825,6 +971,7 @@ Thứ sáu, OTA để cập nhật firmware từ xa.
 
 % ----- PHỤ LỤC C -----
 \subsection*{PHỤ LỤC C. Mã nguồn sơ đồ Wokwi (JSON)}
+\phantomsection
 \addcontentsline{toc}{subsection}{Phụ lục C. Mã nguồn sơ đồ Wokwi (JSON)}
 \label{sec:pl-c}
 
