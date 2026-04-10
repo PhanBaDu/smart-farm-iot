@@ -1,0 +1,12 @@
+% =============================================================================
+%  GHI CHÚ (không cần file ảnh riêng tên anh-mach-vat-ly-thuc-te.png)
+%
+%  Theo hướng dẫn: "Mạch vật lý (Chụp hình lại mạch vật lý được sử dụng)".
+%  Trong tiểu luận, phần này được thay thế bằng ảnh mạch mô phỏng Wokwi:
+%      latex/images/mach-vat-ly-wokwi.png
+%  (chụp từ simulator — tương đương mạch vật lý đã nối dây theo diagram.json).
+%
+%  Nếu sau này có mạch lắp thật: có thể chụp ảnh và thay thế trong main.tex
+%  (hoặc đặt tên tùy chọn, ví dụ anh-mach-vat-ly-thuc-te.png) — không bắt buộc
+%  khi đã dùng mach-vat-ly-wokwi.png.
+% =============================================================================

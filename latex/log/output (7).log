@@ -1,0 +1,4121 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.27)  9 APR 2026 23:54
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**name.tex
+(./name.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-05-26>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count271
+\c@section=\count272
+\c@subsection=\count273
+\c@subsubsection=\count274
+\c@paragraph=\count275
+\c@subparagraph=\count276
+\c@figure=\count277
+\c@table=\count278
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-05-26 L3 programming layer (loader) 
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2025-04-14 L3 backend support: XeTeX
+\g__graphics_track_int=\count279
+\g__pdfannot_backend_int=\count280
+\g__pdfannot_backend_link_int=\count281
+))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count282
+\l__fontspec_language_int=\count283
+\l__fontspec_strnum_int=\count284
+\l__fontspec_tmp_int=\count285
+\l__fontspec_tmpa_int=\count286
+\l__fontspec_tmpb_int=\count287
+\l__fontspec_tmpc_int=\count288
+\l__fontspec_em_int=\count289
+\l__fontspec_emdef_int=\count290
+\l__fontspec_strong_int=\count291
+\l__fontspec_strongdef_int=\count292
+\l__fontspec_tmpa_dim=\dimen149
+\l__fontspec_tmpb_dim=\dimen150
+\l__fontspec_tmpc_dim=\dimen151
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/local/texlive/2025/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2025/05/12 v2.5 Modern multilingual typesetting with XeLaTeX and LuaLaTeX
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count293
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+\l_xpg_alias_keyvals_int=\count294
+(/usr/local/texlive/2025/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
+File: gloss-latex.ldf polyglossia: module for default language
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/polyglossia/gloss-vietnamese.ldf
+File: gloss-vietnamese.ldf polyglossia: module for Vietnamese
+)
+
+Package polyglossia Info: Default language is vietnamese
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
+File: gloss-english.ldf polyglossia: module for English
+)
+
+Package fontspec Info: 
+(fontspec)             Font family 'TimesNewRoman(0)' created for font 'Times
+(fontspec)             New Roman' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/B/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/I/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/BI/OT:language=dflt;mapping=tex-text;"
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count295
+\Gm@cntv=\count296
+\c@Gm@tempcnt=\count297
+\Gm@bindingoffset=\dimen152
+\Gm@wd@mp=\dimen153
+\Gm@odd@mp=\dimen154
+\Gm@even@mp=\dimen155
+\Gm@layoutwidth=\dimen156
+\Gm@layoutheight=\dimen157
+\Gm@layouthoffset=\dimen158
+\Gm@layoutvoffset=\dimen159
+\Gm@dimlist=\toks18
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip51
+\aftertitleunit=\skip52
+\ttl@plus=\dimen160
+\ttl@minus=\dimen161
+\ttl@toksa=\toks19
+\titlewidth=\dimen162
+\titlewidthlast=\dimen163
+\titlewidthfirst=\dimen164
+)
+
+! LaTeX Error: No counter 'document' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 \counterwithin{section}{document}
+                                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2025-05-20 v7.01m Hypertext links for LaTeX
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count298
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen165
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2025-05-20 v7.01m Hyperref: PDFDocEncoding definition (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count301
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2025-05-20 v7.01m Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count302
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen166
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count303
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count304
+\c@Item=\count305
+\c@Hfootnote=\count306
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2025-05-20 v7.01m Hyperref driver for XeTeX
+\pdfm@box=\box54
+\c@Hy@AnnotLevel=\count307
+\HyField@AnnotCount=\count308
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip53
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen169
+\Gin@req@width=\dimen170
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count311
+\float@exts=\toks20
+\float@box=\box55
+\@float@everytoks=\toks21
+\@floatcapt=\box56
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen171
+\lightrulewidth=\dimen172
+\cmidrulewidth=\dimen173
+\belowrulesep=\dimen174
+\belowbottomsep=\dimen175
+\aboverulesep=\dimen176
+\abovetopsep=\dimen177
+\cmidrulesep=\dimen178
+\cmidrulekern=\dimen179
+\defaultaddspace=\dimen180
+\@cmidla=\count312
+\@cmidlb=\count313
+\@aboverulesep=\dimen181
+\@belowrulesep=\dimen182
+\@thisruleclass=\count314
+\@lastruleclass=\count315
+\@thisrulewidth=\dimen183
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen184
+\ar@mcellbox=\box57
+\extrarowheight=\dimen185
+\NC@list=\toks22
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box58
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen186
+\TX@old@table=\dimen187
+\TX@old@col=\dimen188
+\TX@target=\dimen189
+\TX@delta=\dimen190
+\TX@cols=\count316
+\TX@ftn=\toks23
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+\LTleft=\skip56
+\LTright=\skip57
+\LTpre=\skip58
+\LTpost=\skip59
+\LTchunksize=\count317
+\LTcapwidth=\dimen191
+\LT@head=\box59
+\LT@firsthead=\box60
+\LT@foot=\box61
+\LT@lastfoot=\box62
+\LT@gbox=\box63
+\LT@cols=\count318
+\LT@rows=\count319
+\c@LT@tables=\count320
+\c@LT@chunks=\count321
+\LT@p@ftn=\toks24
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/seqsplit/seqsplit.sty
+Package: seqsplit 2006/08/07 v0.1 Splitting long sequences (DNA, RNA, proteins, etc.) 
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip60
+\enit@outerparindent=\dimen192
+\enit@toks=\toks25
+\enit@inbox=\box64
+\enit@count@id=\count322
+\enitdp@description=\count323
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks26
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+Package tocbibind Note: Using section or other style headings.
+
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks27
+\pgfutil@tempdima=\dimen193
+\pgfutil@tempdimb=\dimen194
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box65
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks28
+\pgfkeys@temptoks=\toks29
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks30
+))
+\pgf@x=\dimen195
+\pgf@y=\dimen196
+\pgf@xa=\dimen197
+\pgf@ya=\dimen198
+\pgf@xb=\dimen199
+\pgf@yb=\dimen256
+\pgf@xc=\dimen257
+\pgf@yc=\dimen258
+\pgf@xd=\dimen259
+\pgf@yd=\dimen260
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count324
+\c@pgf@countb=\count325
+\c@pgf@countc=\count326
+\c@pgf@countd=\count327
+\t@pgf@toka=\toks31
+\t@pgf@tokb=\toks32
+\t@pgf@tokc=\toks33
+\pgf@sys@id@count=\count328
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-xetex.def
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count329
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count330
+\pgfsyssoftpath@bigbuffer@items=\count331
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen261
+\pgfmath@count=\count332
+\pgfmath@box=\box66
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count333
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen262
+\pgf@picmaxx=\dimen263
+\pgf@picminy=\dimen264
+\pgf@picmaxy=\dimen265
+\pgf@pathminx=\dimen266
+\pgf@pathmaxx=\dimen267
+\pgf@pathminy=\dimen268
+\pgf@pathmaxy=\dimen269
+\pgf@xx=\dimen270
+\pgf@xy=\dimen271
+\pgf@yx=\dimen272
+\pgf@yy=\dimen273
+\pgf@zx=\dimen274
+\pgf@zy=\dimen275
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen276
+\pgf@path@lasty=\dimen277
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen278
+\pgf@shorten@start@additional=\dimen279
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box67
+\pgf@hbox=\box68
+\pgf@layerbox@main=\box69
+\pgf@picture@serial@count=\count334
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen280
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen281
+\pgf@pt@y=\dimen282
+\pgf@pt@temp=\dimen283
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen284
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen285
+\pgf@sys@shading@range@num=\count335
+\pgf@shadingcount=\count336
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box70
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box71
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen286
+\pgf@nodesepend=\dimen287
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen288
+\pgffor@skip=\dimen289
+\pgffor@stack=\toks37
+\pgffor@toks=\toks38
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count337
+\pgfplotmarksize=\dimen290
+)
+\tikz@lastx=\dimen291
+\tikz@lasty=\dimen292
+\tikz@lastxsaved=\dimen293
+\tikz@lastysaved=\dimen294
+\tikz@lastmovetox=\dimen295
+\tikz@lastmovetoy=\dimen296
+\tikzleveldistance=\dimen297
+\tikzsiblingdistance=\dimen298
+\tikz@figbox=\box72
+\tikz@figbox@bg=\box73
+\tikz@tempbox=\box74
+\tikz@tempbox@bg=\box75
+\tikztreelevel=\count338
+\tikznumberofchildren=\count339
+\tikznumberofcurrentchild=\count340
+\tikz@fig@count=\count341
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count342
+\pgfmatrixcurrentcolumn=\count343
+\pgf@matrix@numberofcolumns=\count344
+)
+\tikz@expandcount=\count345
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen299
+\pgfarrowlength=\dimen300
+\pgfarrowwidth=\dimen301
+\pgfarrowlinewidth=\dimen302
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count346
+\lst@gtempboxa=\box76
+\lst@token=\toks39
+\lst@length=\count347
+\lst@currlwidth=\dimen303
+\lst@column=\count348
+\lst@pos=\count349
+\lst@lostspace=\dimen304
+\lst@width=\dimen305
+\lst@newlines=\count350
+\lst@lineno=\count351
+\lst@maxwidth=\dimen306
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count352
+\lst@skipnumbers=\count353
+\lst@framebox=\box77
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip61
+\f@nch@offset@elh=\skip62
+\f@nch@offset@erh=\skip63
+\f@nch@offset@olh=\skip64
+\f@nch@offset@orh=\skip65
+\f@nch@offset@elf=\skip66
+\f@nch@offset@erf=\skip67
+\f@nch@offset@olf=\skip68
+\f@nch@offset@orf=\skip69
+\f@nch@height=\skip70
+\f@nch@footalignment=\skip71
+\f@nch@widthL=\skip72
+\f@nch@widthC=\skip73
+\f@nch@widthR=\skip74
+\@temptokenb=\toks40
+)
+Package hyperref Info: Option `unicode' set `true' on input line 198.
+Package hyperref Info: Option `colorlinks' set `true' on input line 198.
+
+LaTeX Warning: Unused global option(s):
+    [13pt].
+
+(./output.aux)
+\openout1 = `output.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 225.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 225.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 225.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 225.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 225.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 225.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 225.
+LaTeX Font Info:    Redeclaring math accent \check on input line 225.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 225.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 225.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 225.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 225.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 225.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 225.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 225.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 225.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 225.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 225.
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=731.23584pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-54.86449pt
+* \headheight=14.5pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 225.
+(./output.out) (./output.out)
+\@outlinefile=\write4
+\openout4 = `output.out'.
+
+\c@lstlisting=\count354
+File: images/logo.png Graphic file (type bmp)
+<images/logo.png>
+
+
+[1
+
+] (./output.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write5
+\openout5 = `output.toc'.
+
+
+
+[1]
+
+[2]
+
+[3]
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 375.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
+(Font)              size <12> substituted on input line 375.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
+(Font)              size <6> substituted on input line 375.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 375.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 375.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 375.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 375.
+
+
+Overfull \hbox (24.11374pt too wide) in paragraph at lines 375--376
+\TU/TimesNewRoman(0)/m/n/13 giây; (2) truyền dữ liệu JSON qua MQTT/TLS lên HiveMQ Cloud (topic \TU/lmtt/m/n/13 iot/farm/sensor\TU/TimesNewRoman(0)/m/n/13 );
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.388 ...t nối trên ESP32:} GPIO 4 (\code{DHT_PIN}
+                                                   trong firmware).\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.388 ...t nối trên ESP32:} GPIO 4 (\code{DHT_PIN}
+                                                   trong firmware).\\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <13> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 389.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.389 ... đọc:} Mỗi \code{PUBLISH_INTERVAL = 5000}
+                                                   mili-giây (5 giây), được ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.389 ... đọc:} Mỗi \code{PUBLISH_INTERVAL = 5000}
+                                                   mili-giây (5 giây), được ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.389 ... đọc:} Mỗi \code{PUBLISH_INTERVAL = 5000}
+                                                   mili-giây (5 giây), được ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.390 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no â ("E2) in font cmmi12!
+Missing character: There is no â ("E2) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ợ ("1EE3) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+Missing character: There is no ý ("FD) in font cmmi12!
+Missing character: There is no ằ ("1EB1) in font cmmi12!
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ỗ ("1ED7) in font cmmi12!
+
+Overfull \hbox (286.98135pt too wide) in paragraph at lines 387--394
+[]\OML/cmm/m/it/12 Mi[]$ 
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.394   \item G
+               ọi \code{dht.readTemperature()} và \code{dht.readHumidity()} ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 394
+[][]
+ []
+
+
+Overfull \hbox (6.71098pt too wide) in paragraph at lines 394--395
+[]\TU/lmtt/m/n/13 Gọi dht.readTemperature() và dht.readHumidity() để đọc nhiệt độ và độ
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.395   \item K
+               iểm tra \code{isnan()} — nếu lỗi thì dùng giá trị ngẫu nhiên ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 395
+[][]
+ []
+
+
+Overfull \hbox (40.18605pt too wide) in paragraph at lines 395--396
+[]\TU/lmtt/m/n/13 Kiểm tra isnan() — nếu lỗi thì dùng giá trị ngẫu nhiên thay thế (fallback)
+ []
+
+
+
+[1]
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396   \item Đ
+               ọc ADC từ potentiometer tại chân GPIO 34: \code{analogRead(SO...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 396
+[][]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.396 ...chân GPIO 34: \code{analogRead(SOIL_PIN)}
+                                                   — giá trị 0–4095.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.396 ...chân GPIO 34: \code{analogRead(SOIL_PIN)}
+                                                   — giá trị 0–4095.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.397   \item
+              Chuyển đổi raw ADC sang phần trăm: \code{soil_percent = round(...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.397   \item C
+               huyển đổi raw ADC sang phần trăm: \code{soil_percent = round(...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no á ("E1) in font cmmi12!
+Missing character: There is no ị ("1ECB) in font cmmi12!
+
+Overfull \hbox (34.18239pt too wide) in paragraph at lines 396--397
+[]\TU/lmtt/m/n/13 Đọc ADC từ potentiometer tại chân GPIO 34: analogRead(SOIL$[]\OML/cmm/m/it/12 IN\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 gitr\OT1/cmr/m/n/12 0[]4095\OML/cmm/m/it/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.397   \item C
+               huyển đổi raw ADC sang phần trăm: \code{soil_percent = round(...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 397
+[][]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.397 ...ent = round((1 - soil_raw / 4095) * 100)}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.397 ...ent = round((1 - soil_raw / 4095) * 100)}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.398   \item
+              Kiểm tra ngưỡng: nếu \code{soil_raw < 1024} (dưới 25\%) thì ph...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.398   \item K
+               iểm tra ngưỡng: nếu \code{soil_raw < 1024} (dưới 25\%) thì ph...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.398   \item K
+               iểm tra ngưỡng: nếu \code{soil_raw < 1024} (dưới 25\%) thì ph...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 398
+[][]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.398 ...ểm tra ngưỡng: nếu \code{soil_raw < 1024}
+                                                   (dưới 25\%) thì phát buzz...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.398 ...ểm tra ngưỡng: nếu \code{soil_raw < 1024}
+                                                   (dưới 25\%) thì phát buzz...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.399   \item
+              Đóng gói JSON bằng \code{ArduinoJson}: \code{temperature}, \co...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.399   \item Đ
+               óng gói JSON bằng \code{ArduinoJson}: \code{temperature}, \co...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ớ ("1EDB) in font cmmi12!
+Missing character: There is no ì ("EC) in font cmmi12!
+Missing character: There is no á ("E1) in font cmmi12!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.399   \item Đ
+               óng gói JSON bằng \code{ArduinoJson}: \code{temperature}, \co...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 399
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.400   \item G
+               ọi \code{mqtt.publish("iot/farm/sensor", jsonBuffer)}.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 400
+[][]
+ []
+
+! Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.401 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.401 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.401 \end{enumerate}
+                     
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.401 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.401 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.401 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.401 \end{enumerate}
+                     
+I'm forgetting what you said and using zero instead.
+
+
+! LaTeX Error: \begin{document} ended by \end{enumerate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.401 \end{enumerate}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.401 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.401 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.401 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.401 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.401 \end{enumerate}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.435 ...nối trên ESP32:} GPIO 34 (\code{SOIL_PIN}
+                                                  ) — chân ADC 12-bit.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.435 ...nối trên ESP32:} GPIO 34 (\code{SOIL_PIN}
+                                                  ) — chân ADC 12-bit.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.436 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no â ("E2) in font cmmi12!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.440 ... \code{int soil_raw = analogRead(GPIO34)}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.440 ... \code{int soil_raw = analogRead(GPIO34)}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.441   \item
+              ESP32 dùng \textbf{ADC 12-bit} — giá trị từ 0 đến 4095.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.441   \item E
+               SP32 dùng \textbf{ADC 12-bit} — giá trị từ 0 đến 4095.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (5.1635pt too wide) in paragraph at lines 442--443
+[]\TU/lmtt/m/n/13 Khi potentiometer ở vị trí trung tâm (giá trị $\OMS/cmsy/m/n/12 ^^Y$ \TU/lmtt/m/n/13 2048), điện áp
+ []
+
+
+Overfull \hbox (51.83397pt too wide) in paragraph at lines 444--445
+[]\TU/lmtt/m/n/13 Khi giá trị ADC $\OML/cmm/m/it/12 <$ \TU/lmtt/m/n/13 1024 (dưới 25%): đất rất khô, phát cảnh báo buzzer. 
+ []
+
+
+
+[2]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.445 ...ent = round((1 - soil_raw / 4095) * 100)}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.445 ...ent = round((1 - soil_raw / 4095) * 100)}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \end{enumerate} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.446 \end{enumerate}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.446 \end{enumerate}
+                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.446 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.446 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 453.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.457 ...i trên ESP32:} GPIO 18 (\code{BUZZER_PIN}
+                                                  ).
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.457 ...i trên ESP32:} GPIO 18 (\code{BUZZER_PIN}
+                                                  ).
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.458 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.463   \item Nếu \code{soil_raw < 1024}
+                                         (dưới 25\% độ ẩm — đất rất khô), gọ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.463   \item Nếu \code{soil_raw < 1024}
+                                         (dưới 25\% độ ẩm — đất rất khô), gọ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.463 ... \code{toneBuzzer(BUZZER_PIN, 2000, 300)}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.463 ... \code{toneBuzzer(BUZZER_PIN, 2000, 300)}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.463 ... \code{toneBuzzer(BUZZER_PIN, 2000, 300)}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.464   \item
+              Hàm \code{toneBuzzer}: cấu hình LEDC 8-bit tần số 2000Hz, duty...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.464   \item H
+               àm \code{toneBuzzer}: cấu hình LEDC 8-bit tần số 2000Hz, duty...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.464   \item H
+               àm \code{toneBuzzer}: cấu hình LEDC 8-bit tần số 2000Hz, duty...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.464   \item H
+               àm \code{toneBuzzer}: cấu hình LEDC 8-bit tần số 2000Hz, duty...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.464   \item H
+               àm \code{toneBuzzer}: cấu hình LEDC 8-bit tần số 2000Hz, duty...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ớ ("1EDB) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ộ ("1ED9) in font cmmi12!
+Missing character: There is no ẩ ("1EA9) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ấ ("1EA5) in font cmmi12!
+Missing character: There is no ấ ("1EA5) in font cmmi12!
+Missing character: There is no ô ("F4) in font cmmi12!
+Missing character: There is no ọ ("1ECD) in font cmmi12!
+
+Overfull \hbox (5.0708pt too wide) in paragraph at lines 463--464
+[]\TU/lmtt/m/n/13 Nếu soil$[]\OML/cmm/m/it/12 aw < \OT1/cmr/m/n/12 1024(\OML/cmm/m/it/12 di\OT1/cmr/m/n/12 25[]\OML/cmm/m/it/12 m[]trtkh\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; gi[]$ 
+ []
+
+
+Overfull \hbox (22.61014pt too wide) in paragraph at lines 464--465
+[]\TU/lmtt/m/n/13 Hàm toneBuzzer: cấu hình LEDC 8-bit tần số 2000Hz, duty cycle 50%
+ []
+
+
+Overfull \hbox (22.61012pt too wide) in paragraph at lines 465--466
+[]\TU/lmtt/m/n/13 Buzzer phát âm thanh cảnh báo tại chỗ (ESP32), song song với cảnh
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.466 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (19.491pt too wide) in paragraph at lines 496--497
+[]\TU/lmtt/m/n/13 Là \TU/lmtt/b/n/13 publisher \TU/lmtt/m/n/13 trên topic iot/farm/sensor — gửi dữ liệu cảm biến định
+ []
+
+
+Overfull \hbox (26.316pt too wide) in paragraph at lines 497--498
+[]\TU/lmtt/m/n/13 Là \TU/lmtt/b/n/13 subscriber \TU/lmtt/m/n/13 trên topic iot/farm/control — nhận lệnh điều khiển bơm
+ []
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 502.
+
+
+[3]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.512 ...{connectMQTT()} tạo \code{MQTT_CLIENT_ID}
+                                                   cố định, gọi \code{mqtt.c...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.512 ...{connectMQTT()} tạo \code{MQTT_CLIENT_ID}
+                                                   cố định, gọi \code{mqtt.c...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.512 ...CLIENT_ID, MQTT_USERNAME, MQTT_PASSWORD)}
+                                                  . Khi kết nối thành công $...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.512 ...CLIENT_ID, MQTT_USERNAME, MQTT_PASSWORD)}
+                                                  . Khi kết nối thành công $...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.512 ...CLIENT_ID, MQTT_USERNAME, MQTT_PASSWORD)}
+                                                  . Khi kết nối thành công $...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ế ("1EBF) in font cmmi12!
+Missing character: There is no ố ("1ED1) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ô ("F4) in font cmmi12!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.512 ...RD)}. Khi kết nối thành công $\rightarrow
+                                                  $ subscribe \code{TOPIC_CO...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.512 ...ightarrow$ subscribe \code{TOPIC_CONTROL}
+                                                   và in log: \code{MQTT con...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.512 ...ightarrow$ subscribe \code{TOPIC_CONTROL}
+                                                   và in log: \code{MQTT con...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.513 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ù ("F9) in font cmmi12!
+Missing character: There is no ỏ ("1ECF) in font cmmi12!
+Missing character: There is no á ("E1) in font cmmi12!
+Missing character: There is no ự ("1EF1) in font cmmi12!
+Missing character: There is no ù ("F9) in font cmmi12!
+Missing character: There is no ợ ("1EE3) in font cmmi12!
+Missing character: There is no ầ ("1EA7) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+Missing character: There is no ệ ("1EC7) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+Missing character: There is no ậ ("1EAD) in font cmmi12!
+Missing character: There is no ở ("1EDF) in font cmmi12!
+Missing character: There is no ê ("EA) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.515 \subsection{Xử lý dữ liệu bằng Node-RED}
+                                              
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.515 \subsection{Xử lý dữ liệu bằng Node-RED}
+                                              
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.515 \subsection{Xử lý dữ liệu bằng Node-RED}
+                                              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.515 \subsection{Xử lý dữ liệu bằng Node-RED}
+                                              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.515 \subsection{Xử lý dữ liệu bằng Node-RED}
+                                              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.515 \subsection{Xử lý dữ liệu bằng Node-RED}
+                                              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ố ("1ED1) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ị ("1ECB) in font cmmi12!
+Missing character: There is no ọ ("1ECD) in font cmmi12!
+
+Overfull \hbox (1321.41383pt too wide) in paragraph at lines 512--515
+[]\TU/lmtt/b/n/13 Trong firmware: \TU/lmtt/m/n/13 connectMQTT() tạo MQTT$[]\OML/cmm/m/it/12 LIENT[]Dcnh; gi[]$ 
+ []
+
+
+Overfull \hbox (20.10101pt too wide) in paragraph at lines 518--519
+\TU/lmtt/m/n/13 Node-RED nhận message từ MQTT, parse JSON và phân luồng xử lý. Cấu trúc
+ []
+
+
+Overfull \hbox (20.10095pt too wide) in paragraph at lines 518--519
+\TU/lmtt/m/n/13 flow chính: topic iot/farm/sensor mang JSON do publishSensorData() tạo:
+ []
+
+File: images/so-do-flow-nodered.png Graphic file (type bmp)
+<images/so-do-flow-nodered.png>
+
+
+[4]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.530 ...ature}, truyền tới node \textbf{ui_gauge}
+                                                   để hiển thị kim đồng hồ đ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.530 ...ature}, truyền tới node \textbf{ui_gauge}
+                                                   để hiển thị kim đồng hồ đ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.531   \item
+              \textbf{Gauge độ ẩm không khí:} trích giá trị \code{msg.payloa...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.531   \item \textbf
+                     {Gauge độ ẩm không khí:} trích giá trị \code{msg.payloa...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+Missing character: There is no ị ("1ECB) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ồ ("1ED3) in font cmmi12!
+Missing character: There is no ồ ("1ED3) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ệ ("1EC7) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ộ ("1ED9) in font cmmi12!
+Missing character: There is no ớ ("1EDB) in font cmmi12!
+Missing character: There is no ù ("F9) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ì ("EC) in font cmmi12!
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ờ ("1EDD) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ỏ ("1ECF) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+
+Overfull \hbox (24.56007pt too wide) in paragraph at lines 530--531
+[]\TU/lmtt/b/n/13 Gauge nhiệt độ: \TU/lmtt/m/n/13 trích giá trị msg.payload.temperature, truyền tới
+ []
+
+
+Overfull \hbox (1.76662pt too wide) in paragraph at lines 530--531
+\TU/lmtt/m/n/13 node \TU/lmtt/b/n/13 ui$[]\OML/cmm/m/it/12 augehinthkimnghonhitvibavngmu\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 xanh \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 bnhthng; vng \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 trunggian;  \OT1/cmr/m/n/12 :
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.531 ...idity}, truyền tới node \textbf{ui_gauge}
+                                                   (dạng donut) hiển thị độ ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.531 ...idity}, truyền tới node \textbf{ui_gauge}
+                                                   (dạng donut) hiển thị độ ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.532   \item
+              \textbf{Gauge độ ẩm đất:} trích giá trị \code{msg.payload.soil...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.532   \item \textbf
+                     {Gauge độ ẩm đất:} trích giá trị \code{msg.payload.soil...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ạ ("1EA1) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+Missing character: There is no ị ("1ECB) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ộ ("1ED9) in font cmmi12!
+Missing character: There is no ẩ ("1EA9) in font cmmi12!
+Missing character: There is no ô ("F4) in font cmmi12!
+Missing character: There is no í ("ED) in font cmmi12!
+
+Overfull \hbox (31.05998pt too wide) in paragraph at lines 531--532
+[]\TU/lmtt/b/n/13 Gauge độ ẩm không khí: trích giá trị msg.payload.humidity, truyền
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.532 ... 100)}, truyền tới node \textbf{ui_gauge}
+                                                   dạng donut với ba vùng mà...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.532 ... 100)}, truyền tới node \textbf{ui_gauge}
+                                                   dạng donut với ba vùng mà...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.533   \item
+              \textbf{Chart nhiệt độ:} trích giá trị nhiệt độ, gán topic \co...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.533   \item \textbf
+                     {Chart nhiệt độ:} trích giá trị nhiệt độ, gán topic \co...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ạ ("1EA1) in font cmmi12!
+Missing character: There is no ớ ("1EDB) in font cmmi12!
+Missing character: There is no ù ("F9) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ợ ("1EE3) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ỏ ("1ECF) in font cmmi12!
+Missing character: There is no ô ("F4) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ì ("EC) in font cmmi12!
+Missing character: There is no ẩ ("1EA9) in font cmmi12!
+
+Overfull \hbox (31.06pt too wide) in paragraph at lines 532--533
+[]\TU/lmtt/b/n/13 Gauge độ ẩm đất: trích giá trị msg.payload.soil (raw ADC 0–4095),
+ []
+
+
+Overfull \hbox (17.40999pt too wide) in paragraph at lines 532--533
+\TU/lmtt/b/n/13 chuyển đổi thành phần trăm Math.round((1 - soil / 4095) * 100),
+ []
+
+
+Overfull \hbox (18.99033pt too wide) in paragraph at lines 532--533
+\TU/lmtt/b/n/13 truyền tới node ui$[]\OML/cmm/m/it/12 augedngdonutvibavngmuongc\OT1/cmr/m/n/12 ( : \OML/cmm/m/it/12 kh; vng \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 trungbnh; xanh \OT1/cmr/m/n/12 :
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.533 ...độ °C}, truyền tới node \textbf{ui_chart}
+                                                   (line chart) để vẽ đồ thị...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.533 ...độ °C}, truyền tới node \textbf{ui_chart}
+                                                   (line chart) để vẽ đồ thị...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.534   \item
+              \textbf{Chart độ ẩm KK:} trích giá trị độ ẩm không khí, gán to...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.534   \item \textbf
+                     {Chart độ ẩm KK:} trích giá trị độ ẩm không khí, gán to...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+Missing character: There is no ẽ ("1EBD) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ồ ("1ED3) in font cmmi12!
+Missing character: There is no ị ("1ECB) in font cmmi12!
+Missing character: There is no ờ ("1EDD) in font cmmi12!
+Missing character: There is no ự ("1EF1) in font cmmi12!
+Missing character: There is no ự ("1EF1) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ộ ("1ED9) in font cmmi12!
+Missing character: There is no ó ("F3) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+Missing character: There is no ũ ("169) in font cmmi12!
+Missing character: There is no ờ ("1EDD) in font cmmi12!
+
+Overfull \hbox (10.585pt too wide) in paragraph at lines 533--534
+[]\TU/lmtt/b/n/13 Chart nhiệt độ: trích giá trị nhiệt độ, gán topic Nhiệt độ °C,
+ []
+
+
+Overfull \hbox (133.17812pt too wide) in paragraph at lines 533--534
+\TU/lmtt/b/n/13 truyền tới node ui$[]\OML/cmm/m/it/12 hart\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 linechart\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 vththeothigianthc; tngxaimcsau\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 gi\OT1/cmr/m/n/12 ([])\OML/cmm/m/it/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.534 ...KK \%}, truyền tới node \textbf{ui_chart}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.534 ...KK \%}, truyền tới node \textbf{ui_chart}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.535   \item
+              \textbf{Chart độ ẩm đất:} trích giá trị độ ẩm đất (đã chuyển \...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.535   \item \textbf
+                     {Chart độ ẩm đất:} trích giá trị độ ẩm đất (đã chuyển \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (10.58496pt too wide) in paragraph at lines 534--535
+[]\TU/lmtt/b/n/13 Chart độ ẩm KK: trích giá trị độ ẩm không khí, gán topic Độ ẩm
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.535 ...ất \%}, truyền tới node \textbf{ui_chart}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.535 ...ất \%}, truyền tới node \textbf{ui_chart}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.536   \item
+              \textbf{Cảnh báo nhiệt độ cao:} switch node kiểm tra \code{pay...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.536   \item \textbf
+                     {Cảnh báo nhiệt độ cao:} switch node kiểm tra \code{pay...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (31.05998pt too wide) in paragraph at lines 535--536
+[]\TU/lmtt/b/n/13 Chart độ ẩm đất: trích giá trị độ ẩm đất (đã chuyển %), gán topic
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.536 ...nh báo, truyền tới node \textbf{ui_toast}
+                                                   hiển thị ở góc dưới bên t...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.536 ...nh báo, truyền tới node \textbf{ui_toast}
+                                                   hiển thị ở góc dưới bên t...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.537   \item
+              \textbf{Cảnh báo độ ẩm KK thấp:} switch node kiểm tra \code{pa...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.537   \item \textbf
+                     {Cảnh báo độ ẩm KK thấp:} switch node kiểm tra \code{pa...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ể ("1EC3) in font cmmi12!
+Missing character: There is no ị ("1ECB) in font cmmi12!
+Missing character: There is no ở ("1EDF) in font cmmi12!
+Missing character: There is no ó ("F3) in font cmmi12!
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ớ ("1EDB) in font cmmi12!
+Missing character: There is no ê ("EA) in font cmmi12!
+Missing character: There is no á ("E1) in font cmmi12!
+Missing character: There is no â ("E2) in font cmmi12!
+
+Overfull \hbox (17.41pt too wide) in paragraph at lines 536--537
+[]\TU/lmtt/b/n/13 Cảnh báo nhiệt độ cao: switch node kiểm tra payload.temperature
+ []
+
+
+Overfull \hbox (10.58502pt too wide) in paragraph at lines 536--537
+\TU/lmtt/b/n/13 > 35. Nếu đúng, function node tạo message cảnh báo, truyền tới
+ []
+
+
+Overfull \hbox (3.75998pt too wide) in paragraph at lines 537--538
+[]\TU/lmtt/b/n/13 Cảnh báo độ ẩm KK thấp: switch node kiểm tra payload.humidity
+ []
+
+
+Overfull \hbox (37.88503pt too wide) in paragraph at lines 537--538
+\TU/lmtt/b/n/13 < 40. Nếu đúng, function node tạo message cảnh báo kèm gợi ý tưới,
+ []
+
+
+Overfull \hbox (17.41002pt too wide) in paragraph at lines 538--539
+[]\TU/lmtt/b/n/13 Cảnh báo đất khô: switch node kiểm tra payload.soil < 2048. Nếu
+ []
+
+
+Overfull \hbox (24.23503pt too wide) in paragraph at lines 538--539
+\TU/lmtt/b/n/13 đúng, function node tạo toast thông báo đất khô kèm giá trị phần
+ []
+
+
+Overfull \hbox (44.71002pt too wide) in paragraph at lines 539--540
+[]\TU/lmtt/b/n/13 Cảnh báo nguy hiểm (đất rất khô): switch node kiểm tra payload.soil
+ []
+
+
+Overfull \hbox (3.76pt too wide) in paragraph at lines 539--540
+\TU/lmtt/b/n/13 < 1024 (dưới 25% độ ẩm), hiển thị cảnh báo đỏ trên Dashboard. 
+ []
+
+
+
+[5]
+Overfull \hbox (6.07378pt too wide) in paragraph at lines 540--541
+[]\TU/lmtt/b/n/13 Tưới tự động: switch node kiểm tra độ ẩm đất $\OML/cmm/m/it/12 <$ \TU/lmtt/b/n/13 2048 đồng thời
+ []
+
+
+Overfull \hbox (24.23499pt too wide) in paragraph at lines 540--541
+\TU/lmtt/b/n/13 flow variable manual == true (chế độ tự động bật). Nếu thỏa điều
+ []
+
+
+Overfull \hbox (3.76001pt too wide) in paragraph at lines 540--541
+\TU/lmtt/b/n/13 kiện, change node tạo JSON {"pump":true,"duration":5} gửi tới
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.541 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (26.796pt too wide) in paragraph at lines 574--575
+\TU/lmtt/m/n/13 Node-RED Dashboard cung cấp giao diện giám sát trực quan qua trình duyệt
+ []
+
+
+Overfull \hbox (2.90509pt too wide) in paragraph at lines 579--580
+[]\TU/lmtt/b/n/13 Gauge nhiệt độ: \TU/lmtt/m/n/13 kim chỉ giá trị nhiệt độ ($[]$C), min=0, max=100,
+ []
+
+
+Overfull \hbox (24.69006pt too wide) in paragraph at lines 581--582
+[]\TU/lmtt/b/n/13 Gauge độ ẩm đất: \TU/lmtt/m/n/13 dạng donut, min=0, max=100, ba vùng màu đảo (đỏ:
+ []
+
+
+
+[6]
+Overfull \hbox (31.2551pt too wide) in paragraph at lines 582--583
+[]\TU/lmtt/b/n/13 Chart nhiệt độ: \TU/lmtt/m/n/13 biểu đồ line theo thời gian thực, tự động xóa điểm
+ []
+
+
+Overfull \hbox (38.73009pt too wide) in paragraph at lines 585--586
+[]\TU/lmtt/b/n/13 Nút Máy bơm (button): \TU/lmtt/m/n/13 gửi JSON {"pump":true,"duration":5} lên topic
+ []
+
+
+Overfull \hbox (12.99008pt too wide) in paragraph at lines 586--587
+[]\TU/lmtt/b/n/13 Switch Tưới tự động (toggle): \TU/lmtt/m/n/13 bật chế độ tưới tự động khi độ ẩm
+ []
+
+
+Overfull \hbox (31.25514pt too wide) in paragraph at lines 587--588
+[]\TU/lmtt/b/n/13 Toast cảnh báo: \TU/lmtt/m/n/13 hiển thị ở góc dưới bên trái trong 8 giây khi vượt
+ []
+
+
+Overfull \hbox (20.10101pt too wide) in paragraph at lines 594--595
+\TU/lmtt/m/n/13 Người dùng thao tác trên Dashboard (button hoặc switch) để gửi lệnh bơm
+ []
+
+
+Overfull \hbox (69.47508pt too wide) in paragraph at lines 600--601
+[]\TU/lmtt/m/n/13 Node-RED gửi JSON {"pump":true,"duration":5} lên topic iot/farm/control. 
+ []
+
+
+Overfull \hbox (22.61014pt too wide) in paragraph at lines 601--602
+[]\TU/lmtt/m/n/13 ESP32 nhận lệnh trong mqttCallback, bật LED (GPIO 5) trong 5 giây
+ []
+
+
+Overfull \hbox (22.61014pt too wide) in paragraph at lines 608--609
+[]\TU/lmtt/m/n/13 Khi soil < 2048 (50%) và chế độ tự động bật, Node-RED tự động gửi
+ []
+
+
+Overfull \hbox (29.30518pt too wide) in paragraph at lines 615--616
+[]\TU/lmtt/m/n/13 Nếu có pump == true: bật LED, ghi log [PUMP] Bật bơm trong X giây. 
+ []
+
+
+
+[7]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.631 ... tra \code{WiFi.status() != WL_CONNECTED}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.631 ... tra \code{WiFi.status() != WL_CONNECTED}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.632   \item
+              Nếu mất kết nối: gọi \code{WiFi.begin(WIFI_SSID, WIFI_PASSWORD...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.632   \item N
+               ếu mất kết nối: gọi \code{WiFi.begin(WIFI_SSID, WIFI_PASSWORD...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.632 ...ode{WiFi.begin(WIFI_SSID, WIFI_PASSWORD)}
+                                                   để reconnect.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.632 ...ode{WiFi.begin(WIFI_SSID, WIFI_PASSWORD)}
+                                                   để reconnect.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.633   \item
+              Khi mất Wi-Fi, đặt \code{ntpSynced = false} để đồng bộ lại NTP...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.633   \item K
+               hi mất Wi-Fi, đặt \code{ntpSynced = false} để đồng bộ lại NTP...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ể ("1EC3) in font cmmi12!
+
+Overfull \hbox (29.66817pt too wide) in paragraph at lines 632--633
+[]\TU/lmtt/m/n/13 Nếu mất kết nối: gọi WiFi.begin(WIFI$[]\OML/cmm/m/it/12 SID; WIFI[]ASSWORD\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 reconnect:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
+
+ []
+
+
+Overfull \hbox (9.22017pt too wide) in paragraph at lines 633--634
+[]\TU/lmtt/m/n/13 Khi mất Wi-Fi, đặt ntpSynced = false để đồng bộ lại NTP khi kết
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.634 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.634 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.640 ...nối và đã qua \code{MQTT_RETRY_MS = 5000}
+                                                   ms: gọi \code{connectMQTT...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.640 ...nối và đã qua \code{MQTT_RETRY_MS = 5000}
+                                                   ms: gọi \code{connectMQTT...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.641   \item
+              \code{mqttClient.loop()} luôn được gọi mỗi vòng loop để duy tr...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.641   \item \code
+                   {mqttClient.loop()} luôn được gọi mỗi vòng loop để duy tr...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ọ ("1ECD) in font cmmi12!
+
+Overfull \hbox (13.372pt too wide) in paragraph at lines 640--641
+[]\TU/lmtt/m/n/13 Nếu mất kết nối và đã qua MQTT$[]\OML/cmm/m/it/12 ETRY[]S \OT1/cmr/m/n/12 = 5000\OML/cmm/m/it/12 ms \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 gi[]:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
+
+ []
+
+
+Overfull \hbox (15.91512pt too wide) in paragraph at lines 641--642
+[]\TU/lmtt/m/n/13 mqttClient.loop() luôn được gọi mỗi vòng loop để duy trì session
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.642 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <15> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 647.
+
+
+[8]
+Overfull \hbox (6.71101pt too wide) in paragraph at lines 714--715
+\TU/lmtt/m/n/13 Sơ đồ nguyên lý được vẽ trên EasyEDA, mô tả đầy đủ kết nối giữa ESP32
+ []
+
+File: images/mach-nguyen-ly-easyeda.png Graphic file (type bmp)
+<images/mach-nguyen-ly-easyeda.png>
+
+
+[9]
+File: images/mach-vat-ly-wokwi.png Graphic file (type bmp)
+<images/mach-vat-ly-wokwi.png>
+
+
+[10]
+Overfull \hbox (20.10103pt too wide) in paragraph at lines 742--743
+\TU/lmtt/m/n/13 đề tài này, ESP32 đảm nhiệm: kết nối Wi-Fi, giao tiếp MQTT qua TLS, đọc
+ []
+
+
+Overfull \hbox (20.10101pt too wide) in paragraph at lines 742--743
+\TU/lmtt/m/n/13 5, điều khiển buzzer qua GPIO 18, và quản lý timer non-blocking cho chu
+ []
+
+
+Overfull \hbox (26.79605pt too wide) in paragraph at lines 746--747
+[]\TU/lmtt/m/n/13 DHT22 là cảm biến đo nhiệt độ và độ ẩm không khí số, sản xuất bởi Aosong
+ []
+
+
+Overfull \hbox (6.71101pt too wide) in paragraph at lines 746--747
+\TU/lmtt/m/n/13 Electronics. So với DHT11, DHT22 có độ chính xác cao hơn đáng kể (sai
+ []
+
+
+Overfull \hbox (63.21135pt too wide) in paragraph at lines 746--747
+\TU/lmtt/m/n/13 số nhiệt độ $\OMS/cmsy/m/n/12 ^^F\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5[]$\TU/lmtt/m/n/13 C so với $\OMS/cmsy/m/n/12 ^^F\OT1/cmr/m/n/12 2[]$\TU/lmtt/m/n/13 C). Giao tiếp qua giao thức 1-wire (Single-Wire).
+ []
+
+
+Overfull \hbox (40.16006pt too wide) in paragraph at lines 746--747
+\TU/lmtt/m/n/13 Dữ liệu trả về dạng 40-bit: 16 bit độ ẩm, 16 bit nhiệt độ, 8 bit checksum. 
+ []
+
+
+Overfull \hbox (1.80705pt too wide) in paragraph at lines 750--751
+[]\TU/lmtt/m/n/13 Potentiometer 10 k$\OT1/cmr/m/n/12 
+$ \TU/lmtt/m/n/13 là biến trở xoay, khi xoay thay đổi giá trị điện
+ []
+
+
+Overfull \hbox (6.698pt too wide) in paragraph at lines 750--751
+\TU/lmtt/m/n/13 phân giải 12-bit (0–4095). Trên thực tế, nên thay bằng cảm biến độ ẩm
+ []
+
+
+Overfull \hbox (20.10103pt too wide) in paragraph at lines 750--751
+\TU/lmtt/m/n/13 đất capacitive để đo trực tiếp trong đất mà không gây oxy hóa điện cực. 
+ []
+
+
+
+[11]
+Overfull \hbox (20.101pt too wide) in paragraph at lines 754--755
+[]\TU/lmtt/m/n/13 LED xanh có điện áp hoạt động khoảng 2.0--3.3V, dòng tối đa 20 mA. Điện
+ []
+
+
+Overfull \hbox (1.80704pt too wide) in paragraph at lines 754--755
+\TU/lmtt/m/n/13 trở 220$\OT1/cmr/m/n/12 
+$ \TU/lmtt/m/n/13 hạn dòng để bảo vệ LED. ESP32 dùng digitalWrite() trên GPIO
+ []
+
+
+Overfull \hbox (26.79605pt too wide) in paragraph at lines 754--755
+\TU/lmtt/m/n/13 5 để bật/tắt LED (mô phỏng bật/tắt máy bơm). Trên thực tế, thay LED bằng
+ []
+
+
+Overfull \hbox (20.10101pt too wide) in paragraph at lines 758--759
+\TU/lmtt/m/n/13 ESP32 dùng LEDC (8-bit, tần số 2000Hz, duty cycle 50%) để phát âm thanh
+ []
+
+
+Overfull \hbox (33.49104pt too wide) in paragraph at lines 764--765
+\TU/lmtt/m/n/13 Theo yêu cầu trình bày theo từng chức năng, hệ thống gồm bốn luồng chính: 
+ []
+
+
+Overfull \hbox (11.44604pt too wide) in paragraph at lines 767--768
+[]\TU/lmtt/b/n/13 Giám sát môi trường: \TU/lmtt/m/n/13 DHT22 (DATA $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 GPIO4) $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 ESP32 đọc, so ngưỡng
+ []
+
+
+Overfull \hbox (7.45605pt too wide) in paragraph at lines 767--768
+\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 đóng gói JSON $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 mqtt.publish topic iot/farm/sensor $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 Node-RED
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.768 ...r:} ESP32 kiểm tra \code{soil_raw < 1024}
+                                                   $\rightarrow$ gọi \code{t...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.768 ...r:} ESP32 kiểm tra \code{soil_raw < 1024}
+                                                   $\rightarrow$ gọi \code{t...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.768 ...m tra \code{soil_raw < 1024} $\rightarrow
+                                                  $ gọi \code{toneBuzzer(200...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (37.96677pt too wide) in paragraph at lines 768--769
+[]\TU/lmtt/b/n/13 Cảnh báo buzzer: \TU/lmtt/m/n/13 ESP32 kiểm tra soil$[]\OML/cmm/m/it/12 aw < \OT1/cmr/m/n/12 1024$$\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 gọi toneBuzzer(2000Hz,
+ []
+
+
+Overfull \hbox (6.27098pt too wide) in paragraph at lines 769--770
+[]\TU/lmtt/b/n/13 Điều khiển bơm từ xa: \TU/lmtt/m/n/13 Dashboard (button/switch) $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 mqtt out topic
+ []
+
+
+Overfull \hbox (34.23605pt too wide) in paragraph at lines 769--770
+\TU/lmtt/m/n/13 iot/farm/control $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 mqttCallback $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 digitalWrite GPIO5 $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 LED bật/tắt. 
+ []
+
+
+Overfull \hbox (18.621pt too wide) in paragraph at lines 770--771
+[]\TU/lmtt/b/n/13 Tưới tự động: \TU/lmtt/m/n/13 Node-RED kiểm tra soil < 2048 && manual == true $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 tự
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.771 \end{itemize}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (26.13242pt too wide) in paragraph at lines 825--826
+ [][] 
+ []
+
+
+
+[12]
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 831.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 831.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\rightarrow' on input line 831.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 831.
+
+
+Overfull \hbox (88.74101pt too wide) in paragraph at lines 834--835
+\TU/lmtt/b/n/13 Bước 1 -- Đo: \TU/lmtt/m/n/13 DHT22 đo nhiệt độ và độ ẩm không khí tại chân GPIO 4; potentiometer
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.836 ...umidity()} và \code{analogRead(SOIL_PIN)}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.836 ...umidity()} và \code{analogRead(SOIL_PIN)}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.837 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (141.041pt too wide) in paragraph at lines 836--837
+[]\TU/lmtt/b/n/13 Bước 2 -- Đọc: \TU/lmtt/m/n/13 loop() kiểm tra timer lastPublish; đủ 5000ms $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 gọi dht.readTemperature(),
+ []
+
+
+Overfull \hbox (22.18095pt too wide) in paragraph at lines 838--839
+[]\TU/lmtt/b/n/13 Bước 3 -- Xử lý: \TU/lmtt/m/n/13 Tính phần trăm độ ẩm đất, kiểm tra ngưỡng buzzer (soil
+ []
+
+
+Overfull \hbox (9.1809pt too wide) in paragraph at lines 840--841
+[]\TU/lmtt/b/n/13 Bước 4 -- Gửi MQTT: \TU/lmtt/m/n/13 mqttClient.publish("iot/farm/sensor", jsonBuffer)
+ []
+
+
+Overfull \hbox (16.52594pt too wide) in paragraph at lines 842--843
+[]\TU/lmtt/b/n/13 Bước 5 -- Node-RED nhận: \TU/lmtt/m/n/13 node mqtt in nhận payload, function trích giá
+ []
+
+
+Overfull \hbox (2.74596pt too wide) in paragraph at lines 844--845
+[]\TU/lmtt/b/n/13 Bước 6 -- Tách luồng: \TU/lmtt/m/n/13 Gauge, chart và toast được cập nhật tương ứng. 
+ []
+
+
+Overfull \hbox (2.48598pt too wide) in paragraph at lines 846--847
+[]\TU/lmtt/b/n/13 Bước 7 -- Hiển thị: \TU/lmtt/m/n/13 Dashboard hiển thị gauge nhiệt độ/độ ẩm, biểu đồ
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.852 ... firmware kiểm tra \code{soil_raw < 1024}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.852 ... firmware kiểm tra \code{soil_raw < 1024}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.853 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (35.6887pt too wide) in paragraph at lines 852--853
+\TU/lmtt/b/n/13 Bước 1 -- Kiểm tra ngưỡng: \TU/lmtt/m/n/13 Mỗi chu kỳ 5 giây, firmware kiểm tra soil$[]\OML/cmm/m/it/12 aw <
+ []
+
+
+
+[13]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.854 ... \code{toneBuzzer(BUZZER_PIN, 2000, 300)}
+                                                  : cấu hình LEDC tần số 200...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.854 ... \code{toneBuzzer(BUZZER_PIN, 2000, 300)}
+                                                  : cấu hình LEDC tần số 200...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.855 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ấ ("1EA5) in font cmmi12!
+Missing character: There is no ì ("EC) in font cmmi12!
+Missing character: There is no ầ ("1EA7) in font cmmi12!
+Missing character: There is no ố ("1ED1) in font cmmi12!
+Missing character: There is no ì ("EC) in font cmmi12!
+Missing character: There is no ồ ("1ED3) in font cmmi12!
+Missing character: There is no ắ ("1EAF) in font cmmi12!
+
+Overfull \hbox (283.58418pt too wide) in paragraph at lines 854--855
+[]\TU/lmtt/b/n/13 Bước 2 -- Phát buzzer: \TU/lmtt/m/n/13 Nếu đúng, gọi toneBuzzer(BUZZER$[]\OML/cmm/m/it/12 IN; \OT1/cmr/m/n/12 2000\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 300) : \OML/cmm/m/it/12 cuhnhLEDCtns\OT1/cmr/m/n/12 2000\OML/cmm/m/it/12 Hz; duty\OT1/cmr/m/n/12 127/255\OML/cmm/m/it/12 ; duytr\OT1/cmr/m/n/12 300\OML/cmm/m/it/12 msritt:$ 
+ []
+
+Missing character: There is no � (U+FFFD) in font [lmmono12-regular]:!
+Missing character: There is no � (U+FFFD) in font [lmmono12-regular]:!
+
+Overfull \hbox (11.32593pt too wide) in paragraph at lines 856--857
+[]\TU/lmtt/b/n/13 Bước 3 -- Toast trên Dashboard: \TU/lmtt/m/n/13 Đồng thời, Node-RED phát toast �� CẢNH
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 859.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\rightarrow' on input line 859.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 859.
+
+
+Overfull \hbox (3.91597pt too wide) in paragraph at lines 862--863
+\TU/lmtt/b/n/13 Bước 1 -- Thao tác: \TU/lmtt/m/n/13 Người dùng nhấn nút \TU/lmtt/b/n/13 Máy bơm \TU/lmtt/m/n/13 hoặc bật switch \TU/lmtt/b/n/13 Tưới
+ []
+
+
+Overfull \hbox (2.48593pt too wide) in paragraph at lines 864--865
+[]\TU/lmtt/b/n/13 Bước 2 -- Gửi MQTT: \TU/lmtt/m/n/13 Node-RED gửi JSON {"pump":true,"duration":5} lên
+ []
+
+
+Overfull \hbox (9.4409pt too wide) in paragraph at lines 866--867
+[]\TU/lmtt/b/n/13 Bước 3 -- ESP32 nhận: \TU/lmtt/m/n/13 mqttClient.loop() kích hoạt mqttCallback(char*,
+ []
+
+
+Overfull \hbox (30.04594pt too wide) in paragraph at lines 868--869
+[]\TU/lmtt/b/n/13 Bước 4 -- Xử lý callback: \TU/lmtt/m/n/13 Parse JSON, kiểm tra doc["pump"], bật LED GPIO
+ []
+
+
+Overfull \hbox (6.53102pt too wide) in paragraph at lines 870--871
+[]\TU/lmtt/b/n/13 Bước 5 -- Timer tắt: \TU/lmtt/m/n/13 Hết pumpDurationMs $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 gọi stopPump() $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 tắt LED. 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.879 ...D, WIFI_PASSWORD); ntpSynced = false; \}}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.879 ...D, WIFI_PASSWORD); ntpSynced = false; \}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \end{enumerate} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.880 \end{enumerate}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.880 \end{enumerate}
+                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (155.6392pt too wide) in paragraph at lines 879--880
+[]\TU/lmtt/m/n/13 if (WiFi.status() != WL$[]\OML/cmm/m/it/12 ONNECTED\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 WiFi:begin\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 WIFI[]SID; WIFI[]ASSWORD\OT1/cmr/m/n/12 ); \OML/cmm/m/it/12 ntpSynced \OT1/cmr/m/n/12 =
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.880 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (2.52509pt too wide) in paragraph at lines 885--886
+[]\TU/lmtt/m/n/13 if (!mqttClient.connected()) { if (millis() - lastMQTTRetry >=
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.889 ...{connectMQTT()} tạo \code{MQTT_CLIENT_ID}
+                                                  , gọi \code{mqttClient.con...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.889 ...{connectMQTT()} tạo \code{MQTT_CLIENT_ID}
+                                                  , gọi \code{mqttClient.con...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.889 .../password, subscribe \code{TOPIC_CONTROL}
+                                                  .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.889 .../password, subscribe \code{TOPIC_CONTROL}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.889 .../password, subscribe \code{TOPIC_CONTROL}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.890 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.894 \section{Cài đặt hệ thống}
+                                
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.894 \section{Cài đặt hệ thống}
+                                
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.894 \section{Cài đặt hệ thống}
+                                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.894 \section{Cài đặt hệ thống}
+                                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.894 \section{Cài đặt hệ thống}
+                                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ọ ("1ECD) in font cmmi12!
+Missing character: There is no ớ ("1EDB) in font cmmi12!
+
+Overfull \hbox (20.10101pt too wide) in paragraph at lines 889--894
+[]\TU/lmtt/m/n/13 Timer lastMQTTRetry tránh spam reconnect liên tục (thử lại mỗi 5 giây).
+ []
+
+
+Overfull \hbox (202.07578pt too wide) in paragraph at lines 889--894
+\TU/lmtt/m/n/13 Hàm connectMQTT() tạo MQTT$[]\OML/cmm/m/it/12 LIENT[]D; gi[]viusername\OT1/cmr/m/n/12 /\OML/cmm/m/it/12 password; subscribe[]$ 
+ []
+
+
+Overfull \hbox (13.40602pt too wide) in paragraph at lines 897--898
+\TU/lmtt/m/n/13 và chạy toàn bộ hệ thống. Làm theo thứ tự từ trên xuống dưới để có một
+ []
+
+
+
+[14]
+Overfull \hbox (15.22601pt too wide) in paragraph at lines 930--931
+[]\TU/lmtt/m/n/13 Cài đặt PlatformIO IDE cho VS Code qua Extensions: tìm \TU/lmtt/b/n/13 PlatformIO IDE\TU/lmtt/m/n/13 ,
+ []
+
+
+Overfull \hbox (29.75113pt too wide) in paragraph at lines 934--935
+[]\TU/lmtt/m/n/13 Mở VS Code $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 PlatformIO $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 New Project $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 đặt tên \TU/lmtt/b/n/13 smart-farm-iot $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 chọn
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.938 ...hêm các dòng sau vào phần \code{lib_deps}
+                                                  :
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.938 ...hêm các dòng sau vào phần \code{lib_deps}
+                                                  :
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.939 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.946 \end{lstlisting}
+                      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.946 \end{lstlisting}
+                      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (9.44104pt too wide) in paragraph at lines 954--955
+\TU/lmtt/m/n/13 Sao chép mã nguồn từ \TU/lmtt/b/n/13 Phụ lục A \TU/lmtt/m/n/13 vào \TU/lmtt/b/n/13 src/main.cpp\TU/lmtt/m/n/13 , sau đó chỉnh sửa các
+ []
+
+
+
+[15] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <9> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 959.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.984 ...ên Windows, \code{/dev/cu.SLAB_USBtoUART}
+                                                   trên macOS).
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.984 ...ên Windows, \code{/dev/cu.SLAB_USBtoUART}
+                                                   trên macOS).
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.985   \item
+              Nhấn \textbf{PlatformIO $\rightarrow$ Upload} ($\rightarrow$) ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.985   \item N
+               hấn \textbf{PlatformIO $\rightarrow$ Upload} ($\rightarrow$) ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ê ("EA) in font cmmi12!
+
+Overfull \hbox (25.6401pt too wide) in paragraph at lines 984--985
+[]\TU/lmtt/m/n/13 Chọn đúng \TU/lmtt/b/n/13 Port \TU/lmtt/m/n/13 trong \TU/lmtt/b/n/13 PlatformIO $\OMS/cmsy/m/n/12 !$ \TU/lmtt/b/n/13 Upload and Monitor \TU/lmtt/m/n/13 (ví dụ COM3
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.986 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+
+[16]
+Missing character: There is no ☰ (U+2630) in font [lmmonolt10-bold]:!
+
+Overfull \hbox (47.71512pt too wide) in paragraph at lines 1045--1046
+[]\TU/lmtt/m/n/13 Trong giao diện Node-RED, nhấn \TU/lmtt/b/n/13 ☰ (menu) $\OMS/cmsy/m/n/12 !$ \TU/lmtt/b/n/13 Manage Palette $\OMS/cmsy/m/n/12 !$ \TU/lmtt/b/n/13 Install\TU/lmtt/m/n/13 . 
+ []
+
+
+Overfull \hbox (22.44104pt too wide) in paragraph at lines 1051--1052
+[]\TU/lmtt/m/n/13 Phiên bản flow mô tả trong Phụ lục B tương thích với \TU/lmtt/b/n/13 node-red-dashboard
+ []
+
+
+Overfull \hbox (49.39015pt too wide) in paragraph at lines 1058--1059
+[]\TU/lmtt/m/n/13 Trong Phụ lục B, chọn toàn bộ mã JSON (Ctrl+A) rồi sao chép (Ctrl+C). 
+ []
+
+Missing character: There is no ☰ (U+2630) in font [lmmonolt10-bold]:!
+
+
+[17]
+Overfull \hbox (30.08511pt too wide) in paragraph at lines 1063--1064
+[]\TU/lmtt/m/n/13 Flow xuất hiện trong editor --- bấm \TU/lmtt/b/n/13 Deploy \TU/lmtt/m/n/13 (nút đỏ trên góc phải). 
+ []
+
+
+Overfull \hbox (17.3451pt too wide) in paragraph at lines 1071--1072
+[]\TU/lmtt/m/n/13 Trong editor Node-RED, tìm node \TU/lmtt/b/n/13 mqtt-broker \TU/lmtt/m/n/13 trong danh sách node
+ []
+
+
+Overfull \hbox (6.10098pt too wide) in paragraph at lines 1110--1111
+[]\TU/lmtt/m/n/13 Cách 1: Trong Node-RED, nhấn nút \TU/lmtt/b/n/13 Dashboard \TU/lmtt/m/n/13 (biểu tượng grid/gauge
+ []
+
+
+Overfull \hbox (36.00014pt too wide) in paragraph at lines 1117--1118
+[]\TU/lmtt/m/n/13 Đảm bảo ESP32 đang chạy và kết nối MQTT thành công (MQTT connected!
+ []
+
+
+
+[18]
+Overfull \hbox (2.04518pt too wide) in paragraph at lines 1123--1124
+[]\TU/lmtt/m/n/13 Thử nhấn nút \TU/lmtt/b/n/13 Máy bơm $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 LED trên mạch (hoặc Wokwi) bật trong 5
+ []
+
+
+Overfull \hbox (25.22395pt too wide) in paragraph at lines 1124--1125
+[]\TU/lmtt/m/n/13 Thử bật switch \TU/lmtt/b/n/13 Tưới tự động $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 khi đất khô (ADC $\OML/cmm/m/it/12 <$ \TU/lmtt/m/n/13 2048), hệ thống
+ []
+
+
+Overfull \hbox (17.16351pt too wide) in paragraph at lines 1125--1126
+[]\TU/lmtt/m/n/13 Thử xoay potentiometer về giá trị thấp ($\OMS/cmsy/m/n/12 ^^Y$ \TU/lmtt/m/n/13 512) $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 buzzer phát âm
+ []
+
+
+Overfull \hbox (17.73514pt too wide) in paragraph at lines 1126--1127
+[]\TU/lmtt/m/n/13 Quan sát \TU/lmtt/b/n/13 Serial Monitor \TU/lmtt/m/n/13 hiển thị log dữ liệu cảm biến, MQTT, bơm
+ []
+
+
+Overfull \hbox (30.38512pt too wide) in paragraph at lines 1141--1142
+[]\TU/lmtt/b/n/13 Kiến trúc hệ thống. \TU/lmtt/m/n/13 Sơ đồ kiến trúc ba tầng: ESP32 $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 HiveMQ Cloud
+ []
+
+File: images/so-do-kien-truc-he-thong.png Graphic file (type bmp)
+<images/so-do-kien-truc-he-thong.png>
+
+Overfull \hbox (17.86513pt too wide) in paragraph at lines 1150--1151
+[]\TU/lmtt/b/n/13 Serial Monitor. \TU/lmtt/m/n/13 Log nhiệt độ, độ ẩm, cảnh báo buzzer, trạng thái
+ []
+
+File: images/serial-monitor.png Graphic file (type bmp)
+<images/serial-monitor.png>
+
+
+[19]
+Overfull \hbox (1.56516pt too wide) in paragraph at lines 1159--1160
+[]\TU/lmtt/b/n/13 Node-RED flow. \TU/lmtt/m/n/13 Toàn bộ flow xử lý: MQTT in $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 HandleData $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 11
+ []
+
+File: images/nodered-flow-full.png Graphic file (type bmp)
+<images/nodered-flow-full.png>
+
+Overfull \hbox (18.64511pt too wide) in paragraph at lines 1168--1169
+[]\TU/lmtt/b/n/13 Dashboard (phần 1/2). \TU/lmtt/m/n/13 Độ ẩm KK, nhiệt độ, điều khiển bơm và tưới
+ []
+
+File: images/nodered-dashboard-full-1.png Graphic file (type bmp)
+<images/nodered-dashboard-full-1.png>
+
+
+[20]
+Overfull \hbox (18.6451pt too wide) in paragraph at lines 1177--1178
+[]\TU/lmtt/b/n/13 Dashboard (phần 2/2). \TU/lmtt/m/n/13 Độ ẩm đất (gauge, biểu đồ, trạng thái đất,
+ []
+
+File: images/nodered-dashboard-full-2.png Graphic file (type bmp)
+<images/nodered-dashboard-full-2.png>
+
+Overfull \hbox (72.07509pt too wide) in paragraph at lines 1186--1187
+[]\TU/lmtt/b/n/13 Mạch mô phỏng Wokwi. \TU/lmtt/m/n/13 ESP32 DevKit C v4 kết nối DHT22, LED, potentiometer
+ []
+
+
+Overfull \hbox (10.78014pt too wide) in paragraph at lines 1186--1187
+\TU/lmtt/m/n/13 và buzzer theo Bảng [][]5[][] (tương ứng \TU/lmtt/b/n/13 diagram.json \TU/lmtt/m/n/13 trong Phụ lục C). 
+ []
+
+File: images/mach-vat-ly-wokwi.png Graphic file (type bmp)
+<images/mach-vat-ly-wokwi.png>
+
+
+[21]
+
+[22]
+Overfull \hbox (7.65009pt too wide) in paragraph at lines 1250--1251
+[]\TU/lmtt/m/n/13 DHT22 đo được nhiệt độ 25.3$[]$C, độ ẩm 55.0%. Potentiometer ở giá
+ []
+
+
+Overfull \hbox (189.98505pt too wide) in paragraph at lines 1251--1252
+[]\TU/lmtt/m/n/13 ESP32 đóng gói JSON: {"device":"ESP32-01","temperature":25.3,"humidity":55.0,"soil":2048}. 
+ []
+
+
+Overfull \hbox (6.44019pt too wide) in paragraph at lines 1253--1254
+[]\TU/lmtt/m/n/13 Node-RED nhận $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 parse JSON $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 gauge và chart cập nhật giá trị. 
+ []
+
+
+Overfull \hbox (22.61014pt too wide) in paragraph at lines 1254--1255
+[]\TU/lmtt/m/n/13 Dashboard hiển thị: gauge nhiệt độ chỉ 25.3, gauge độ ẩm KK 55.0,
+ []
+
+
+Overfull \hbox (22.61017pt too wide) in paragraph at lines 1254--1255
+\TU/lmtt/m/n/13 gauge độ ẩm đất 50.0. Không có toast cảnh báo. Chu kỳ lặp lại mỗi
+ []
+
+
+Overfull \hbox (29.30516pt too wide) in paragraph at lines 1260--1261
+[]\TU/lmtt/m/n/13 Potentiometer xoay về giá trị 1024 (dưới 25% độ ẩm — đất rất khô). 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1261 ...m ESP32 kiểm tra: \code{soil_raw < 1024}
+                                                   $\rightarrow$ gọi \code{t...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.1261 ...m ESP32 kiểm tra: \code{soil_raw < 1024}
+                                                   $\rightarrow$ gọi \code{t...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1261 ...tra: \code{soil_raw < 1024} $\rightarrow
+                                                  $ gọi \code{toneBuzzer(200...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (20.09088pt too wide) in paragraph at lines 1261--1262
+[]\TU/lmtt/m/n/13 ESP32 kiểm tra: soil$[]\OML/cmm/m/it/12 aw < \OT1/cmr/m/n/12 1024$$\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 gọi toneBuzzer(2000, 300). Buzzer
+ []
+
+Missing character: There is no � (U+FFFD) in font [lmmono12-regular]:!
+Missing character: There is no � (U+FFFD) in font [lmmono12-regular]:!
+
+Overfull \hbox (27.91518pt too wide) in paragraph at lines 1263--1264
+[]\TU/lmtt/m/n/13 Switch cảnh báo đất rất khô: soil < 1024 === true $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 toast đỏ hiển
+ []
+
+
+Overfull \hbox (64.34007pt too wide) in paragraph at lines 1264--1265
+[]\TU/lmtt/m/n/13 Nếu switch \TU/lmtt/b/n/13 Tưới tự động \TU/lmtt/m/n/13 bật: Node-RED tự gửi {"pump":true,"duration":5}
+ []
+
+
+Overfull \hbox (26.52522pt too wide) in paragraph at lines 1265--1266
+[]\TU/lmtt/m/n/13 ESP32 nhận $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 bật LED (bơm) trong 5 giây $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 Serial: [PUMP] Bật bơm
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1266 \end{enumerate}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (25.13518pt too wide) in paragraph at lines 1273--1274
+[]\TU/lmtt/m/n/13 ESP32 nhận $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 mqttCallback $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 handleControlPayload $\OMS/cmsy/m/n/12 !$ \TU/lmtt/m/n/13 bật LED GPIO
+ []
+
+
+
+[23]
+Overfull \hbox (6.71101pt too wide) in paragraph at lines 1287--1288
+\TU/lmtt/m/n/13 Hệ thống IoT hoàn chỉnh ba tầng đã được triển khai và kiểm chứng trên
+ []
+
+
+Overfull \hbox (12.7301pt too wide) in paragraph at lines 1290--1291
+[]\TU/lmtt/b/n/13 Thu thập dữ liệu môi trường \TU/lmtt/m/n/13 --- ESP32 đọc DHT22 định kỳ 5 giây,
+ []
+
+
+Overfull \hbox (2.52513pt too wide) in paragraph at lines 1290--1291
+\TU/lmtt/m/n/13 đọc ADC potentiometer, chuyển đổi raw ADC sang phần trăm độ ẩm
+ []
+
+
+Overfull \hbox (4.47511pt too wide) in paragraph at lines 1291--1292
+[]\TU/lmtt/b/n/13 Cảnh báo buzzer \TU/lmtt/m/n/13 --- Phát âm thanh 2000Hz trong 300ms khi độ ẩm
+ []
+
+
+Overfull \hbox (65.22392pt too wide) in paragraph at lines 1291--1292
+\TU/lmtt/m/n/13 đất dưới 25% (raw ADC $\OML/cmm/m/it/12 <$ \TU/lmtt/m/n/13 1024), đồng thời toast cảnh báo trên Dashboard. 
+ []
+
+
+Overfull \hbox (32.29507pt too wide) in paragraph at lines 1292--1293
+[]\TU/lmtt/b/n/13 Truyền dữ liệu qua MQTT \TU/lmtt/m/n/13 --- HiveMQ Cloud (TLS 8883), ESP32 publish
+ []
+
+
+Overfull \hbox (2.52507pt too wide) in paragraph at lines 1292--1293
+\TU/lmtt/m/n/13 iot/farm/sensor, subscribe iot/farm/control. Tự động reconnect
+ []
+
+
+Overfull \hbox (32.8151pt too wide) in paragraph at lines 1293--1294
+[]\TU/lmtt/b/n/13 Xử lý và hiển thị Dashboard \TU/lmtt/m/n/13 --- NRD với gauge nhiệt độ/độ ẩm, biểu
+ []
+
+
+Overfull \hbox (24.43011pt too wide) in paragraph at lines 1294--1295
+[]\TU/lmtt/b/n/13 Điều khiển bơm \TU/lmtt/m/n/13 --- Button bật bơm thủ công và switch tưới tự động
+ []
+
+
+Overfull \hbox (2.52515pt too wide) in paragraph at lines 1294--1295
+\TU/lmtt/m/n/13 dựa trên ngưỡng độ ẩm đất. LED mô phỏng bơm 5 giây rồi tự tắt. 
+ []
+
+
+Overfull \hbox (19.4251pt too wide) in paragraph at lines 1295--1296
+[]\TU/lmtt/b/n/13 Hướng dẫn triển khai đầy đủ \TU/lmtt/m/n/13 --- Từ cài PlatformIO, thư viện, cấu
+ []
+
+
+Overfull \hbox (5.25507pt too wide) in paragraph at lines 1296--1297
+[]\TU/lmtt/b/n/13 Mô phỏng Wokwi đầy đủ \TU/lmtt/m/n/13 --- Sơ đồ mạch với diagram.json cho phép
+ []
+
+
+Overfull \hbox (42.69514pt too wide) in paragraph at lines 1306--1307
+[]\TU/lmtt/m/n/13 Xác thực chứng chỉ TLS đầy đủ (setCACert), không dùng setInsecure(). 
+ []
+
+
+Overfull \hbox (56.08511pt too wide) in paragraph at lines 1307--1308
+[]\TU/lmtt/m/n/13 Lưu trữ dữ liệu lịch sử (database, export CSV) ngoài biểu đồ real-time
+ []
+
+
+
+[24]
+Overfull \hbox (22.61015pt too wide) in paragraph at lines 1308--1309
+[]\TU/lmtt/m/n/13 Relay / máy bơm nước 12V thực sự và cảm biến độ ẩm đất capacitive
+ []
+
+
+Overfull \hbox (22.6101pt too wide) in paragraph at lines 1309--1310
+[]\TU/lmtt/m/n/13 Xác thực người dùng trên Node-RED Dashboard (adminAuth hoặc tương
+ []
+
+
+Overfull \hbox (41.01036pt too wide) in paragraph at lines 1331--1332
+\TU/lmtt/m/n/13 espClient.setCACert() 
+ []
+
+
+Overfull \hbox (14.23036pt too wide) in paragraph at lines 1331--1332
+\TU/lmtt/m/n/13 production-ready.|  
+ []
+
+[25]
+
+[26]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1347.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1359 ...ông tin sau trong code: \code{WIFI_SSID}
+                                                   và \code{WIFI_PASSWORD} (...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.1359 ...ông tin sau trong code: \code{WIFI_SSID}
+                                                   và \code{WIFI_PASSWORD} (...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1359 ...\code{WIFI_SSID} và \code{WIFI_PASSWORD}
+                                                   (tên và mật khẩu Wi-Fi); ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.1359 ...\code{WIFI_SSID} và \code{WIFI_PASSWORD}
+                                                   (tên và mật khẩu Wi-Fi); ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.1359 ...\code{WIFI_SSID} và \code{WIFI_PASSWORD}
+                                                   (tên và mật khẩu Wi-Fi); ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1359 ...và mật khẩu Wi-Fi); \code{MQTT_USERNAME}
+                                                   và \code{MQTT_PASSWORD} (...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.1359 ...và mật khẩu Wi-Fi); \code{MQTT_USERNAME}
+                                                   và \code{MQTT_PASSWORD} (...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.1359 ...và mật khẩu Wi-Fi); \code{MQTT_USERNAME}
+                                                   và \code{MQTT_PASSWORD} (...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1359 ...e{MQTT_USERNAME} và \code{MQTT_PASSWORD}
+                                                   (tài khoản HiveMQ Cloud)....
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox  #1->\leavevmode \hbox {#1}
+                                 
+l.1359 ...e{MQTT_USERNAME} và \code{MQTT_PASSWORD}
+                                                   (tài khoản HiveMQ Cloud)....
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.1359 ...e{MQTT_USERNAME} và \code{MQTT_PASSWORD}
+                                                   (tài khoản HiveMQ Cloud)....
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1360 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+Missing character: There is no ô ("F4) in font cmmi12!
+Missing character: There is no á ("E1) in font cmmi12!
+Missing character: There is no ự ("1EF1) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ã ("E3) in font cmmi12!
+Missing character: There is no đ ("111) in font cmmi12!
+Missing character: There is no ư ("1B0) in font cmmi12!
+Missing character: There is no ợ ("1EE3) in font cmmi12!
+Missing character: There is no ẩ ("1EA9) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ệ ("1EC7) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ì ("EC) in font cmmi12!
+Missing character: There is no ý ("FD) in font cmmi12!
+Missing character: There is no ả ("1EA3) in font cmmi12!
+Missing character: There is no ậ ("1EAD) in font cmmi12!
+(./main-src.txt)
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no à ("E0) in font cmmi12!
+! Missing } inserted.
+<inserted text> 
+                }
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ê ("EA) in font cmmi12!
+Missing character: There is no à ("E0) in font cmmi12!
+Missing character: There is no ậ ("1EAD) in font cmmi12!
+Missing character: There is no ẩ ("1EA9) in font cmmi12!
+! Missing } inserted.
+<inserted text> 
+                }
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1375 ...lục B --- Mã nguồn Node-RED (JSON Flow)}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no à ("E0) in font cmmi12!
+
+Overfull \hbox (34.27106pt too wide) in paragraph at lines 1359--1375
+\TU/lmtt/b/n/13 Lưu ý: \TU/lmtt/m/n/13 Trước khi nạp firmware, cần cập nhật các thông tin sau trong code:
+ []
+
+
+Overfull \hbox (856.03242pt too wide) in paragraph at lines 1359--1375
+\TU/lmtt/m/n/13 WIFI$[]\OML/cmm/m/it/12 SIDv[]$ 
+ []
+
+
+
+[27]
+Overfull \vbox (2861.31393pt too high) has occurred while \output is active []
+
+
+
+[28]
+Overfull \hbox (15.91515pt too wide) in paragraph at lines 1383--1384
+[]\TU/lmtt/m/n/13 Chọn thẻ Clipboard, dán toàn bộ mã JSON của Phụ lục B (đoạn liệt
+ []
+
+
+Overfull \hbox (15.61601pt too wide) in paragraph at lines 1388--1389
+[]\TU/lmtt/b/n/13 Lưu ý: \TU/lmtt/m/n/13 Sau khi import, kiểm tra và cập nhật cấu hình node \TU/lmtt/b/n/13 mqtt-broker\TU/lmtt/m/n/13 :
+ []
+
+
+Overfull \hbox (26.79599pt too wide) in paragraph at lines 1388--1389
+\TU/lmtt/m/n/13 hostname, port (8883), username, password phải khớp với tài khoản HiveMQ
+ []
+
+(./node-red-flow.txt
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+
+[34]
+
+[35]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+[41]
+
+[42]
+
+[43]
+
+[44]
+
+[45]
+
+[46]
+
+[47]
+
+[48]) (./wokwi-diagram.txt
+
+[49]
+
+[50])
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1434
+[]\TU/lmtt/m/n/13 Espressif Systems. \TU/lmtt/m/it/13 ESP32 Series Datasheet\TU/lmtt/m/n/13 . Truy cập: [][]$[][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1434
+[] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][][][] [] [][][][][][][] [] [][][][][] [] [][][][][][][][][][][][][] [] [][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1435--1436
+[]\TU/lmtt/m/n/13 Node-RED. \TU/lmtt/m/it/13 Node-RED Documentation\TU/lmtt/m/n/13 . IBM & others. Truy cập:
+ []
+
+
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 1439--1440
+[]\TU/lmtt/m/n/13 Seeed Studio. \TU/lmtt/m/it/13 Capacitive Soil Moisture Sensor\TU/lmtt/m/n/13 . Truy cập:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1442
+[]\TU/lmtt/m/n/13 Adafruit. \TU/lmtt/m/it/13 DHT sensor library for Arduino\TU/lmtt/m/n/13 . Truy cập: [][]$[][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1443--1444
+[]\TU/lmtt/m/n/13 Nick O'Leary. \TU/lmtt/m/it/13 PubSubClient for Arduino\TU/lmtt/m/n/13 . Truy cập: [][]$[][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1445--1446
+[]\TU/lmtt/m/n/13 Node-RED. \TU/lmtt/m/it/13 node-red-dashboard\TU/lmtt/m/n/13 . Truy cập: [][]$[][][][][] [] [] [] [][][][][] [] [][][][][][][] []
+ []
+
+
+
+[52] (./output.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-05-26>
+ ***********
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+Package rerunfilecheck Info: File `output.out' has not changed.
+(rerunfilecheck)             Checksum: 79B1580F7C3C96D1DAD7552FFFC8C18E;9774.
+ )
+(\end occurred inside a group at level 9)
+
+### simple group (level 9) entered at line 1359 ({)
+### simple group (level 8) entered at line 938 ({)
+### simple group (level 7) entered at line 889 ({)
+### simple group (level 6) entered at line 854 ({)
+### simple group (level 5) entered at line 852 ({)
+### simple group (level 4) entered at line 836 ({)
+### simple group (level 3) entered at line 512 ({)
+### simple group (level 2) entered at line 457 ({)
+### simple group (level 1) entered at line 435 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 27483 strings out of 468527
+ 558210 string characters out of 5447699
+ 2484939 words of memory out of 5000000
+ 55348 multiletter control sequences out of 15000+600000
+ 636116 words of font info for 127 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 84i,18n,93p,507b,2977s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on output.xdv (56 pages, 1949108 bytes).
