@@ -6,18 +6,18 @@
 #include <DHT.h>
 
 #ifdef WOKWI
-const char *WIFI_SSID = "Wokwi-GUEST";
+const char *WIFI_SSID = "";
 const char *WIFI_PASSWORD = "";
 #else
-const char *WIFI_SSID = "YOUR_WIFI_SSID";
-const char *WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
+const char *WIFI_SSID = "";
+const char *WIFI_PASSWORD = "";
 #endif
 
-const char *MQTT_BROKER = "b1c8f2cc5cd4416fb74b671a407dc0ff.s1.eu.hivemq.cloud";
-const int MQTT_PORT = 8883;
+const char *MQTT_BROKER = "";
+const int MQTT_PORT = ;
 const char *MQTT_CLIENT_ID = "esp32-sensor-01";
-const char *MQTT_USERNAME = "hivemq.webclient.1775680760112";
-const char *MQTT_PASSWORD = "amy&f0VPG3c5<8,U>qAB";
+const char *MQTT_USERNAME = "";
+const char *MQTT_PASSWORD = "";
 
 const char *TOPIC_SENSOR = "iot/farm/sensor";
 const char *TOPIC_CONTROL = "iot/farm/control";
@@ -73,12 +73,12 @@ void handleControlPayload(const char *payload, size_t len)
       pumpActive = true;
       pumpStartTime = millis();
       digitalWrite(LED_PIN, HIGH);
-      Serial.printf("[PUMP] Bat bom trong %d giay\n", durationS);
+      Serial.printf("[PUMP] Bật bơm trong %d giây\n", durationS);
     }
     else
     {
       stopPump();
-      Serial.println("[PUMP] Tat bom");
+      Serial.println("[PUMP] Tắt bơm");
     }
   }
 }
@@ -165,7 +165,7 @@ void checkPumpTimeout()
   if (pumpActive && (millis() - pumpStartTime >= PUMP_DURATION_MS))
   {
     stopPump();
-    Serial.println("[PUMP] Het thoi gian, tat bom");
+    Serial.println("[PUMP] Hết thời gian, tắt bơm");
   }
 }
 
