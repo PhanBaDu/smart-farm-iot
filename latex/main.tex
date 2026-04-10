@@ -3,10 +3,10 @@
 %  Thiết kế và triển khai hệ thống giám sát và điều khiển môi trường trang trại thông minh
 %  Sinh viên: [Đã ẩn thông tin]
 % =============================================================================
-\documentclass[13pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 
 % =============================================================================
-% 1. TIẾNG VIỆT (XeLaTeX)
+% 1. TIẾNG VIỆT (XeLaTeX) & SIZE 13
 % =============================================================================
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -14,6 +14,10 @@
 \setotherlanguage{english}
 
 \setmainfont{Times New Roman}
+
+% Để có cỡ chữ 13pt chuẩn
+\usepackage{scrextend}
+\changefontsizes{13pt}
 
 % =============================================================================
 % 2. MARGIN & PAGE
@@ -323,14 +327,14 @@ Xin trân trọng cảm ơn!
 \subsection{Bối cảnh và tính cấp thiết của đề tài}
 Trong bối cảnh biến đổi khí hậu diễn biến phức tạp và quá trình đô thị hóa diễn ra nhanh chóng, việc áp dụng công nghệ thông minh vào sản xuất nông nghiệp ngày càng trở nên quan trọng và thực tiễn. Hiện nay, phương pháp tưới tiêu thủ công tại các mô hình nhà kính, trang trại vừa và nhỏ, hay quy mô hộ gia đình (sân thượng, ban công) thường bộc lộ nhiều hạn chế, tốn kém thời gian và khó đảm bảo cung cấp nước đúng mức độ, đúng thời điểm. Những khó khăn này đặt ra nhu cầu lớn trong việc ứng dụng Internet of Things (IoT) để chuyển đổi số nông nghiệp. 
 
-Việc trang bị một hệ thống có khả năng tự động theo dõi xuyên suốt các thông số thiết yếu (nhiệt độ, độ ẩm không khí, độ ẩm của đất) kết hợp với chức năng cảnh báo sớm và điều khiển bơm tưới tiêu từ xa là một tiện ích không thể thiếu. Tính năng tự động hóa giám sát — truyền dữ liệu lên máy chủ cloud — cập nhật lên giao diện trực quan (Dashboard) và đẩy các lệnh điều khiển ngược trở lại cho thiết bị phần cứng chính là hướng tiếp cận hiệu quả nhằm giải quyết nhu cầu hiển hiện trên. Đồng thời, đây cũng là hướng đi bám sát với mục đích và nội dung cốt lõi mong đợi của học phần Phát triển Ứng dụng IoT.
+Việc trang bị một hệ thống có khả năng tự động theo dõi xuyên suốt các thông số thiết yếu (nhiệt độ, độ ẩm không khí, độ ẩm của đất) kết hợp với chức năng cảnh báo sớm và điều khiển bơm tưới tiêu từ xa là một tiện ích không thể thiếu. Tính năng tự động hóa giám sát — publish dữ liệu lên MQTT Cloud Broker — cập nhật lên giao diện trực quan (Dashboard) và thực hiện subscribe các lệnh điều khiển ngược trở lại cho thiết bị phần cứng chính là hướng tiếp cận hiệu quả nhằm giải quyết nhu cầu hiển hiện trên. Đồng thời, đây cũng là hướng đi bám sát với mục đích và nội dung cốt lõi mong đợi của học phần Phát triển Ứng dụng IoT.
 
 \subsection{Mục tiêu thiết kế và phạm vi nghiên cứu}
 Đề tài tập trung thiết kế và triển khai một hệ thống mô phỏng quy trình giám sát và điều khiển trang trại thông minh cỡ nhỏ. Các mục tiêu kỹ thuật cụ thể được giới hạn trong phạm vi thực thi thống nhất giữa Firmware và Flow điều khiển như sau:
 
 \begin{itemize}
   \item Đọc nhiệt độ, độ ẩm không khí (DHT22, GPIO 4) và độ ẩm đất mô phỏng bằng biến trở (ADC GPIO 34), chu kỳ 5 giây.
-  \item Truyền dữ liệu JSON lên broker HiveMQ Cloud qua MQTT TLS (cổng 8883), topic \code{iot/farm/sensor}; nhận lệnh điều khiển tại \code{iot/farm/control}.
+  \item Publish dữ liệu JSON lên MQTT Broker (HiveMQ Cloud) qua giao thức TLS (cổng 8883), topic \code{iot/farm/sensor}; đồng thời subscribe để nhận lệnh điều khiển tại topic \code{iot/farm/control}.
   \item Điều khiển LED mô phỏng máy bơm (GPIO 5), cảnh báo buzzer (GPIO 18) khi đất khô (ngưỡng raw ADC $<$ 2048 trong code).
   \item Node-RED Dashboard: gauge, biểu đồ, toast cảnh báo, nút bơm thủ công và chế độ tưới tự động theo \file{node-red.json}.
 \end{itemize}
@@ -351,15 +355,38 @@ Firmware định kỳ 5 giây (\code{PUBLISH_INTERVAL}) gọi \code{readSensor()
 
 DHT22 đo KK theo giao tiếp 1-wire; độ chính xác tốt hơn DHT11. Potentiometer mô phỏng cảm biến độ ẩm đất: giá trị ADC càng thấp thì trên Dashboard (công thức \code{(1 - soil/4095)*100}) đất càng khô.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.22\linewidth]{dht22.png}
+  \caption{Cảm biến DHT22 đo đạc thông số nhiệt độ và độ ẩm không khí}
+  \label{fig:2_dht22}
+\end{figure}
+
 \subsection{Chỉ báo cục bộ: LED mô phỏng máy bơm và buzzer cảnh báo}
 
 GPIO \code{LED_PIN} (5) điều khiển LED cực dương (mô phỏng máy bơm). GPIO \code{BUZZER_PIN} (18) dùng PWM qua \code{ledc} trong hàm \code{toneBuzzer()}: khi \code{soilRaw < 2048}, firmware phát cảnh báo 2\,kHz trong 300\,ms mỗi chu kỳ đọc (\file{main.cpp}).
 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.45\linewidth]{led.png}
+    \caption{Đèn LED mô phỏng máy bơm}
+    \label{fig:2_led}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.45\linewidth]{buzzer.png}
+    \caption{Còi Buzzer phát âm thanh cảnh báo}
+    \label{fig:2_buzzer}
+  \end{minipage}
+\end{figure}
+
 \subsection{Truyền dữ liệu qua MQTT (HiveMQ Cloud, TLS)}
 
-MQTT (Message Queuing Telemetry Transport) là giao thức truyền thông nhẹ, được thiết kế đặc biệt cho các thiết bị IoT có băng thông thấp, năng lượng hạn chế hoặc kết nối không ổn định. MQTT hoạt động theo mô hình publisher/subscriber (pub/sub), trong đó thiết bị gửi (publisher) đẩy dữ liệu lên một topic trên MQTT Broker, và các thiết bị nhận (subscriber) đăng ký nhận topic tương ứng. Mô hình này tách biệt người gửi và người nhận, giúp hệ thống dễ mở rộng.
+MQTT (Message Queuing Telemetry Transport) là giao thức truyền thông nhẹ, được thiết kế đặc biệt cho các thiết bị IoT có băng thông thấp, năng lượng hạn chế hoặc kết nối không ổn định. MQTT hoạt động theo mô hình publisher/subscriber (pub/sub), trong đó thiết bị gửi (publisher) thực hiện publish dữ liệu lên một topic trên MQTT Broker, và các thiết bị nhận (subscriber) sẽ subscribe vào các topic tương ứng để nhận dữ liệu. Mô hình này tách biệt người gửi và người nhận, giúp hệ thống dễ mở rộng.
 
-MQTT sử dụng cơ chế QoS (Quality of Service) với ba mức: QoS 0 (At most once) — message gửi một lần, không xác nhận; QoS 1 (At least once) — gửi ít nhất một lần, có xác nhận, đảm bảo message đến; QoS 2 (Exactly once) — đảm bảo message đến đúng một lần, phù hợp cho các ứng dụng yêu cầu độ tin cậy cao. Trong đề tài này, QoS 0 được sử dụng cho cả việc gửi dữ liệu cảm biến (\code{iot/farm/sensor}) và điều khiển (\code{iot/farm/control}), phù hợp với tần suất dữ liệu không quá cao.
+MQTT sử dụng cơ chế QoS (Quality of Service) với ba mức: QoS 0 (At most once) — message được publish một lần, không xác nhận; QoS 1 (At least once) — gửi ít nhất một lần, có xác nhận, đảm bảo message đến; QoS 2 (Exactly once) — đảm bảo message đến đúng một lần, phù hợp cho các ứng dụng yêu cầu độ tin cậy cao. Trong đề tài này, QoS 0 được sử dụng cho cả việc publish dữ liệu cảm biến (\code{iot/farm/sensor}) và điều khiển (\code{iot/farm/control}), phù hợp với tần suất dữ liệu không quá cao.
 
 HiveMQ Cloud là dịch vụ MQTT Broker dạng cloud do HiveMQ cung cấp, hỗ trợ giao thức bảo mật TLS (Transport Layer Security) trên cổng 8883, đảm bảo dữ liệu truyền giữa thiết bị và broker được mã hóa end-to-end. HiveMQ Cloud có gói miễn phí (Free Tier) cho phép kết nối tối đa 100 thiết bị, đủ cho các ứng dụng demo và học tập.
 
@@ -399,7 +426,7 @@ Nhánh thứ chín (\textbf{Cảnh báo đất khô}): switch node kiểm tra \c
 
 Nhánh thứ mười (\textbf{Cảnh báo nguy hiểm — đất rất khô}): switch node kiểm tra \code{payload.soil < 1024} (dưới 25\% độ ẩm), hiển thị cảnh báo đỏ trên Dashboard (bổ sung cho nhánh 9; buzzer trên ESP32 trong \file{main.cpp} chỉ theo ngưỡng \code{soilRaw < 2048}, không tách thêm ngưỡng 1024).
 
-Nhánh thứ mười một (\textbf{Tưới tự động}): switch node kiểm tra độ ẩm đất $<$ 2048 đồng thời \code{flow.manual == true} (switch \textit{Tưới tự động} trên Dashboard gán biến flow tên \code{manual} --- trùng tên với file \file{node-red.json}). Nếu thỏa điều kiện, change node tạo JSON \code{\{"pump":true,"duration":5\}} gửi tới mqtt out topic \code{iot/farm/control}.
+Nhánh thứ mười một (\textbf{Tưới tự động}): switch node kiểm tra độ ẩm đất $<$ 2048 đồng thời \code{flow.manual == true} (switch \textit{Tưới tự động} trên Dashboard gán biến flow tên \code{manual} --- trùng tên với file \file{node-red.json}). Nếu thỏa điều kiện, change node tạo cấu trúc JSON \code{\{"pump":true,"duration":5\}} và publish thông qua node \textbf{mqtt out} đến topic \code{iot/farm/control}.
 
 \begin{figure}[H]
   \centering
@@ -432,7 +459,7 @@ Trên Dashboard: toast khi \code{temperature > 35}, khi \code{humidity < 40}, kh
 
 \subsection{Điều khiển máy bơm từ xa qua MQTT}
 
-Topic \code{iot/farm/control} nhận JSON; \code{handleControlPayload()} đọc \code{pump} (boolean) và \code{duration} (giây, mặc định 5 --- dùng trong log Serial). Khi \code{pump == true}, LED bật, \code{pumpStartTime} được gán; \code{checkPumpTimeout()} tắt bơm sau \code{PUMP_DURATION_MS} (5000\,ms) --- thời gian tắt thực tế đang cố định theo hằng số này (\file{main.cpp}).
+Hệ thống cung cấp khả năng điều khiển thiết bị chấp hành thông qua các bản tin định hướng từ máy chủ. Cụ thể, thiết bị ESP32 thực hiện subscribe vào topic điều khiển \code{iot/farm/control} để chờ nhận lệnh. Khi nhận được một gói tin JSON chứa chỉ thị kích hoạt máy bơm, bộ vi xử lý sẽ tiến hành parse dữ liệu và thực thi việc bật cơ cấu chấp hành (mô phỏng bằng đèn LED). Để đảm bảo an toàn và tiết kiệm tài nguyên, hệ thống tích hợp cơ chế tự động ngắt sau một khoảng thời gian vận hành dự kiến. Quy trình này giúp duy trì sự đồng bộ giữa trạng thái hiển thị trên Dashboard và hoạt động thực tế của thiết bị, đồng thời bảo vệ hệ thống khỏi các lỗi vận hành kéo dài không mong muốn.
 
 \begin{figure}[H]
   \centering
@@ -443,11 +470,11 @@ Topic \code{iot/farm/control} nhận JSON; \code{handleControlPayload()} đọc 
 
 \subsection{Duy trì kết nối và đồng bộ trạng thái bơm}
 
-\code{loop()} kiểm tra Wi-Fi, gọi lại \code{setupWiFi()} nếu mất kết nối; nếu MQTT ngắt, \code{reconnectMQTT()} được gọi tối đa mỗi \code{MQTT_RETRY_MS} (5\,s). \code{mqttClient.loop()} xử lý message điều khiển. \code{checkPumpTimeout()} tắt bơm khi hết thời gian để trạng thái LED khớp thời gian chạy đã gửi.
+Hệ thống được thiết kế để tự động giám sát và duy trì tính ổn định của các kết nối mạng. Trong vòng lặp chính của chương trình, vi điều khiển liên tục kiểm tra trạng thái của Wi-Fi và giao thức MQTT. Nếu phát hiện sự cố ngắt kết nối, quy trình tái lập liên kết sẽ được thực hiện định kỳ cho đến khi thông tin giao tiếp được khôi phục. Đồng thời, cơ chế giám sát thời gian vận hành máy bơm cũng được thực thi song song để đảm bảo thiết bị tự động ngắt sau một khoảng thời gian quy định, giữ cho trạng thái thực tế luôn khớp với lệnh điều khiển đã gửi.
 
 \subsection{Tự động tưới theo ngưỡng độ ẩm đất (Node-RED)}
 
-Hệ thống kết hợp đánh giá điều kiện \code{soil < 2048} và trạng thái biến flow \code{manual == true} (thu nhận từ thao tác bật switch \textit{Tưới tự động} trên giao diện Dashboard). Khi cả hai điều kiện này đồng thời thoả mãn, logic trên Node-RED sẽ tự động kích hoạt và gửi bản tin JSON \code{\{"pump":true,"duration":5\}} sang topic \code{iot/farm/control} nhằm bật máy bơm tưới bù độ ẩm cho đất.
+Hệ thống tích hợp logic điều khiển tự động dựa trên sự kết hợp giữa các thông số cảm biến thực tế và thiết lập từ người dùng. Khi chế độ tưới tự động được kích hoạt trên Dashboard, hệ thống sẽ liên tục đánh giá giá trị độ ẩm đất đo được. Nếu độ ẩm giảm xuống dưới ngưỡng khô hạn đã thiết lập, Node-RED sẽ tự động tạo và publish các payload điều khiển qua giao thức MQTT để kích hoạt máy bơm nước tưới bù độ ẩm, đảm bảo duy trì môi trường lý tưởng cho cây trồng.
 
 % =============================================================================
 % 3. THIẾT KẾ MẠCH IOT
@@ -556,57 +583,66 @@ Hình~\ref{fig:wokwi}.
 \subsection{Giải thích các linh kiện chính}
 
 \subsubsection{Vi điều khiển ESP32 DevKit C v4}
-ESP32 là một hệ thống trên một vi mạch (SoC) mạnh mẽ, được tích hợp sẵn kết nối Wi-Fi và Bluetooth. Với vi xử lý Xtensa dual-core tốc độ cao cùng bộ chuyển đổi tín hiệu tương tự sang số (ADC) 12-bit, ESP32 lý tưởng cho các ứng dụng IoT đòi hỏi khả năng tính toán và kết nối mạng liên tục. Trong hệ thống này, ESP32 đóng vai trò là "bộ não" thu thập dữ liệu và xử lý các lệnh điều khiển.
+ESP32 là một hệ thống trên chip (SoC) tích hợp Wi-Fi và Bluetooth, được xây dựng trên nền vi xử lý Xtensa LX6 dual-core hiệu năng cao. Với bộ chuyển đổi tín hiệu tương tự sang số (ADC) 12-bit có độ phân giải cao, ESP32 có khả năng đọc chính xác các tín hiệu điện áp từ cảm biến analog. Trong hệ thống này, ESP32 đóng vai trò trung tâm điều phối: thu thập dữ liệu từ cảm biến, xử lý tín hiệu và duy trì kết nối liên tục lên đám mây qua giao thức MQTT bảo mật.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.45\linewidth]{esp32.png}
-  \caption{Mạch vi điều khiển ESP32 DevKit C}
+  \includegraphics[width=0.42\linewidth]{esp32.png}
+  \caption{Mạch vi điều khiển ESP32 DevKit C v4}
   \label{fig:hw_esp32_detail}
 \end{figure}
 
-\subsubsection{Cảm biến nhiệt độ và độ ẩm DHT22}
-DHT22 là chuẩn cảm biến môi trường phổ biến với khả năng đo đạc nhiệt độ và độ ẩm không khí mang lại độ phân giải và độ chính xác cao hơn hẳn so với dòng cũ (DHT11). Cảm biến sử dụng giao tiếp kỹ thuật số 1-wire, cho phép truyền dữ liệu đã được số hóa trực tiếp về vi điều khiển một cách đáng tin cậy.
+\subsubsection{Cảm biến nhiệt độ và độ ẩm không khí DHT22}
+DHT22 là cảm biến đo môi trường sử dụng giao tiếp số 1-wire, cho phép đo đồng thời nhiệt độ (độ chính xác $\pm$0.5\textdegree C) và độ ẩm không khí (độ chính xác $\pm$2--5\%). So với thế hệ trước (DHT11), DHT22 cải thiện đáng kể về phạm vi đo và độ phân giải, phù hợp cho các ứng dụng nông nghiệp yêu cầu theo dõi môi trường chính xác.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\linewidth]{dht22.png}
-  \caption{Cảm biến DHT22 thực tế}
+  \includegraphics[width=0.38\linewidth]{dht22.png}
+  \caption{Cảm biến DHT22 đo nhiệt độ và độ ẩm không khí}
   \label{fig:hw_dht22_detail}
 \end{figure}
 
 \subsubsection{Biến trở (mô phỏng cảm biến độ ẩm đất)}
-Trong giới hạn mô phỏng của đề tài, một biến trở (Potentiometer) được sử dụng để đóng vai trò thay thế cho cảm biến đo độ ẩm đất analog thực tế. Bằng cách xoay trục biến trở, linh kiện này sẽ thay đổi phân áp để đưa về một tín hiệu điện áp tuyến tính, qua đó mô phỏng các giá trị từ khi đất rất khô đến khi ngập nước theo miền giá trị điện áp tương ứng.
+Trong phạm vi mô phỏng của đề tài, biến trở (Potentiometer) được sử dụng thay thế cho cảm biến đo độ ẩm đất chuyên dụng. Khi xoay trục biến trở, điện trở thay đổi làm thay đổi mức điện áp trên chân tín hiệu, từ đó mô phỏng dải giá trị từ đất khô hoàn toàn đến đất bão hòa nước. Kết quả đọc được qua bộ ADC sẽ được quy đổi sang phần trăm độ ẩm để hiển thị trực quan trên Dashboard.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\linewidth]{potentiometer.png}
-  \caption{Biến trở xoay dùng trong mô phỏng}
+  \includegraphics[width=0.38\linewidth]{potentiometer.png}
+  \caption{Biến trở xoay dùng mô phỏng tín hiệu độ ẩm đất}
   \label{fig:hw_pot_detail}
 \end{figure}
 
 \subsubsection{Cơ cấu chấp hành và tín hiệu cảnh báo (LED \& Buzzer)}
-Để phản ánh trực quan quá trình điều khiển thiết bị bơm nước trong mô phỏng, hệ thống sử dụng một bóng đèn LED để thể hiện trạng thái đóng/cắt của máy bơm. Cùng với đó, một còi sinh âm (Buzzer) được sử dụng như một phương tiện cảnh báo cục bộ, nó sẽ tạo ra những âm thanh báo động ở tần số cao khi phát hiện môi trường đang bị khô hạn nghiêm trọng.
+Hệ thống sử dụng hai thiết bị đầu ra để phản ánh trực quan kết quả điều khiển. Đèn LED đóng vai trò giả lập trạng thái hoạt động của máy bơm nước: sáng khi bơm đang vận hành, tắt khi bơm ngừng. Còi sinh âm (Buzzer) được điều khiển bằng xung PWM, phát tín hiệu âm thanh cường độ cao khi hệ thống phát hiện độ ẩm đất xuống dưới ngưỡng cảnh báo khô hạn, nhằm thông báo kịp thời cho người vận hành.
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.45\textwidth}
+  \begin{minipage}{0.46\textwidth}
     \centering
-    \includegraphics[width=0.7\linewidth]{led.png}
-    \caption{Đèn LED hiển thị đóng/cắt}
+    \includegraphics[width=0.65\linewidth]{led.png}
+    \caption{Đèn LED mô phỏng trạng thái máy bơm}
     \label{fig:hw_led_detail}
   \end{minipage}\hfill
-  \begin{minipage}{0.45\textwidth}
+  \begin{minipage}{0.46\textwidth}
     \centering
-    \includegraphics[width=0.7\linewidth]{buzzer.png}
-    \caption{Còi loa Buzzer báo hiệu âm thanh}
+    \includegraphics[width=0.65\linewidth]{buzzer.png}
+    \caption{Còi Buzzer phát âm thanh cảnh báo}
     \label{fig:hw_buz_detail}
   \end{minipage}
 \end{figure}
 
+
 \subsection{Luồng hoạt động tóm tắt theo chức năng}
 
-Thu thập $\rightarrow$ xử lý ngưỡng buzzer $\rightarrow$ đóng gói JSON $\rightarrow$ MQTT publish; song song subscribe \code{iot/farm/control} để bật/tắt bơm và \code{checkPumpTimeout}. Chi tiết sơ đồ kiến trúc, luồng dữ liệu và lưu đồ firmware xem chương~\ref{sec:ch4}.
+Toàn bộ hoạt động của hệ thống diễn ra theo một vòng lặp liên tục: vi điều khiển định kỳ thu thập dữ liệu từ các cảm biến, thực hiện kiểm tra ngưỡng để kích hoạt cảnh báo âm thanh khi cần, sau đó đóng gói kết quả thành bản tin JSON và gửi lên broker MQTT. Song song với đó, hệ thống luôn lắng nghe các lệnh điều khiển từ Dashboard để bật hoặc tắt máy bơm, đồng thời tự động ngắt bơm sau một khoảng thời gian chạy định sẵn nhằm tránh bơm hoạt động quá lâu. Chi tiết về sơ đồ kiến trúc và luồng dữ liệu được trình bày trong Chương~4.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{image-3-4.png}
+  \caption{Sơ đồ luồng hoạt động tóm tắt theo chức năng của hệ thống}
+  \label{fig:luong-3-4}
+\end{figure}
+
 
 % =============================================================================
 % 4. NGUYÊN LÝ HOẠT ĐỘNG
@@ -620,7 +656,7 @@ Thu thập $\rightarrow$ xử lý ngưỡng buzzer $\rightarrow$ đóng gói JSO
 
 \subsection{Sơ đồ luồng hệ thống (kiến trúc ba tầng)}
 
-Hệ thống gồm tầng thiết bị (ESP32 + cảm biến/chấp hành), tầng trung gian (HiveMQ Cloud, TLS), tầng ứng dụng (Node-RED Dashboard). Topic \code{iot/farm/sensor} và \code{iot/farm/control} là giao diện dữ liệu giữa các tầng.
+Kiến trúc của hệ thống được xây dựng dựa trên mô hình ba tầng tiêu chuẩn của một ứng dụng IoT hiện đại. Tầng dưới cùng là tầng thiết bị, bao gồm vi điều khiển ESP32 kết nối trực tiếp với các cảm biến và cơ cấu chấp hành. Tầng chính giữa là tầng trung gian, sử dụng dịch vụ Broker của HiveMQ Cloud với giao thức bảo mật TLS để chuyển tiếp dữ liệu một cách an toàn. Trên cùng là tầng ứng dụng với Node-RED Dashboard, đóng vai trò là giao diện trung tâm để người dùng giám sát các thông số môi trường và phát lệnh điều khiển ngược trở lại thiết bị qua các chủ đề (topic) đã được định nghĩa thống nhất.
 
 \begin{figure}[H]
   \centering
@@ -631,7 +667,8 @@ Hệ thống gồm tầng thiết bị (ESP32 + cảm biến/chấp hành), tầ
 
 \subsection{Luồng giám sát: cảm biến $\rightarrow$ MQTT $\rightarrow$ Dashboard}
 
-ESP32 đọc cảm biến, gọi \code{publishSensorData()} khi MQTT đã kết nối; broker chuyển payload JSON tới Node-RED; các nhánh gauge/chart/toast hiển thị (mô tả chương~\ref{sec:ch2}).
+Luồng giám sát được thực hiện theo cơ chế định kỳ: cứ mỗi chu kỳ 5 giây, vi điều khiển đọc dữ liệu từ cảm biến nhiệt độ, độ ẩm không khí và tín hiệu ADC từ biến trở mô phỏng độ ẩm đất. Toàn bộ dữ liệu được đóng gói thành một bản tin JSON có cấu trúc thống nhất rồi gửi lên MQTT Broker (HiveMQ Cloud) qua kết nối bảo mật TLS. Broker sau đó phân phát bản tin tới Node-RED — nơi các luồng xử lý song song phân tích giá trị và cập nhật lên các widget tương ứng trên Dashboard: đồng hồ đo (gauge), biểu đồ theo thời gian thực (line chart) và thông báo cảnh báo (toast notification). Kiến trúc ba tầng của luồng này được minh họa tại Hình~\ref{fig:kien-truc} (mục~4.1).
+
 
 \subsection{Luồng điều khiển: Dashboard $\rightarrow$ MQTT $\rightarrow$ ESP32 (LED mô phỏng bơm)}
 
@@ -655,15 +692,16 @@ ESP32 thực hiện chu trình: khởi tạo Serial 115200, Wi-Fi, DHT, GPIO, MQ
 
 \subsection{Luồng đồng bộ trạng thái bơm và giới hạn thời gian chạy}
 
-Biến \code{pumpActive} và \code{checkPumpTimeout()} đảm bảo LED tắt sau \code{PUMP_DURATION_MS} (5\,s), khớp hành vi ``bơm một khoảng thời gian'' khi nhận lệnh từ Dashboard.
+Để tránh tình trạng máy bơm hoạt động không kiểm soát, hệ thống triển khai cơ chế giám sát thời gian chạy tự động. Ngay khi nhận lệnh kích hoạt bơm từ Dashboard, vi điều khiển ghi lại thời điểm bắt đầu và theo dõi thời gian đã trôi qua. Khi thời gian vận hành đạt ngưỡng giới hạn định sẵn (5 giây), hệ thống tự động ngắt bơm và cập nhật trạng thái đèn LED tương ứng — đảm bảo hành vi thực tế của thiết bị luôn đồng bộ với trạng thái hiển thị trên giao diện điều khiển.
 
 \subsection{Luồng tưới tự động theo ngưỡng độ ẩm đất (Node-RED)}
 
-Hệ thống tự động kích hoạt gửi lệnh bơm hoạt động dựa trên phương pháp đánh giá ngưỡng độ ẩm đất thực tế (\code{soil < 2048}) và tín hiệu cho phép chế độ vận hành tự động từ quản trị viên (\code{flow.manual == true}).
+Chế độ tưới tự động được kích hoạt dựa trên hai điều kiện đồng thời: giá trị độ ẩm đất đo được thấp hơn ngưỡng cảnh báo khô hạn, và người dùng đã bật chế độ tự động trên Dashboard. Khi cả hai điều kiện này được thỏa mãn, Node-RED tự động phát lệnh kích hoạt bơm mà không cần can thiệp thủ công. Cơ chế này hoàn toàn dựa trên giá trị cảm biến thực tế, không phụ thuộc vào lịch thời gian hay đồng hồ hệ thống.
 
 \subsection{Luồng duy trì kết nối Wi-Fi và MQTT}
 
-\code{loop()} gọi lại \code{setupWiFi()} khi mất Wi-Fi; \code{reconnectMQTT()} lặp mỗi 5\,s khi mất MQTT; \code{mqttClient.loop()} duy trì session và nhận lệnh điều khiển.
+Tính ổn định của hệ thống IoT phụ thuộc lớn vào khả năng tự phục hồi kết nối mạng. Vi điều khiển liên tục kiểm tra trạng thái kết nối Wi-Fi trong mỗi vòng lặp; nếu phát hiện mất kết nối, hệ thống tự động thực hiện kết nối lại mà không làm gián đoạn các tác vụ khác. Tương tự, nếu phiên kết nối MQTT bị ngắt, hệ thống định kỳ thử kết nối lại tối đa mỗi 5 giây — đảm bảo luồng dữ liệu cảm biến và các lệnh điều khiển không bị gián đoạn lâu dài.
+
 
 % =============================================================================
 % 5. CÀI ĐẶT HỆ THỐNG
@@ -675,41 +713,62 @@ Hệ thống tự động kích hoạt gửi lệnh bơm hoạt động dựa tr
 \setcounter{section}{5}
 \setcounter{subsection}{0}
 
-\subsection{Yêu cầu phần mềm}
+\subsection{Chuẩn bị công cụ và môi trường phát triển}
 
-Máy phát triển cần Windows/macOS/Linux với VS Code, PlatformIO extension; Node.js 18 LTS trở lên; trình duyệt web để mở Node-RED và Dashboard.
+Trước khi tiến hành cài đặt, người dùng cần chuẩn bị các phần mềm và môi trường nền tảng sau để đảm bảo hệ thống vận hành ổn định:
+\begin{itemize}
+    \item \textbf{Visual Studio Code:} Trình soạn thảo mã nguồn chính, tải tại \url{https://code.visualstudio.com/}.
+    \item \textbf{PlatformIO IDE:} Tiện ích mở rộng trong VS Code dùng để quản lý dư án và thư viện cho ESP32, thông tin tại \url{https://platformio.org/}.
+    \item \textbf{Node.js:} Nền tảng thực thi JavaScript phía máy chủ, tải phiên bản LTS tại \url{https://nodejs.org/}.
+    \item \textbf{Node-RED:} Công cụ lập trình luồng (flow-based), hướng dẫn cài đặt tại \url{https://nodered.org/docs/getting-started/local}.
+\end{itemize}
 
-\subsection{Công cụ biên dịch và thư viện firmware}
+\subsection{Khởi tạo sơ đồ mạch mô phỏng và cấu hình phần cứng}
 
-Cài PlatformIO; thêm project từ mã nguồn đề tài; các thư viện khai báo trong \file{platformio.ini} (Arduino framework, DHT, PubSubClient, ArduinoJson, v.v.) được PlatformIO tải tự động khi build.
+Trong đề tài này, việc kiểm thử phần cứng được thực hiện thông qua nền tảng mô phỏng trực tuyến Wokwi (\url{https://wokwi.com/}). Quy trình thiết lập như sau:
+\begin{enumerate}
+    \item Truy cập Wokwi và khởi tạo một dự án ESP32 mới.
+    \item Sao chép toàn bộ nội dung mã nguồn JSON tại \textbf{Phụ lục C (Sơ đồ mạch Wokwi)}.
+    \item Mở thẻ \file{diagram.json} trong trình soạn thảo của Wokwi và dán nội dung đã sao chép vào.
+    \item Hệ thống sẽ tự động khởi tạo các linh kiện (ESP32, DHT22, Biến trở, LED, Buzzer) và các kết nối dây tương ứng theo đúng thiết kế của đề tài.
+\end{enumerate}
 
-\subsection{Cấu hình Wi-Fi và MQTT trên ESP32}
+\subsection{Triển khai và vận hành Firmware cho ESP32}
 
-Trong \file{main.cpp}: \code{WIFI_SSID}, \code{WIFI_PASSWORD}; \code{MQTT_BROKER}, cổng 8883, \code{MQTT_USERNAME}, \code{MQTT_PASSWORD}, \code{TOPIC_SENSOR}, \code{TOPIC_CONTROL}. Có macro \code{WOKWI} để dùng Wi-Fi guest khi mô phỏng. Không đưa mật khẩu thật vào bản in; dùng placeholder.
+\subsubsection{Cài đặt mã nguồn và thư viện}
+Người dùng thực hiện sao chép toàn bộ mã nguồn chương trình tại \textbf{Phụ lục A (Mã nguồn ESP32)} và dán vào tệp \file{main.cpp} trong dự án PlatformIO hoặc thẻ \file{sketch.ino} trên Wokwi. Các thư viện như \textit{DHT sensor library}, \textit{PubSubClient} và \textit{ArduinoJson} sẽ được hệ thống tự động nhận diện và quản lý.
 
-\subsection{Build, nạp firmware và Serial Monitor}
+\subsubsection{Cấu hình thông số hệ thống}
+Để thiết bị có thể kết nối với hạ tầng đám mây, cần cập nhật các thông số sau trong tệp mã nguồn:
+\begin{itemize}
+    \item \textbf{Kết nối mạng:} Cập nhật tên và mật khẩu Wi-Fi. (Trên Wokwi mặc định dùng tên dự án và mật khẩu trống hoặc mạng giả lập).
+    \item \textbf{Xác thực MQTT:} Cập nhật các thông tin định danh bao gồm địa chỉ máy chủ, tên đăng nhập và mật khẩu truy cập (Broker, Username, Password) sao cho khớp với tài khoản HiveMQ Cloud đã đăng ký.
+\end{itemize}
 
-Build/Upload từ PlatformIO; mở Serial Monitor 115200 baud để xem log kết nối, dữ liệu cảm biến và MQTT. Trên Wokwi: dán project, bấm Play (không cần nạp vật lý).
+\subsubsection{Vận hành mô phỏng}
+Vì hệ thống sử dụng môi trường mô phỏng Wokwi, người dùng không cần kết nối thiết bị vật lý qua cổng USB. Chỉ cần nhấn nút \textbf{Start Simulation} để bắt đầu chạy chương trình. Toàn bộ quá trình kết nối và dữ liệu cảm biến sẽ được hiển thị trực tiếp qua cửa sổ \textit{Serial Monitor} của trình giả lập.
 
-\subsection{Cài đặt Node.js và Node-RED}
+\subsection{Thiết lập hệ thống điều khiển và giao diện Node-RED}
 
-\code{npm install -g node-red}; chạy \code{node-red} để khởi động (mặc định cổng 1880).
+\subsubsection{Lệnh cài đặt nền tảng}
+Mở cửa sổ dòng lệnh (Terminal) và thực hiện cài đặt Node-RED cùng giao diện Dashboard thông qua trình quản lý gói npm:
+\begin{lstlisting}[language=bash, basicstyle=\ttfamily\small, frame=none, numbers=none]
+npm install -g node-red
+npm install -g node-red-dashboard
+\end{lstlisting}
+Sau đó, gõ lệnh \code{node-red} để khởi động dịch vụ và truy cập vào địa trị \url{http://127.0.0.1:1880}.
 
-\subsection{Cài đặt node-red-dashboard}
+\subsubsection{Triển khai luồng xử lý và giao diện Dashboard}
+Để thiết lập logic điều khiển và giao diện, người dùng thực hiện:
+\begin{enumerate}
+    \item Sao chép mã nguồn JSON tại \textbf{Phụ lục B (Mã nguồn Node-RED Flow)}.
+    \item Tại giao diện Node-RED, chọn \textbf{Menu} $\rightarrow$ \textbf{Import} và dán nội dung vào cửa sổ hiện ra.
+    \item Nhấn \textbf{Import} để hệ thống tự động tạo ra các luồng xử lý và giao diện Dashboard.
+    \item Cập nhật cấu hình node \textbf{mqtt-broker} để thiết lập thông tin đăng nhập HiveMQ Cloud tương tự như phía ESP32.
+\end{enumerate}
 
-\code{npm install -g node-red-dashboard} hoặc \textit{Manage palette} trong Node-RED; khởi động lại Node-RED nếu cần.
-
-\subsection{Import Node-RED Flow từ Phụ lục B}
-
-Truy cập \url{http://127.0.0.1:1880}, Menu $\rightarrow$ Import, dán nội dung \file{node-red-flow.txt} (trùng \file{node-red.json} trong repo), Deploy.
-
-\subsection{Cấu hình MQTT Broker trong Node-RED}
-
-Node \textbf{mqtt-broker} trong flow: hostname cluster HiveMQ, cổng 8883, TLS, username/password trùng firmware.
-
-\subsection{Truy cập Dashboard và kiểm tra kết nối}
-
-Mở \url{http://127.0.0.1:1880/ui}; kiểm tra gauge cập nhật khi ESP32 publish; thử nút bơm và switch tưới tự động.
+\subsection{Vận hành và kiểm thử tổng thể}
+Sau khi hoàn tất cài đặt, người dùng truy cập Dashboard tại \url{http://127.0.0.1:1880/ui}. Hệ thống hoạt động đúng khi các đồng hồ đo hiển thị giá trị nhiệt độ, độ ẩm thực tế từ Wokwi, và người dùng có thể thực hiện bật/tắt máy bơm từ xa thông qua các nút nhấn trên giao diện.
 
 \begin{figure}[H]
   \centering
@@ -742,38 +801,74 @@ Mở \url{http://127.0.0.1:1880/ui}; kiểm tra gauge cập nhật khi ESP32 pub
 \setcounter{section}{6}
 \setcounter{subsection}{0}
 
-\subsection{Các hình ảnh minh họa}
+\subsection{Kết quả mô phỏng phần cứng trên Wokwi}
+Mạch điện của hệ thống được thực hiện mô phỏng đầy đủ trên nền tảng Wokwi. Hình~\ref{fig:res-wokwi} cho thấy sự kết nối chính xác giữa ESP32 và các linh kiện như cảm biến DHT22, biến trở mô phỏng độ ẩm đất, còi báo động Buzzer và đèn LED giả lập máy bơm.
 
-Hệ thống hoạt động ổn định với chu kỳ đọc 5 giây. DHT22 đo nhiệt độ và độ ẩm KK; ESP32 đọc ADC đất (potentiometer); JSON gửi lên \code{iot/farm/sensor}. Cấu trúc payload điển hình:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\linewidth]{mach-vat-ly-wokwi.png}
+  \caption{Mô phỏng sơ đồ kết nối phần cứng thực tế trên môi trường Wokwi}
+  \label{fig:res-wokwi}
+\end{figure}
 
-\begin{lstlisting}[style=jcode, caption={JSON payload gửi lên topic iot/farm/sensor}, label={lst:json}]
-{
-  "device": "ESP32-01",
-  "temperature": 25.3,
-  "humidity": 55.0,
-  "soil": 2048,
-  "timestamp": 12345678
-}
-\end{lstlisting}
-
-Node-RED nhận JSON, parse và phân luồng tới các node hiển thị. Gauge nhiệt độ hiển thị giá trị với kim chỉ vị trí tương ứng trên thang 0–100$^\circ$C, tự động đổi màu theo ngưỡng (xanh: dưới 33, vàng: 33–67, đỏ: trên 67). Gauge độ ẩm không khí hiển thị dạng donut. Gauge độ ẩm đất hiển thị phần trăm tính từ giá trị raw ADC (0–4095), với ba vùng màu đảo ngược (đỏ: dưới 33\% — đất khô, vàng: 33–67\%, xanh: trên 67\% — đất ẩm). Biểu đồ line vẽ điểm mới mỗi 5 giây cho cả ba thông số, tự động xóa điểm cũ sau 1 giờ (\code{removeOlderPoints: 10}, \code{removeOlderUnit: 3600}), đảm bảo biểu đồ không bị quá tải.
-
-Hình~\ref{fig:nr-flow}, \ref{fig:nr-dash-1}, \ref{fig:nr-dash-2} minh họa editor Node-RED và Dashboard. Hình~\ref{fig:serial} là log Serial Monitor (PlatformIO).
+\subsection{Kết quả truyền nhận dữ liệu qua Serial Monitor}
+Trong quá trình vận hành, vi điều khiển ESP32 liên tục gửi các thông tin trạng thái hoạt động lên cửa sổ Serial Monitor. Các thông tin bao gồm quá trình kết nối Wi-Fi, trạng thái thiết lập kết nối bảo mật TLS với HiveMQ Cloud và dữ liệu cảm biến thu thập được trước khi đóng gói JSON (Hình~\ref{fig:res-serial}).
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\linewidth]{serial-monitor.png}
-  \caption{Serial Monitor: log dữ liệu cảm biến và trạng thái MQTT trên PlatformIO}
-  \label{fig:serial}
+  \caption{Dữ liệu log hoạt động và trạng thái kết nối MQTT trên Serial Monitor}
+  \label{fig:res-serial}
+\end{figure}
+
+\subsection{Thiết lập luồng xử lý dữ liệu trên Node-RED}
+Mọi chương trình xử lý phía máy chủ được tổ chức thành các luồng (flow) trực quan trên Node-RED. Hình~\ref{fig:res-nr-flow} thể hiện toàn bộ các node chức năng từ việc tiếp nhận dữ liệu MQTT, giải mã JSON đến việc phân luồng hiển thị và logic điều khiển máy bơm tự động.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{nodered-flow-full.png}
+  \caption{Sơ đồ luồng xử lý dữ liệu (Flow) đầy đủ trên trình biên tập Node-RED}
+  \label{fig:res-nr-flow}
+\end{figure}
+
+\subsection{Giao diện giám sát và điều khiển Dashboard}
+Kết quả quan trọng nhất của hệ thống là giao diện tương tác người dùng hiện đại và trực quan. Hệ thống Dashboard cung cấp đầy đủ các thông tin cần thiết về môi trường trang trại theo thời gian thực (Hình~\ref{fig:res-dash-1} và Hình~\ref{fig:res-dash-2}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-1.png}
+  \caption{Giao diện Dashboard (Phần 1): Hiển thị đồng hồ đo và các nút điều khiển trung tâm}
+  \label{fig:res-dash-1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-2.png}
+  \caption{Giao diện Dashboard (Phần 2): Biểu đồ lịch sử dữ liệu và các thông tin trạng thái đất}
+  \label{fig:res-dash-2}
 \end{figure}
 
 \subsection{Phân tích luồng hoạt động thực tế}
 
-\textbf{Cảnh báo:} Khi nhiệt độ $>$ 35$^\circ$C, toast cảnh báo nhiệt; khi độ ẩm KK $<$ 40\%, toast gợi ý tưới; khi \code{soil} $<$ 2048, toast đất khô và buzzer trên ESP32 (\code{soilRaw < 2048}); khi \code{soil} $<$ 1024, Dashboard thêm cảnh báo đỏ (buzzer firmware không tách ngưỡng 1024).
+Hệ thống được thiết kế để xử lý các tình huống môi trường thực tế thông qua các cơ chế phản hồi tự động và cảnh báo trực quan (Hình~\ref{fig:res-alerts}).
 
-\textbf{Điều khiển:} Nút \textbf{Máy bơm} gửi \code{\{"pump":true,"duration":5\}} lên \code{iot/farm/control}; switch \textbf{Tưới tự động} kết hợp \code{soil < 2048} gửi lệnh tương tự (\file{node-red.json}).
+\textbf{Cơ chế cảnh báo:} Khi các thông số vượt ngưỡng an toàn, hệ thống sẽ tự động kích hoạt các chỉ báo:
+\begin{itemize}
+    \item \textbf{Nhiệt độ:} Khi nhiệt độ $>$ 35$^\circ$C, Dashboard hiển thị toast cảnh báo nhiệt độ cao.
+    \item \textbf{Độ ẩm không khí:} Khi độ ẩm $<$ 40\%, hệ thống gợi ý thực hiện tưới nước thông qua thông báo.
+    \item \textbf{Độ ẩm đất:} Khi mức ADC $<$ 2048, toast cảnh báo đất khô sẽ xuất hiện và còi Buzzer trên ESP32 phát âm thanh báo động. Đặc biệt, khi độ ẩm giảm sâu (ADC $<$ 1024), Dashboard sẽ hiển thị cảnh báo mức đỏ cực kỳ khô hạn.
+\end{itemize}
 
-\textbf{Wokwi:} Mô phỏng tương đương phần cứng; DHT22 và potentiometer có giá trị mặc định; LED (mô phỏng bơm) bật khi nhận lệnh MQTT; buzzer khi \code{soilRaw < 2048}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{nodered-dashboard-full-2.png}
+  \caption{Minh họa các thông báo cảnh báo và biểu đồ trạng thái trên giao diện Dashboard}
+  \label{fig:res-alerts}
+\end{figure}
+
+\textbf{Cơ chế điều khiển:} Người dùng có thể thực hiện publish lệnh điều khiển thông qua nút nhấn \textbf{Máy bơm} hoặc kích hoạt chế độ \textbf{Tưới tự động} để hệ thống tự xử lý dựa trên ngưỡng độ ẩm đất.
+
+\textbf{Kết quả mô phỏng:} Môi trường Wokwi phản hồi chính xác các lệnh MQTT gửi đến; đèn LED (giả lập máy bơm) bật/tắt đúng theo yêu cầu và còi báo động hoạt động đồng bộ với trạng thái cảm biến.
 
 \begin{table}[H]
   \centering
@@ -787,7 +882,7 @@ Hình~\ref{fig:nr-flow}, \ref{fig:nr-dash-1}, \ref{fig:nr-dash-2} minh họa edi
     \hline
     Đọc độ ẩm đất (ADC) & Hoàn thành & GPIO 34, potentiometer trên Wokwi \\
     \hline
-    Truyền MQTT (TLS port 8883) & Hoàn thành & WiFiClientSecure + PubSubClient \\
+    Publish/Subscribe MQTT (TLS) & Hoàn thành & Sử dụng giao thức bảo mật cổng 8883 \\
     \hline
     Hiển thị Gauge nhiệt độ & Hoàn thành & 3 vùng màu, min=0, max=100 \\
     \hline
@@ -852,7 +947,7 @@ Chưa tích hợp máy bơm/relay thật (LED mô phỏng); chưa dùng cảm bi
 
 Thứ nhất, thay potentiometer bằng cảm biến độ ẩm đất capacitive.
 
-Thứ hai, relay và máy bơm thật; mở rộng firmware dùng \code{duration} từ JSON cho \code{checkPumpTimeout}.
+Thứ hai, tích hợp relay và máy bơm nước thực tế; nâng cấp firmware để tự động ngắt bơm dựa trên thời gian (duration) nhận từ bản tin JSON.
 
 Thứ ba, xác thực TLS đầy đủ (CA), bỏ \code{setInsecure()} khi triển khai thực tế.
 
