@@ -351,32 +351,9 @@ Firmware định kỳ 5 giây (\code{PUBLISH_INTERVAL}) gọi \code{readSensor()
 
 DHT22 đo KK theo giao tiếp 1-wire; độ chính xác tốt hơn DHT11. Potentiometer mô phỏng cảm biến độ ẩm đất: giá trị ADC càng thấp thì trên Dashboard (công thức \code{(1 - soil/4095)*100}) đất càng khô.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.35\linewidth]{dht22.png}
-  \caption{Cảm biến đo nhiệt độ và độ ẩm không khí DHT22}
-  \label{fig:dht22}
-\end{figure}
-
 \subsection{Chỉ báo cục bộ: LED mô phỏng máy bơm và buzzer cảnh báo}
 
 GPIO \code{LED_PIN} (5) điều khiển LED cực dương (mô phỏng máy bơm). GPIO \code{BUZZER_PIN} (18) dùng PWM qua \code{ledc} trong hàm \code{toneBuzzer()}: khi \code{soilRaw < 2048}, firmware phát cảnh báo 2\,kHz trong 300\,ms mỗi chu kỳ đọc (\file{main.cpp}).
-
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.45\textwidth}
-    \centering
-    \includegraphics[width=0.8\linewidth]{led.png}
-    \caption{Đèn LED mô phỏng trạng thái máy bơm}
-    \label{fig:led}
-  \end{minipage}\hfill
-  \begin{minipage}{0.45\textwidth}
-    \centering
-    \includegraphics[width=0.8\linewidth]{buzzer.png}
-    \caption{Còi loa (Buzzer) phát âm thanh cảnh báo}
-    \label{fig:buzzer}
-  \end{minipage}
-\end{figure}
 
 \subsection{Truyền dữ liệu qua MQTT (HiveMQ Cloud, TLS)}
 
